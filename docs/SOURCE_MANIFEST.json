@@ -1,0 +1,230 @@
+{
+  "schema": "neurosphere-sources/v1",
+  "createdDate": "2026-10-31",
+  "repository": "https://github.com/Nostrama/Neuron",
+  "commit": "21e548692d4c8b062ee2330ecbcbf8f3c7b7c45c",
+  "branch": "main",
+  "policy": "Runtime and historical oracle files are byte-for-byte copies. Only relative require paths changed in upstream tests. The Node entry point, examples, verification and package documentation are new.",
+  "files": [
+    {
+      "source": "neuron.js",
+      "destination": "src/neuron/neuron.js",
+      "kind": "runtime",
+      "sourceSha256": "6974f6e4d90395847d80018d4b755e3b53eb70f664d68cb242ce40aec6968e79",
+      "copiedSha256": "6974f6e4d90395847d80018d4b755e3b53eb70f664d68cb242ce40aec6968e79",
+      "bytes": 20685,
+      "modifications": "none"
+    },
+    {
+      "source": "field.js",
+      "destination": "src/neuron/field.js",
+      "kind": "runtime",
+      "sourceSha256": "7161c8975ed8bb13376e2068d2fce43b70249900a42cdfed9eafd37333ea6d80",
+      "copiedSha256": "7161c8975ed8bb13376e2068d2fce43b70249900a42cdfed9eafd37333ea6d80",
+      "bytes": 76293,
+      "modifications": "none"
+    },
+    {
+      "source": "spatial.js",
+      "destination": "src/neuron/spatial.js",
+      "kind": "runtime",
+      "sourceSha256": "3313fae0f38314c37a4baaaf14cb0b430da5a979531f8204e00328dfef31aafe",
+      "copiedSha256": "3313fae0f38314c37a4baaaf14cb0b430da5a979531f8204e00328dfef31aafe",
+      "bytes": 2017,
+      "modifications": "none"
+    },
+    {
+      "source": "logic-task.js",
+      "destination": "src/neuron/logic-task.js",
+      "kind": "runtime",
+      "sourceSha256": "bd627e5fd0b4b151f58fffbe57641502fb670bec7443a460647716ac01218421",
+      "copiedSha256": "bd627e5fd0b4b151f58fffbe57641502fb670bec7443a460647716ac01218421",
+      "bytes": 6374,
+      "modifications": "none"
+    },
+    {
+      "source": "assembly-task.js",
+      "destination": "src/neuron/assembly-task.js",
+      "kind": "runtime",
+      "sourceSha256": "3b25df070ae03c8a393db0a5a04bafcb1b9b8b6313f03b8404a31e139469de35",
+      "copiedSha256": "3b25df070ae03c8a393db0a5a04bafcb1b9b8b6313f03b8404a31e139469de35",
+      "bytes": 18083,
+      "modifications": "none"
+    },
+    {
+      "source": "simulation.js",
+      "destination": "src/neuron/simulation.js",
+      "kind": "runtime",
+      "sourceSha256": "495f3f1fa4da0b0e69f314e6c2742b8a4c21b2a143380da807a3725f699a34d3",
+      "copiedSha256": "495f3f1fa4da0b0e69f314e6c2742b8a4c21b2a143380da807a3725f699a34d3",
+      "bytes": 461,
+      "modifications": "none"
+    },
+    {
+      "source": "spike-io.js",
+      "destination": "src/neuron/spike-io.js",
+      "kind": "runtime",
+      "sourceSha256": "5161e8de011c388e9aefc1fa653748035f188d1a30600a72f10b6ee83f603a08",
+      "copiedSha256": "5161e8de011c388e9aefc1fa653748035f188d1a30600a72f10b6ee83f603a08",
+      "bytes": 5859,
+      "modifications": "none"
+    },
+    {
+      "source": "development.js",
+      "destination": "src/neuron/development.js",
+      "kind": "runtime",
+      "sourceSha256": "c7c6a8d852d21c465906e38c6ccea2c4c52905a633f4ba05b7a9c1ad9c42e453",
+      "copiedSha256": "c7c6a8d852d21c465906e38c6ccea2c4c52905a633f4ba05b7a9c1ad9c42e453",
+      "bytes": 6736,
+      "modifications": "none"
+    },
+    {
+      "source": "controller.js",
+      "destination": "src/neuron/controller.js",
+      "kind": "runtime",
+      "sourceSha256": "77bc74dae59889ac2362d2bf0d73d82798c27ed8fbf8ff9eede164b3fb1b9566",
+      "copiedSha256": "77bc74dae59889ac2362d2bf0d73d82798c27ed8fbf8ff9eede164b3fb1b9566",
+      "bytes": 18747,
+      "modifications": "none"
+    },
+    {
+      "source": "population.js",
+      "destination": "src/neuron/population.js",
+      "kind": "runtime",
+      "sourceSha256": "9f38bbc5c5e36727423f7f77828dc57aa51f8b189851981120b23bdb919628fd",
+      "copiedSha256": "9f38bbc5c5e36727423f7f77828dc57aa51f8b189851981120b23bdb919628fd",
+      "bytes": 6377,
+      "modifications": "none"
+    },
+    {
+      "source": "presets.js",
+      "destination": "src/neuron/presets.js",
+      "kind": "runtime",
+      "sourceSha256": "34dcab5890ed0a054973723daaece15d88eb20b2042bb194fe738122afcb4de9",
+      "copiedSha256": "34dcab5890ed0a054973723daaece15d88eb20b2042bb194fe738122afcb4de9",
+      "bytes": 793,
+      "modifications": "none"
+    },
+    {
+      "source": "results-v3/source/field.js",
+      "destination": "tests/fixtures/neuron/results-v3/source/field.js",
+      "kind": "historical test oracle",
+      "sourceSha256": "84efce262754fb620d0215d749dfac9bdb42f15cb6a962ac712125b060e41ec0",
+      "copiedSha256": "84efce262754fb620d0215d749dfac9bdb42f15cb6a962ac712125b060e41ec0",
+      "bytes": 31496,
+      "modifications": "none"
+    },
+    {
+      "source": "results-v3/source/neuron.js",
+      "destination": "tests/fixtures/neuron/results-v3/source/neuron.js",
+      "kind": "historical test oracle",
+      "sourceSha256": "8cc3ca37e9390c3314ba1447364b088f6e0b870d08cee569416aec5681a09eff",
+      "copiedSha256": "8cc3ca37e9390c3314ba1447364b088f6e0b870d08cee569416aec5681a09eff",
+      "bytes": 11319,
+      "modifications": "none"
+    },
+    {
+      "source": "history/results-v4/source-phase10/field.js",
+      "destination": "tests/fixtures/neuron/history/results-v4/source-phase10/field.js",
+      "kind": "historical test oracle",
+      "sourceSha256": "f91ebae57a867944363f1f51e39e1d1f2c0c2435c4a260995af70964351c7e83",
+      "copiedSha256": "f91ebae57a867944363f1f51e39e1d1f2c0c2435c4a260995af70964351c7e83",
+      "bytes": 74044,
+      "modifications": "none"
+    },
+    {
+      "source": "history/results-v4/source-phase10/neuron.js",
+      "destination": "tests/fixtures/neuron/history/results-v4/source-phase10/neuron.js",
+      "kind": "historical test oracle",
+      "sourceSha256": "76a0c73aa4e6b1e4778d94c0ba496685b2bc20702026a2c866051706a5c627f1",
+      "copiedSha256": "76a0c73aa4e6b1e4778d94c0ba496685b2bc20702026a2c866051706a5c627f1",
+      "bytes": 20116,
+      "modifications": "none"
+    },
+    {
+      "source": "history/results-v4/source-phase10/logic-task.js",
+      "destination": "tests/fixtures/neuron/history/results-v4/source-phase10/logic-task.js",
+      "kind": "historical test oracle",
+      "sourceSha256": "bd627e5fd0b4b151f58fffbe57641502fb670bec7443a460647716ac01218421",
+      "copiedSha256": "bd627e5fd0b4b151f58fffbe57641502fb670bec7443a460647716ac01218421",
+      "bytes": 6374,
+      "modifications": "none"
+    },
+    {
+      "source": "history/results-v4/source-phase10/spatial.js",
+      "destination": "tests/fixtures/neuron/history/results-v4/source-phase10/spatial.js",
+      "kind": "historical test oracle",
+      "sourceSha256": "3313fae0f38314c37a4baaaf14cb0b430da5a979531f8204e00328dfef31aafe",
+      "copiedSha256": "3313fae0f38314c37a4baaaf14cb0b430da5a979531f8204e00328dfef31aafe",
+      "bytes": 2017,
+      "modifications": "none"
+    },
+    {
+      "source": "history/results-v4/source-phase10/assembly-task.js",
+      "destination": "tests/fixtures/neuron/history/results-v4/source-phase10/assembly-task.js",
+      "kind": "historical test oracle",
+      "sourceSha256": "4e094882f7348cf960531e5e58316b6a46c16e117ffdebd1e6dad61b3eb8bbfd",
+      "copiedSha256": "4e094882f7348cf960531e5e58316b6a46c16e117ffdebd1e6dad61b3eb8bbfd",
+      "bytes": 18064,
+      "modifications": "none"
+    },
+    {
+      "source": "spiking.test.cjs",
+      "destination": "tests/upstream/spiking.test.cjs",
+      "kind": "upstream regression test",
+      "sourceSha256": "404858b68aa3f26295896a1acd526ea9703d04973e91b753d9f4e0511d636113",
+      "copiedSha256": "092dfa3d99f302687ffdfc89ffd9b976b0c1da7fecc37743b9b32b20ed826e9f",
+      "bytes": 17387,
+      "modifications": "relative require paths only"
+    },
+    {
+      "source": "geometry.test.cjs",
+      "destination": "tests/upstream/geometry.test.cjs",
+      "kind": "upstream regression test",
+      "sourceSha256": "3afcd698e859455b6595aa502a1875ef48082a5e93b2784083135df76288e615",
+      "copiedSha256": "d420143575a16ba0c43a2912b6a7f7b4c73c84d05ed146100b77545b9622c696",
+      "bytes": 5811,
+      "modifications": "relative require paths only"
+    },
+    {
+      "source": "population.test.cjs",
+      "destination": "tests/upstream/population.test.cjs",
+      "kind": "upstream regression test",
+      "sourceSha256": "a1ea13c8350fedb8e874c34db2e862906ee605d278fa7b18067aebfec95f03e5",
+      "copiedSha256": "96239e36973512dbff883b65e73af7d1bc2ed913da5991db5c07ac70e27df741",
+      "bytes": 6274,
+      "modifications": "relative require paths only"
+    },
+    {
+      "source": "controller.test.cjs",
+      "destination": "tests/upstream/controller.test.cjs",
+      "kind": "upstream regression test",
+      "sourceSha256": "a121409a4e12061b79d9609e33f1c86280dbbc87328e8a27b9b28fb20d319ac2",
+      "copiedSha256": "0b353c14315490853230794a047758fd670b7424b194cda2f89660d62517be7f",
+      "bytes": 8845,
+      "modifications": "relative require paths only"
+    },
+    {
+      "source": "brain.json",
+      "destination": "data/a-concept-brain.json",
+      "repository": "https://github.com/Nostrama/a-concept-lab",
+      "commit": "0b59bc069b0a1d41921cd3ac3455ff503973503c",
+      "kind": "vocabulary source",
+      "sourceSha256": "57d0abbe8675d7a2031669d70ed4c7ce313fdaa2d5b7147a452838ece1b9cd3c",
+      "copiedSha256": "57d0abbe8675d7a2031669d70ed4c7ce313fdaa2d5b7147a452838ece1b9cd3c",
+      "bytes": 1345538,
+      "modifications": "none"
+    },
+    {
+      "source": "engine.js",
+      "destination": "src/vocabulary/upstream-engine.js",
+      "repository": "https://github.com/Nostrama/a-concept-lab",
+      "commit": "0b59bc069b0a1d41921cd3ac3455ff503973503c",
+      "kind": "vocabulary validation and normalization",
+      "sourceSha256": "9ca8605b3273a476278ed63526d1e69d0d7f867183352cb267b830a6d5faa220",
+      "copiedSha256": "9ca8605b3273a476278ed63526d1e69d0d7f867183352cb267b830a6d5faa220",
+      "bytes": 30577,
+      "modifications": "none"
+    }
+  ]
+}

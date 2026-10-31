@@ -1,0 +1,30 @@
+node_modules/
+coverage/
+*.log
+outputs/*
+!outputs/formation/
+outputs/formation/*
+!outputs/formation/*/
+outputs/formation/*/*
+!outputs/formation/*/summary.json
+!outputs/pilot-v*/
+outputs/pilot-v*/*
+!outputs/pilot-v*/summary.json
+!outputs/pilot-v*/engram-pilot.json
+*.node
+
+# Private/local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.key
+Thumbs.db
+.DS_Store
+
+# Portable formation figures and complete verified Stage 1g evidence
+!outputs/formation/*/training-curves.png
+!outputs/formation/*/training-curves.svg
+!outputs/formation/2026-10-31T23-05-24-523Z-stage1g/
+!outputs/formation/2026-10-31T23-05-24-523Z-stage1g/**

@@ -1,0 +1,21 @@
+{
+  "repository": "Nostrama/Neuron",
+  "commit": "21e548692d4c8b062ee2330ecbcbf8f3c7b7c45c",
+  "files": [
+    {
+      "source": "volume-view.js",
+      "destination": "public/upstream/neuron-volume.js",
+      "mode": "verbatim",
+      "sha256": "104fb0b9d970120b24ef73b6c51f244e0d6dc75c153191677daf18d46b2afdc0"
+    },
+    {
+      "source": "app.js",
+      "destination": "public/morphology.js",
+      "mode": "adapted",
+      "sourceSha256": "9043e1322b61d345594b9e42845230ee77ccd4426e9faf59e4375d5bbb9dca71",
+      "sourceFunction": "drawNeuron",
+      "notes": "Original 12-point organic soma outline, quadratic outline smoothing, gradient body, nucleus, and highlight. Uses the exact copied neuronShape() branches, projected in 3D, with cyan/amber colors and level-of-detail sizing."
+    }
+  ],
+  "scope": "View-only anatomy. No additional synapses, random model draws, or neuron dynamics are introduced."
+}

@@ -1,0 +1,23 @@
+{
+  "name": "neurosphere",
+  "version": "0.7.0",
+  "private": true,
+  "description": "Local neuron memory workspace built on Neuron and a-concept-lab",
+  "type": "commonjs",
+  "main": "src/index.cjs",
+  "exports": {
+    ".": "./src/index.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.cjs",
+    "test": "node --test examples/stdp-timing-probe.cjs tests/formation.test.cjs tests/fact-memory.test.cjs tests/fact-server.test.cjs tests/text-memory.test.cjs tests/text-server.test.cjs tests/api.test.cjs tests/engrams.test.cjs tests/server.test.cjs tests/console.test.cjs tests/domain-layout.test.cjs tests/upstream/spiking.test.cjs tests/upstream/geometry.test.cjs tests/upstream/population.test.cjs tests/upstream/controller.test.cjs",
+    "verify": "node scripts/verify-source.cjs",
+    "demo": "node examples/relay.cjs",
+    "demo:growth": "node examples/growth.cjs",
+    "demo:engrams": "node examples/engrams.cjs",
+    "demo:formation": "node examples/formation.cjs"
+  }
+}

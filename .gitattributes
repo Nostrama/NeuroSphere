@@ -1,0 +1,7 @@
+# Retain the exact source bytes recorded in docs/SOURCE_MANIFEST.json.
+* text=auto eol=lf
+src/neuron/* -text
+tests/fixtures/** -text
+tests/upstream/* -text
+src/vocabulary/upstream-engine.js -text
+data/a-concept-brain.json -text

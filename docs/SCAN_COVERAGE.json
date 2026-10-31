@@ -1,0 +1,2164 @@
+{
+  "schema": "neurosphere-reuse-scan/v1",
+  "date": "2026-10-31",
+  "localRoot": "C:\\Users\\James\\Desktop\\Projects",
+  "scope": "Current file inventory and available README/manifest triage for every entry; targeted source inspection for processing candidates. Not an exhaustive audit or fresh verification of other projects.",
+  "localFolderCount": 70,
+  "githubRepositoryCount": 17,
+  "local": [
+    {
+      "name": "3D Image",
+      "filesInventoried": 11,
+      "extensions": [
+        [
+          ".js",
+          6
+        ],
+        [
+          "",
+          2
+        ],
+        [
+          ".mjs",
+          1
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          ".txt",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A Three.js image experiment that builds layered depth planes from an uploaded image, with optional AI slicing and blending.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "_Project_Catalog_2026-09-25",
+      "filesInventoried": 88,
+      "extensions": [
+        [
+          ".png",
+          62
+        ],
+        [
+          ".json",
+          10
+        ],
+        [
+          ".py",
+          4
+        ],
+        [
+          ".docx",
+          2
+        ],
+        [
+          ".html",
+          2
+        ],
+        [
+          ".ps1",
+          2
+        ],
+        [
+          ".cjs",
+          2
+        ],
+        [
+          ".pdf",
+          2
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": null,
+      "decision": "reference",
+      "reason": "Older portfolio context; not a current code or validation authority."
+    },
+    {
+      "name": "a-concept-lab",
+      "filesInventoried": 20,
+      "extensions": [
+        [
+          ".cjs",
+          7
+        ],
+        [
+          ".json",
+          6
+        ],
+        [
+          ".txt",
+          2
+        ],
+        [
+          ".js",
+          2
+        ],
+        [
+          ".html",
+          2
+        ],
+        [
+          "",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.txt"
+      ],
+      "historicalCatalogContext": null,
+      "decision": "copied",
+      "reason": "Complete vocabulary plus source validator and normalizer; symbolic decoding not used for neural recall."
+    },
+    {
+      "name": "AgentForge",
+      "filesInventoried": 44,
+      "extensions": [
+        [
+          ".json",
+          10
+        ],
+        [
+          ".md",
+          10
+        ],
+        [
+          ".ts",
+          7
+        ],
+        [
+          "",
+          2
+        ],
+        [
+          ".example",
+          2
+        ],
+        [
+          ".sh",
+          2
+        ],
+        [
+          ".tsx",
+          2
+        ],
+        [
+          ".ps1",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "package.json",
+        "server/package.json"
+      ],
+      "historicalCatalogContext": "A multi-agent builder intended to plan, generate and audit software from natural-language requests.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "AI",
+      "filesInventoried": 18,
+      "extensions": [
+        [
+          ".md",
+          18
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "The central written portfolio of AI, storage and business-product concepts.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "AI Cloud Build",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".drawio",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A multi-cloud storage/search and multi-model AI architecture with request decomposition and verification.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "AI Cluster Matrix",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".drawio",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A cause/process/outcome reasoning sketch that omits one term from A to B equals C and assigns computation matrices to the unknown.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "AI Ref Files",
+      "filesInventoried": 16,
+      "extensions": [
+        [
+          ".md",
+          16
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A second copy of the core AI and storage concept-summary library.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "AI Sales Gen",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".drawio",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A workflow for identifying prospective buyers, product fit, contacts and outreach approaches from company/product information.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "AIMTS",
+      "filesInventoried": 82,
+      "extensions": [
+        [
+          ".js",
+          54
+        ],
+        [
+          ".md",
+          20
+        ],
+        [
+          ".css",
+          3
+        ],
+        [
+          ".html",
+          2
+        ],
+        [
+          ".py",
+          1
+        ],
+        [
+          ".json",
+          1
+        ],
+        [
+          "",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A visual training-graph compiler that produces contracts, manifests, assembly plans and executable PyTorch training code.",
+      "decision": "deferred",
+      "reason": "Training graph contracts, browser globals and PyTorch compiler; possible future infrastructure."
+    },
+    {
+      "name": "AIS",
+      "filesInventoried": 70,
+      "extensions": [
+        [
+          ".py",
+          54
+        ],
+        [
+          ".md",
+          13
+        ],
+        [
+          ".json",
+          2
+        ],
+        [
+          ".txt",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md"
+      ],
+      "historicalCatalogContext": "A small Chimera learning-loop implementation for recognition, validated knowledge locking, composition, relations and arithmetic.",
+      "decision": "candidate",
+      "reason": "Shadow-copy write admission and permanence checks; Python model requires a deliberate port."
+    },
+    {
+      "name": "API Keys",
+      "filesInventoried": null,
+      "extensions": [],
+      "documentsSampled": [],
+      "historicalCatalogContext": "Supporting credentials/configuration for other projects.",
+      "decision": "excluded",
+      "reason": "Credentials folder recognized by name; its contents were not inspected or imported."
+    },
+    {
+      "name": "Audio Auto Translation",
+      "filesInventoried": 17,
+      "extensions": [
+        [
+          ".py",
+          13
+        ],
+        [
+          ".pdf",
+          1
+        ],
+        [
+          ".drawio",
+          1
+        ],
+        [
+          ".txt",
+          1
+        ],
+        [
+          ".md",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "Modular Translation/README.md"
+      ],
+      "historicalCatalogContext": "A two-channel phone translation bridge combining speech recognition, language detection, translation and speech synthesis.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "BIn Viewer",
+      "filesInventoried": 3,
+      "extensions": [
+        [
+          ".py",
+          2
+        ],
+        [
+          ".bin",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A Tkinter binary-file pixel viewer/animator with a separate probe for LED-fan image layouts.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Bird Flock",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".html",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": null,
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Byte Encryption",
+      "filesInventoried": 93,
+      "extensions": [
+        [
+          ".py",
+          47
+        ],
+        [
+          ".json",
+          10
+        ],
+        [
+          ".bin",
+          10
+        ],
+        [
+          ".txt",
+          9
+        ],
+        [
+          ".md",
+          5
+        ],
+        [
+          "",
+          5
+        ],
+        [
+          ".toml",
+          1
+        ],
+        [
+          ".css",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "tcaf-prototype/README.md",
+        "tcaf-prototype/pyproject.toml"
+      ],
+      "historicalCatalogContext": "Transform Cluster Assembly Format reconstructs exact binary content from patterns, transforms, patches and literal fallbacks; adjacent documents define a broader Memory Constructor.",
+      "decision": "deferred",
+      "reason": "Reconstruction codec may inform storage only after a memory format is established."
+    },
+    {
+      "name": "Chimera",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".md",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "An integrated research AI architecture joining learning, knowledge storage, supervision and causal/hypothesis reasoning.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Color Disk",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".html",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A single-page simulation of rotating colored tracks, binary readout and theoretical state counts.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Color Encodng",
+      "filesInventoried": 10,
+      "extensions": [
+        [
+          ".py",
+          6
+        ],
+        [
+          ".md",
+          2
+        ],
+        [
+          ".txt",
+          2
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A Python color-symbol encoding experiment that evolved from rings to a static 10 by 10 grid and sequential readout.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Color Encryption",
+      "filesInventoried": 29,
+      "extensions": [
+        [
+          ".js",
+          18
+        ],
+        [
+          ".txt",
+          6
+        ],
+        [
+          ".html",
+          2
+        ],
+        [
+          ".bat",
+          1
+        ],
+        [
+          ".md",
+          1
+        ],
+        [
+          ".css",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A browser tool for rotational binary visualization, image-to-color-grid conversion and CEBIN reconstruction.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Concensus",
+      "filesInventoried": 38,
+      "extensions": [
+        [
+          ".py",
+          19
+        ],
+        [
+          ".json",
+          12
+        ],
+        [
+          ".md",
+          4
+        ],
+        [
+          "",
+          2
+        ],
+        [
+          ".txt",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A local chat app whose primary answer is audited by other models, with document context, panel scores, disagreement flags and reports.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Concept Model",
+      "filesInventoried": 11,
+      "extensions": [
+        [
+          ".json",
+          3
+        ],
+        [
+          ".md",
+          3
+        ],
+        [
+          ".js",
+          2
+        ],
+        [
+          ".html",
+          2
+        ],
+        [
+          ".txt",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "package.json"
+      ],
+      "historicalCatalogContext": "A geometric search experiment that optimizes routes through fixed computational nodes and retains paths for later branching.",
+      "decision": "deferred",
+      "reason": "Geometric route search with Three.js dependency; different computational model."
+    },
+    {
+      "name": "Continue Education",
+      "filesInventoried": 42,
+      "extensions": [
+        [
+          ".js",
+          15
+        ],
+        [
+          ".jsx",
+          13
+        ],
+        [
+          ".json",
+          5
+        ],
+        [
+          "",
+          2
+        ],
+        [
+          ".md",
+          2
+        ],
+        [
+          ".sql",
+          1
+        ],
+        [
+          ".example",
+          1
+        ],
+        [
+          ".drawio",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "package.json",
+        "client/package.json",
+        "server/package.json"
+      ],
+      "historicalCatalogContext": "An event/registration system for Suffolk County Dental Society activities, with admin management and email workflows.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Cube Encoder",
+      "filesInventoried": 44,
+      "extensions": [
+        [
+          ".py",
+          25
+        ],
+        [
+          ".md",
+          9
+        ],
+        [
+          ".txt",
+          2
+        ],
+        [
+          ".css",
+          2
+        ],
+        [
+          ".html",
+          2
+        ],
+        [
+          ".js",
+          2
+        ],
+        [
+          "",
+          1
+        ],
+        [
+          ".mdc",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md"
+      ],
+      "historicalCatalogContext": "A desktop encoder/decoder mapping data into a typed 3D cube and compact CE1 storage, with a USB filesystem experiment.",
+      "decision": "deferred",
+      "reason": "Typed cube storage codec rather than neural processing."
+    },
+    {
+      "name": "Custom LLM Concept",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".md",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": null,
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "DND Projection Mapping",
+      "filesInventoried": 12,
+      "extensions": [
+        [
+          ".js",
+          8
+        ],
+        [
+          ".css",
+          1
+        ],
+        [
+          ".md",
+          1
+        ],
+        [
+          ".json",
+          1
+        ],
+        [
+          ".html",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "package.json"
+      ],
+      "historicalCatalogContext": "A Dungeons and Dragons projection tool for layered maps, video, effects, audio and saved scenes.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "DSRA",
+      "filesInventoried": 26,
+      "extensions": [
+        [
+          ".md",
+          20
+        ],
+        [
+          ".docx",
+          6
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A ten-role reasoning architecture separating causal solving from supervisory auditing, grounded in a structured materials library.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Dynamic Neuron Architecture",
+      "filesInventoried": 73318,
+      "extensions": [
+        [
+          ".png",
+          73000
+        ],
+        [
+          ".json",
+          84
+        ],
+        [
+          ".js",
+          84
+        ],
+        [
+          ".cjs",
+          61
+        ],
+        [
+          ".md",
+          36
+        ],
+        [
+          ".html",
+          30
+        ],
+        [
+          ".css",
+          11
+        ],
+        [
+          ".csv",
+          4
+        ]
+      ],
+      "documentsSampled": [
+        "README.md"
+      ],
+      "historicalCatalogContext": "A browser research bench for prototype learning, spatial memory, repair, retrieval and handwriting experiments.",
+      "decision": "candidate",
+      "reason": "Spatial/reference experiments and negative retrieval evidence; representation differs from spiking neurons."
+    },
+    {
+      "name": "Floorplan",
+      "filesInventoried": 4,
+      "extensions": [
+        [
+          ".js",
+          2
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          ".css",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A planned browser floorplan editor with rooms, walls, doors, windows, catalog objects and exports.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Geo Compatibility Ref",
+      "filesInventoried": 18,
+      "extensions": [
+        [
+          ".xlsx",
+          15
+        ],
+        [
+          ".css",
+          1
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          ".js",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A browser catalog reading Excel references to show units and compatible accessories.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "kairos_matrix",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".html",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "An interactive HTML explanation of Chimera, Kairos, training, locking and reasoning flows.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "L&G",
+      "filesInventoried": 2,
+      "extensions": [
+        [
+          ".drawio",
+          1
+        ],
+        [
+          ".html",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A learning game combining brief lessons/quizzes with avatar traits, streaks and progression.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Lease Generator",
+      "filesInventoried": 10,
+      "extensions": [
+        [
+          ".js",
+          4
+        ],
+        [
+          "",
+          3
+        ],
+        [
+          ".md",
+          1
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          ".css",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md"
+      ],
+      "historicalCatalogContext": "A local browser application for commercial tenants, lease/rider generation, templates, revenue analytics and database backup.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "LeaseLogic",
+      "filesInventoried": 34,
+      "extensions": [
+        [
+          ".js",
+          26
+        ],
+        [
+          ".md",
+          1
+        ],
+        [
+          ".py",
+          1
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          ".xlsx",
+          1
+        ],
+        [
+          ".txt",
+          1
+        ],
+        [
+          ".css",
+          1
+        ],
+        [
+          ".db",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md"
+      ],
+      "historicalCatalogContext": "A broader commercial real-estate management interface for properties, tenants, leases, maintenance, payments and finance.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "LexanPC Case",
+      "filesInventoried": 11,
+      "extensions": [
+        [
+          ".png",
+          3
+        ],
+        [
+          "",
+          2
+        ],
+        [
+          ".js",
+          2
+        ],
+        [
+          ".txt",
+          1
+        ],
+        [
+          ".py",
+          1
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          ".example",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "An image-overlay tool marking transparent/backlit zones, previewing them and exporting image treatments.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "LocalReach",
+      "filesInventoried": 10,
+      "extensions": [
+        [
+          ".md",
+          10
+        ]
+      ],
+      "documentsSampled": [
+        "README.md"
+      ],
+      "historicalCatalogContext": "A curated discovery directory linking users to verified origin-specific makers, initially Italian ceramics and leather goods.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Material Data Base",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".md",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A structured challenge for sourcing materials properties across elements, alloys, composites and manufacturing processes.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "MBL Betting",
+      "filesInventoried": 43,
+      "extensions": [
+        [
+          ".py",
+          39
+        ],
+        [
+          ".txt",
+          2
+        ],
+        [
+          ".toml",
+          1
+        ],
+        [
+          ".md",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "mlb_edge_analytics/README.md",
+        "mlb_edge_analytics/pyproject.toml"
+      ],
+      "historicalCatalogContext": "A baseball analytics app with desktop, CLI and API surfaces, matchup simulations, collectors and betting analysis.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "MLB",
+      "filesInventoried": 58,
+      "extensions": [
+        [
+          ".py",
+          41
+        ],
+        [
+          ".json",
+          14
+        ],
+        [
+          "",
+          2
+        ],
+        [
+          ".txt",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A baseball prediction/analysis desktop app with a multi-model audit panel derived from Senate/Consensus.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Mobile Game",
+      "filesInventoried": 0,
+      "extensions": [],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A reserved game-project folder with no local description.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "MobileGame",
+      "filesInventoried": 0,
+      "extensions": [],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A second reserved mobile-game folder with no local description.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "ModelLab",
+      "filesInventoried": 1717,
+      "extensions": [
+        [
+          ".json",
+          1519
+        ],
+        [
+          ".js",
+          65
+        ],
+        [
+          ".png",
+          36
+        ],
+        [
+          ".md",
+          21
+        ],
+        [
+          ".py",
+          14
+        ],
+        [
+          ".txt",
+          13
+        ],
+        [
+          ".html",
+          10
+        ],
+        [
+          ".log",
+          8
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "package.json",
+        "authoring-app/README.md"
+      ],
+      "historicalCatalogContext": null,
+      "decision": "candidate",
+      "reason": "Train/test separation, replay and controlled experiment comparisons."
+    },
+    {
+      "name": "Moving Game",
+      "filesInventoried": 67,
+      "extensions": [
+        [
+          ".js",
+          40
+        ],
+        [
+          ".json",
+          18
+        ],
+        [
+          ".md",
+          3
+        ],
+        [
+          ".html",
+          2
+        ],
+        [
+          ".css",
+          2
+        ],
+        [
+          ".txt",
+          1
+        ],
+        [
+          "",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "package.json"
+      ],
+      "historicalCatalogContext": "An Electron desktop toy whose characters and scenery inhabit movable windows and cross between adjacent windows.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "MultiCode",
+      "filesInventoried": 17,
+      "extensions": [
+        [
+          ".py",
+          14
+        ],
+        [
+          "",
+          2
+        ],
+        [
+          ".txt",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A Python tool assigning code generation to an acceptor model and verification to other models.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Neuro Suite 360",
+      "filesInventoried": 1862,
+      "extensions": [
+        [
+          ".jsx",
+          1792
+        ],
+        [
+          ".jpg",
+          32
+        ],
+        [
+          ".js",
+          17
+        ],
+        [
+          ".md",
+          6
+        ],
+        [
+          ".drawio",
+          4
+        ],
+        [
+          ".json",
+          3
+        ],
+        [
+          ".zip",
+          2
+        ],
+        [
+          ".css",
+          2
+        ]
+      ],
+      "documentsSampled": [
+        "NeuroSuite 360/README.md",
+        "NeuroSuite 360/package.json",
+        "data-access-tunnel/README.md"
+      ],
+      "historicalCatalogContext": "A broad Base44-backed enterprise application suite with business modules and a proposed backend-abstraction layer.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "neuromind-concept",
+      "filesInventoried": 22,
+      "extensions": [
+        [
+          ".json",
+          7
+        ],
+        [
+          ".cjs",
+          7
+        ],
+        [
+          ".js",
+          3
+        ],
+        [
+          ".html",
+          2
+        ],
+        [
+          "",
+          2
+        ],
+        [
+          ".md",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "package.json"
+      ],
+      "historicalCatalogContext": null,
+      "decision": "candidate",
+      "reason": "Future explicit sense/relation schema and provenance migration; vocabulary currently comes from a-concept-lab."
+    },
+    {
+      "name": "Neuron",
+      "filesInventoried": 4209,
+      "extensions": [
+        [
+          ".json",
+          2047
+        ],
+        [
+          ".cjs",
+          768
+        ],
+        [
+          ".log",
+          503
+        ],
+        [
+          ".js",
+          186
+        ],
+        [
+          ".png",
+          170
+        ],
+        [
+          ".md",
+          162
+        ],
+        [
+          ".svg",
+          136
+        ],
+        [
+          ".py",
+          110
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "package.json"
+      ],
+      "historicalCatalogContext": null,
+      "decision": "copied",
+      "reason": "Headless spiking runtime, I/O, development and locking; unchanged source."
+    },
+    {
+      "name": "nexus-ai-starter",
+      "filesInventoried": 12,
+      "extensions": [
+        [
+          ".js",
+          6
+        ],
+        [
+          ".json",
+          2
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          ".example",
+          1
+        ],
+        [
+          "",
+          1
+        ],
+        [
+          ".md",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "server/package.json",
+        "web/package.json"
+      ],
+      "historicalCatalogContext": "A minimal full-stack multi-model chat hub with final and per-model panels.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Noise Stack",
+      "filesInventoried": 509,
+      "extensions": [
+        [
+          ".json",
+          476
+        ],
+        [
+          ".py",
+          21
+        ],
+        [
+          ".md",
+          6
+        ],
+        [
+          ".png",
+          4
+        ],
+        [
+          ".csv",
+          1
+        ],
+        [
+          ".txt",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "flow_latent_recovery/README.md"
+      ],
+      "historicalCatalogContext": "Separate benches for reversible seeded transforms and a learnable-flow comparison against a FiLM latent-recovery baseline.",
+      "decision": "deferred",
+      "reason": "Task-specific inverse/latent research with documented failed criterion."
+    },
+    {
+      "name": "ORDIS",
+      "filesInventoried": 13,
+      "extensions": [
+        [
+          ".py",
+          4
+        ],
+        [
+          ".html",
+          2
+        ],
+        [
+          ".ps1",
+          1
+        ],
+        [
+          ".txt",
+          1
+        ],
+        [
+          ".md",
+          1
+        ],
+        [
+          ".mp4",
+          1
+        ],
+        [
+          ".json",
+          1
+        ],
+        [
+          ".vbs",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md"
+      ],
+      "historicalCatalogContext": "A local AI assistant with chat modes, task management, settings, exports and an animated desktop UI.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Othezen",
+      "filesInventoried": 359,
+      "extensions": [
+        [
+          ".md",
+          285
+        ],
+        [
+          ".html",
+          36
+        ],
+        [
+          ".py",
+          25
+        ],
+        [
+          ".css",
+          5
+        ],
+        [
+          ".js",
+          3
+        ],
+        [
+          ".json",
+          2
+        ],
+        [
+          ".zip",
+          1
+        ],
+        [
+          ".txt",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A configuration-driven business/ERP platform with vertical planning, plus an adjacent exterior-design visualization app.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Parallax",
+      "filesInventoried": 827,
+      "extensions": [
+        [
+          "",
+          443
+        ],
+        [
+          ".js",
+          57
+        ],
+        [
+          ".json",
+          55
+        ],
+        [
+          ".hyb",
+          52
+        ],
+        [
+          ".ts",
+          51
+        ],
+        [
+          ".md",
+          32
+        ],
+        [
+          ".old",
+          21
+        ],
+        [
+          ".log",
+          19
+        ]
+      ],
+      "documentsSampled": [
+        "package.json",
+        "Idea Roulette/package.json",
+        "parallax/README.md",
+        "parallax/package.json"
+      ],
+      "historicalCatalogContext": "A local research-ideation platform with concepts, debates, quizzes, grading, council audits, gap analysis and longitudinal reviews.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Projection Mapping",
+      "filesInventoried": 3,
+      "extensions": [
+        [
+          ".html",
+          2
+        ],
+        [
+          ".md",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A browser projection interface for video/camera input, corner warping, effects and projector output, with QR phone connection.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Sales Platform",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".md",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A proposed enterprise sales platform organized around buyer decisions, evidence, coordinated work, commercial commitments and customer continuity.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Sandbox",
+      "filesInventoried": 59,
+      "extensions": [
+        [
+          ".tsx",
+          23
+        ],
+        [
+          ".md",
+          13
+        ],
+        [
+          ".ts",
+          9
+        ],
+        [
+          ".json",
+          6
+        ],
+        [
+          ".svg",
+          4
+        ],
+        [
+          ".css",
+          1
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          "",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "kiln/README.md",
+        "kiln/package.json"
+      ],
+      "historicalCatalogContext": "A typed visual editor for assembling AI training pipelines and determining readiness to simulate or run.",
+      "decision": "deferred",
+      "reason": "Visual training pipeline model; no current spiking dependency."
+    },
+    {
+      "name": "Sphere Model",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".html",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "Ten independent computational spheres search for numerical programs and reuse validated fragments.",
+      "decision": "deferred",
+      "reason": "Program search embedded in HTML; different model and extraction required."
+    },
+    {
+      "name": "Statistical Analysis for Sports",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".csv",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A sports-analysis starting point represented by an exit-velocity dataset.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Stock Analyzer",
+      "filesInventoried": 0,
+      "extensions": [],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A planned multi-model stock/sector analysis product with external evidence checks.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Storage Capacity",
+      "filesInventoried": 5,
+      "extensions": [
+        [
+          ".docx",
+          2
+        ],
+        [
+          ".pdf",
+          1
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          ".png",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A monolithic storage architecture with cardinal addressing and a proposed stacked shift-register PCB proof of concept.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "sysforge",
+      "filesInventoried": 128,
+      "extensions": [
+        [
+          ".jsx",
+          52
+        ],
+        [
+          ".py",
+          48
+        ],
+        [
+          ".md",
+          6
+        ],
+        [
+          ".bat",
+          6
+        ],
+        [
+          ".json",
+          4
+        ],
+        [
+          ".js",
+          3
+        ],
+        [
+          ".css",
+          3
+        ],
+        [
+          ".html",
+          2
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "package.json",
+        "frontend/package.json"
+      ],
+      "historicalCatalogContext": "A Windows desktop suite for hardware telemetry, diagnostics, profiles, maintenance and a companion touch dashboard.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "TableTop",
+      "filesInventoried": 35,
+      "extensions": [
+        [
+          ".js",
+          16
+        ],
+        [
+          ".json",
+          4
+        ],
+        [
+          ".svg",
+          4
+        ],
+        [
+          ".md",
+          3
+        ],
+        [
+          "",
+          3
+        ],
+        [
+          ".mjs",
+          1
+        ],
+        [
+          ".cmd",
+          1
+        ],
+        [
+          ".css",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "client/package.json",
+        "server/package.json"
+      ],
+      "historicalCatalogContext": "A private WebRTC card-game platform arranging overhead camera feeds around a shared virtual table.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Temperature Mapping",
+      "filesInventoried": 1,
+      "extensions": [
+        [
+          ".docx",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A room temperature/humidity network with wall sensors, transfer nodes, a primary controller and volumetric display.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Thermal Mapping",
+      "filesInventoried": 50,
+      "extensions": [
+        [
+          ".py",
+          31
+        ],
+        [
+          ".md",
+          6
+        ],
+        [
+          ".json",
+          4
+        ],
+        [
+          ".csv",
+          3
+        ],
+        [
+          "",
+          3
+        ],
+        [
+          ".toml",
+          1
+        ],
+        [
+          ".txt",
+          1
+        ],
+        [
+          ".tag",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "pyproject.toml",
+        ".pytest_cache/README.md"
+      ],
+      "historicalCatalogContext": "A headless Python heat, humidity and airflow solver for a specific small calibration-chamber geometry.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "ToDo Tasks",
+      "filesInventoried": 60,
+      "extensions": [
+        [
+          ".py",
+          21
+        ],
+        [
+          ".jsx",
+          10
+        ],
+        [
+          ".md",
+          5
+        ],
+        [
+          ".js",
+          5
+        ],
+        [
+          ".svg",
+          4
+        ],
+        [
+          "",
+          4
+        ],
+        [
+          ".css",
+          2
+        ],
+        [
+          ".json",
+          2
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "frontend/README.md",
+        "frontend/package.json"
+      ],
+      "historicalCatalogContext": "A local task manager with companies/projects, tunable priority ranking, dashboard and ICS calendar export.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "TrackSphere",
+      "filesInventoried": 9,
+      "extensions": [
+        [
+          ".py",
+          4
+        ],
+        [
+          ".css",
+          1
+        ],
+        [
+          ".html",
+          1
+        ],
+        [
+          ".js",
+          1
+        ],
+        [
+          ".sql",
+          1
+        ],
+        [
+          ".png",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A shipment dashboard with map routes, estimated arrivals, weather and radar views.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Trading Platform",
+      "filesInventoried": 48,
+      "extensions": [
+        [
+          ".mjs",
+          32
+        ],
+        [
+          ".md",
+          6
+        ],
+        [
+          ".json",
+          4
+        ],
+        [
+          ".cmd",
+          4
+        ],
+        [
+          "",
+          2
+        ]
+      ],
+      "documentsSampled": [
+        "README.md",
+        "package.json",
+        "Trading Platform/README.md",
+        "Trading Platform/package.json"
+      ],
+      "historicalCatalogContext": "A local Node app for Coinbase analysis, risk controls, order previews and isolated paper-trading experiments.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Trading Platform API Ref",
+      "filesInventoried": 2,
+      "extensions": [
+        [
+          ".json",
+          1
+        ],
+        [
+          ".local",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "Supporting configuration/credential material for Trading Platform.",
+      "decision": "excluded",
+      "reason": "Credential/configuration reference; no contents imported."
+    },
+    {
+      "name": "VR Experience",
+      "filesInventoried": 6,
+      "extensions": [
+        [
+          ".html",
+          2
+        ],
+        [
+          ".md",
+          2
+        ],
+        [
+          ".js",
+          1
+        ],
+        [
+          ".css",
+          1
+        ]
+      ],
+      "documentsSampled": [
+        "README.md"
+      ],
+      "historicalCatalogContext": "A WebXR/A-Frame experience with scripted fear scenes, procedural audio and Quest controller interaction.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "Vritual View",
+      "filesInventoried": 24,
+      "extensions": [
+        [
+          ".js",
+          9
+        ],
+        [
+          ".html",
+          5
+        ],
+        [
+          ".md",
+          4
+        ],
+        [
+          ".task",
+          2
+        ],
+        [
+          ".py",
+          2
+        ],
+        [
+          ".txt",
+          1
+        ],
+        [
+          ".mp4",
+          1
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "A webcam-driven head-coupled 3D window illusion and hand-gesture physics sandbox.",
+      "decision": "not-selected",
+      "reason": "No immediate dependency for the headless neuron and word-engram foundation; unrelated application, reference material or empty folder."
+    },
+    {
+      "name": "VSA Test",
+      "filesInventoried": 4,
+      "extensions": [
+        [
+          ".py",
+          4
+        ]
+      ],
+      "documentsSampled": [],
+      "historicalCatalogContext": "Four Python studies of vector-symbolic representations, continuous modulation, compositional controls and latent recovery.",
+      "decision": "deferred",
+      "reason": "Vector-symbolic and modulation research; no compatible spiking module selected."
+    }
+  ],
+  "github": [
+    {
+      "name": "Microsolve",
+      "repository": "https://github.com/Nostrama/Microsolve",
+      "revision": "c233d618128ebc4e094af8bede45f4558cc94ac3",
+      "filesInventoried": 1,
+      "treeTruncated": false,
+      "decision": "not-selected",
+      "reason": "README-only placeholder."
+    },
+    {
+      "name": "Othezen",
+      "repository": "https://github.com/Nostrama/Othezen",
+      "revision": "893c2c6d7d254e64100ca64bda92c1a89e50116f",
+      "filesInventoried": 1,
+      "treeTruncated": false,
+      "decision": "not-selected",
+      "reason": "README-only placeholder on GitHub."
+    },
+    {
+      "name": "AIMTS",
+      "repository": "https://github.com/Nostrama/AIMTS",
+      "revision": "9428aa029b521e87f7d64c807eb46c7d3f67b595",
+      "filesInventoried": 79,
+      "treeTruncated": false,
+      "decision": "deferred",
+      "reason": "Training graph contracts, browser globals and PyTorch compiler; possible future infrastructure."
+    },
+    {
+      "name": "husk-lab",
+      "repository": "https://github.com/Nostrama/husk-lab",
+      "revision": "1220a340edd7a07c0be14f1fb0d1a4b56c8e8a72",
+      "filesInventoried": 546,
+      "treeTruncated": false,
+      "decision": "candidate",
+      "reason": "Validated lexical memory, classifiers, explicit test separation and routing evaluation; ESM symbolic/classifier code."
+    },
+    {
+      "name": "systemscape",
+      "repository": "https://github.com/Nostrama/systemscape",
+      "revision": "2d9f479705c838c82592ba8752bf1f0ca5c122f8",
+      "filesInventoried": 114,
+      "treeTruncated": false,
+      "decision": "deferred",
+      "reason": "Deterministic simulation and experiment infrastructure for workshop processes."
+    },
+    {
+      "name": "volumetric-branching",
+      "repository": "https://github.com/Nostrama/volumetric-branching",
+      "revision": "81e3c38fe1d5121d2496b0cf52703aa83c3ae171",
+      "filesInventoried": 41,
+      "treeTruncated": false,
+      "decision": "candidate",
+      "reason": "Symbolic route-memory and portable state; several global solver dependencies require extraction."
+    },
+    {
+      "name": "real-sensor-lab",
+      "repository": "https://github.com/Nostrama/real-sensor-lab",
+      "revision": "12ef4ce11dbef67477f1024e188743868f22958d",
+      "filesInventoried": 68,
+      "treeTruncated": false,
+      "decision": "candidate",
+      "reason": "Checkpoint/rollback controls and before-label observation; task-specific sensor model."
+    },
+    {
+      "name": "rgb-concept",
+      "repository": "https://github.com/Nostrama/rgb-concept",
+      "revision": "df1c90e334aa47d1f53db23097de0e680f181148",
+      "filesInventoried": 274,
+      "treeTruncated": false,
+      "decision": "candidate",
+      "reason": "Checkpoint copying and verification patterns; documented failed geometry/mixing directions and duplicated subprojects."
+    },
+    {
+      "name": "nn-designer-v2",
+      "repository": "https://github.com/Nostrama/nn-designer-v2",
+      "revision": "7dfb8b3f6963cd1e7f135332a47ffdb25fe95c8a",
+      "filesInventoried": 26,
+      "treeTruncated": false,
+      "decision": "deferred",
+      "reason": "HTML-embedded learning/graph code needs extraction; different model."
+    },
+    {
+      "name": "system-combiner",
+      "repository": "https://github.com/Nostrama/system-combiner",
+      "revision": "7ac8e2eca4a7218d381de76e855042c1ba65723c",
+      "filesInventoried": 34,
+      "treeTruncated": false,
+      "decision": "deferred",
+      "reason": "Python durable job queue and separate worker; possible future batch infrastructure."
+    },
+    {
+      "name": "it-command-center",
+      "repository": "https://github.com/Nostrama/it-command-center",
+      "revision": "34095120710be65a9e95bc58ad55f855efb15256",
+      "filesInventoried": 16,
+      "treeTruncated": false,
+      "decision": "not-selected",
+      "reason": "Local command/dashboard infrastructure; no direct neural dependency."
+    },
+    {
+      "name": "dot-cube",
+      "repository": "https://github.com/Nostrama/dot-cube",
+      "revision": "f60ec9bde0f8a0bd29e90015cfa0b6d2d700ba6b",
+      "filesInventoried": 21,
+      "treeTruncated": false,
+      "decision": "deferred",
+      "reason": "HTML-embedded routing and specialist experiments; different model."
+    },
+    {
+      "name": "NovixSuite",
+      "repository": "https://github.com/Nostrama/NovixSuite",
+      "revision": "22a6f3530727cf25483eeb6a127bc181725c93ca",
+      "filesInventoried": 171,
+      "treeTruncated": false,
+      "decision": "deferred",
+      "reason": "Business-process simulation and comparison machinery, not neuronal dynamics."
+    },
+    {
+      "name": "SPA",
+      "repository": "https://github.com/Nostrama/SPA",
+      "revision": "bce0ed90dcbf4bb2271f90f7ca8afab74c7f4e8a",
+      "filesInventoried": 9,
+      "treeTruncated": false,
+      "decision": "not-selected",
+      "reason": "Paid API-backed synthetic population analysis; no direct neural dependency."
+    },
+    {
+      "name": "Neuron",
+      "repository": "https://github.com/Nostrama/Neuron",
+      "revision": "21e548692d4c8b062ee2330ecbcbf8f3c7b7c45c",
+      "filesInventoried": 4209,
+      "treeTruncated": false,
+      "decision": "copied",
+      "reason": "Headless spiking runtime, I/O, development and locking; unchanged source."
+    },
+    {
+      "name": "a-concept-lab",
+      "repository": "https://github.com/Nostrama/a-concept-lab",
+      "revision": "0b59bc069b0a1d41921cd3ac3455ff503973503c",
+      "filesInventoried": 20,
+      "treeTruncated": false,
+      "decision": "copied",
+      "reason": "Complete vocabulary plus source validator and normalizer; symbolic decoding not used for neural recall."
+    },
+    {
+      "name": "neuromind-concept",
+      "repository": "https://github.com/Nostrama/neuromind-concept",
+      "revision": "8100e257c59b8956ed05819440a0c53cac0cdd56",
+      "filesInventoried": 22,
+      "treeTruncated": false,
+      "decision": "candidate",
+      "reason": "Future explicit sense/relation schema and provenance migration; vocabulary currently comes from a-concept-lab."
+    }
+  ]
+}

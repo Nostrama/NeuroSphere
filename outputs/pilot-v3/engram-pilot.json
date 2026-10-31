@@ -1,0 +1,409 @@
+{
+  "schema": "neurosphere-engram-pilot/v1",
+  "interpretation": "Developmental exact-word associative recall on an assigned scaffold. Retention uses an explicit circuit lock. No claim of semantic understanding, neural storage of definitions, autonomous domain discovery, generalization, or biological engrams.",
+  "sourceHash": "57d0abbe8675d7a2031669d70ed4c7ce313fdaa2d5b7147a452838ece1b9cd3c",
+  "availableConcepts": 1826,
+  "codeHashes": {
+    "src/engram-volume.cjs": "a24cc1ef715978b6c4415b5ec88f79597c4c8db03e65f8e9648a1a6222cd3270",
+    "src/vocabulary.cjs": "bf9162d62113bffc9913e58ef267f8a8b06395118ed166b48bc8a911771fdfad",
+    "examples/engrams.cjs": "2d99d1a9781212b708591a2800900abd2d1afad33112d2552c5083ec7329f99e"
+  },
+  "inputCode": "neurosphere-word-v2/192/8",
+  "leadingCellThreshold": 1.6,
+  "enrolledConcepts": 18,
+  "domains": 9,
+  "neurons": 1782,
+  "synapses": 3492,
+  "epochs": 24,
+  "trainingSeconds": 96,
+  "exactBefore": 0,
+  "exactLearned": 18,
+  "exactLearningDisabled": 0,
+  "exactAfterAblation": 0,
+  "untrainedProbeCount": 8,
+  "untrainedProbeFalseRecalls": 0,
+  "exactAfterSerialization": 18,
+  "firstWordRetainedAfter60SecondsLocked": true,
+  "rows": [
+    {
+      "conceptId": "001-001-001",
+      "word": "aardvark",
+      "domainId": "001",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "001-002-001",
+      "word": "abdomen",
+      "domainId": "001",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "002-001-001",
+      "word": "aback",
+      "domainId": "002",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "002-001-002",
+      "word": "abashed",
+      "domainId": "002",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "003-001-001",
+      "word": "abbacy",
+      "domainId": "003",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "003-001-002",
+      "word": "abbé",
+      "domainId": "003",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "004-001-001",
+      "word": "abandon",
+      "domainId": "004",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "004-001-002",
+      "word": "abandoned",
+      "domainId": "004",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "005-001-001",
+      "word": "abbreviate",
+      "domainId": "005",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "005-001-002",
+      "word": "abc",
+      "domainId": "005",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "006-001-001",
+      "word": "abaft",
+      "domainId": "006",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "006-001-002",
+      "word": "abeam",
+      "domainId": "006",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "007-001-001",
+      "word": "abacus",
+      "domainId": "007",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "007-003-001",
+      "word": "abattoir",
+      "domainId": "007",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "008-001-001",
+      "word": "aberrant",
+      "domainId": "008",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "008-001-002",
+      "word": "aberration",
+      "domainId": "008",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "009-005-001",
+      "word": "abo",
+      "domainId": "009",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    },
+    {
+      "conceptId": "009-005-002",
+      "word": "abode",
+      "domainId": "009",
+      "before": false,
+      "learned": true,
+      "learningDisabled": false,
+      "ablated": false
+    }
+  ],
+  "negatives": [
+    {
+      "word": "banana",
+      "status": "unknown",
+      "recalled": [],
+      "activated": [],
+      "inputBits": [
+        29,
+        78,
+        87,
+        94,
+        107,
+        109,
+        161,
+        187
+      ],
+      "routedDomains": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009"
+      ]
+    },
+    {
+      "word": "quantum",
+      "status": "unknown",
+      "recalled": [],
+      "activated": [],
+      "inputBits": [
+        11,
+        91,
+        125,
+        140,
+        142,
+        148,
+        159,
+        188
+      ],
+      "routedDomains": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009"
+      ]
+    },
+    {
+      "word": "neurosphere",
+      "status": "unknown",
+      "recalled": [],
+      "activated": [],
+      "inputBits": [
+        2,
+        5,
+        20,
+        109,
+        124,
+        147,
+        155,
+        162
+      ],
+      "routedDomains": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009"
+      ]
+    },
+    {
+      "word": "xyzzy",
+      "status": "unknown",
+      "recalled": [],
+      "activated": [],
+      "inputBits": [
+        21,
+        67,
+        68,
+        134,
+        145,
+        170,
+        185,
+        190
+      ],
+      "routedDomains": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009"
+      ]
+    },
+    {
+      "word": "notaword",
+      "status": "unknown",
+      "recalled": [],
+      "activated": [],
+      "inputBits": [
+        18,
+        32,
+        132,
+        143,
+        149,
+        152,
+        178,
+        189
+      ],
+      "routedDomains": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009"
+      ]
+    },
+    {
+      "word": "zebra",
+      "status": "unknown",
+      "recalled": [],
+      "activated": [],
+      "inputBits": [
+        2,
+        10,
+        46,
+        70,
+        74,
+        79,
+        134,
+        177
+      ],
+      "routedDomains": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009"
+      ]
+    },
+    {
+      "word": "water",
+      "status": "unknown",
+      "recalled": [],
+      "activated": [],
+      "inputBits": [
+        4,
+        27,
+        45,
+        61,
+        70,
+        127,
+        161,
+        164
+      ],
+      "routedDomains": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009"
+      ]
+    },
+    {
+      "word": "computer",
+      "status": "unknown",
+      "recalled": [],
+      "activated": [],
+      "inputBits": [
+        3,
+        10,
+        24,
+        39,
+        126,
+        135,
+        138,
+        191
+      ],
+      "routedDomains": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009"
+      ]
+    }
+  ]
+}

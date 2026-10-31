@@ -1,0 +1,217 @@
+{
+  "stage": "1g",
+  "protocol": {
+    "pool": 500,
+    "poolRadius": 120,
+    "radius": 60,
+    "featureRadius": 600,
+    "k": 8,
+    "w0": 1.1,
+    "initialWeight": 0.4,
+    "maxSynapses": 8,
+    "growthPeriod": 1.8,
+    "inhibitionStrength": 0.5,
+    "inhibitionRadiusFactor": 0.6,
+    "epochs": 80,
+    "seed": 1,
+    "gap": 10,
+    "secretion": 0,
+    "jitter": 15,
+    "competitionMargin": 1,
+    "exploration": 0.1,
+    "pairingClock": "arrival",
+    "decay": "off",
+    "cues": "disjoint",
+    "featureGrowth": false,
+    "homeostasis": false,
+    "activityScaledInhibition": false
+  },
+  "cells": [
+    {
+      "id": "baseline-1",
+      "role": "baseline",
+      "options": {
+        "pool": 500,
+        "poolRadius": 120,
+        "radius": 60,
+        "featureRadius": 600,
+        "k": 8,
+        "w0": 1.1,
+        "initialWeight": 0.4,
+        "maxSynapses": 8,
+        "growthPeriod": 1.8,
+        "inhibitionStrength": 0.5,
+        "inhibitionRadiusFactor": 0.6,
+        "epochs": 80,
+        "seed": 1,
+        "gap": 10,
+        "secretion": 0,
+        "jitter": 15,
+        "competitionMargin": 1,
+        "exploration": 0.1,
+        "pairingClock": "arrival",
+        "decay": "off",
+        "cues": "disjoint",
+        "featureGrowth": false,
+        "homeostasis": false,
+        "activityScaledInhibition": false
+      }
+    },
+    {
+      "id": "baseline-2",
+      "role": "baseline",
+      "options": {
+        "pool": 500,
+        "poolRadius": 120,
+        "radius": 60,
+        "featureRadius": 600,
+        "k": 8,
+        "w0": 1.1,
+        "initialWeight": 0.4,
+        "maxSynapses": 8,
+        "growthPeriod": 1.8,
+        "inhibitionStrength": 0.5,
+        "inhibitionRadiusFactor": 0.6,
+        "epochs": 80,
+        "seed": 2,
+        "gap": 10,
+        "secretion": 0,
+        "jitter": 15,
+        "competitionMargin": 1,
+        "exploration": 0.1,
+        "pairingClock": "arrival",
+        "decay": "off",
+        "cues": "disjoint",
+        "featureGrowth": false,
+        "homeostasis": false,
+        "activityScaledInhibition": false
+      }
+    },
+    {
+      "id": "baseline-3",
+      "role": "baseline",
+      "options": {
+        "pool": 500,
+        "poolRadius": 120,
+        "radius": 60,
+        "featureRadius": 600,
+        "k": 8,
+        "w0": 1.1,
+        "initialWeight": 0.4,
+        "maxSynapses": 8,
+        "growthPeriod": 1.8,
+        "inhibitionStrength": 0.5,
+        "inhibitionRadiusFactor": 0.6,
+        "epochs": 80,
+        "seed": 3,
+        "gap": 10,
+        "secretion": 0,
+        "jitter": 15,
+        "competitionMargin": 1,
+        "exploration": 0.1,
+        "pairingClock": "arrival",
+        "decay": "off",
+        "cues": "disjoint",
+        "featureGrowth": false,
+        "homeostasis": false,
+        "activityScaledInhibition": false
+      }
+    },
+    {
+      "id": "comparison-1",
+      "role": "comparison",
+      "options": {
+        "pool": 500,
+        "poolRadius": 120,
+        "radius": 60,
+        "featureRadius": 600,
+        "k": 8,
+        "w0": 1.1,
+        "initialWeight": 0.4,
+        "maxSynapses": 8,
+        "growthPeriod": 1.8,
+        "inhibitionStrength": 1,
+        "inhibitionRadiusFactor": 0.6,
+        "epochs": 80,
+        "seed": 1,
+        "gap": 10,
+        "secretion": 0,
+        "jitter": 15,
+        "competitionMargin": 1,
+        "exploration": 0.1,
+        "pairingClock": "arrival",
+        "decay": "off",
+        "cues": "disjoint",
+        "featureGrowth": false,
+        "homeostasis": false,
+        "activityScaledInhibition": false
+      }
+    }
+  ],
+  "stopping": {
+    "epochs": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80
+    ],
+    "minimumEpoch": 30,
+    "maximumEpoch": 80,
+    "threshold": 0.8,
+    "rule": "First checkpoint >=30 where both fixed halves of both A and B complete >=0.8 of their contemporaneous cores at both 0 and 60 seconds. C and all other gates are excluded.",
+    "core": "At least 80% presence in the last ten trials of that cue.",
+    "noMatch": "Evaluate epoch 80, mark criterion not reached and fail.",
+    "afterStop": "Continue the same training to epoch 80 for the curve only. Never replace the first stopping circuit after seeing another gate fail."
+  },
+  "controls": {
+    "names": [
+      "growth-off",
+      "hebbian-off",
+      "inhibition-off",
+      "shuffled",
+      "untrained",
+      "prune-formed"
+    ],
+    "training": "Match each primary stopping epoch. Controls do not choose their own duration; untrained has zero epochs.",
+    "pruning": "Prune only growth-formed pool-to-pool edges on the circuit at the primary stopping epoch.",
+    "required": "Growth-off fails 9 and 10; Hebbian-off fails 9 and 10; prune-formed lowers every A/B half at both delays below 0.6 from a higher value."
+  },
+  "acceptance": {
+    "gated": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10
+    ],
+    "stabilityMinimum": 0.7,
+    "medianWeightMinimum": 0.6,
+    "completion": "Both halves of A/B at both delays >=0.8 AND gain >=0.25 over untrained on the same contemporaneous core.",
+    "negativeCue": "Readback rejects C at both delays, C-to-core Jaccards <=0.25, spillover <=25% of the smaller core.",
+    "decision": "All three baseline seeds reach criterion and pass every gate and required control at their own stop. The comparison is reported only."
+  },
+  "checkpointProbes": {
+    "halves": [
+      "A even",
+      "A odd",
+      "B even",
+      "B odd"
+    ],
+    "idleSeconds": [
+      0,
+      60
+    ],
+    "additional": [
+      "full A at 0 s",
+      "C at 0 s"
+    ],
+    "isolation": "Independent locked native controllers. No probe or stopping decision changes formation state or RNG."
+  }
+}
