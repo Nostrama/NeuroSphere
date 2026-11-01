@@ -169,3 +169,23 @@ See INHIBITORY_DIAGNOSTIC.md and READOUT.md for complete evidence. The original
 preregistrations are archived byte-for-byte as source-plan.md in their study
 directories, with the original hashes. This post-result note changes no gate,
 setting, stopping rule or control from those runs.
+
+---
+
+## Confirmation run (declared 2026-11-01, after the seed-1 diagnostic, before running)
+
+The primary (tick 24 / factor 0.4) is NO-GO: R4 strict and R3 pass on all seeds, R1 on seeds
+1 and 3, R2 on none. Cause: the factor assumed readout weights ≥ 1.0 and ignored leak over the
+arrival spread; measured own-core readout weights plateau at 0.73–0.81, which is what
+`hebbianRate 0.018` × association at ~0.2 s lags yields over 80 epochs. The 0.4 factor was an
+arithmetic error in this plan, not a property of the memories.
+
+Two predeclared seed-1 cells pass every gate and every control: tick 24 / 0.25 and tick 32 /
+0.25. **Selection rule:** confirm the passing cell nearest the primary — **tick 24 / factor
+0.25** — on seeds 2 and 3 with all five controls. GO requires R1–R4 and all control
+discriminations on all three seeds at that single setting. No other factor or tick is run.
+If confirmation fails on either seed, Stage 3 is NO-GO and the report says which gate.
+
+Report additionally, for the confirmed setting: C's peak membrane margin relative to the
+lower threshold (the containment headroom this factor leaves), and the first natural-firing
+epoch per O cell.
