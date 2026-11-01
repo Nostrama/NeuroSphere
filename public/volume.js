@@ -23,7 +23,7 @@ export class VolumeView {
       if(event.key==='+'||event.key==='=')this.zoom(1.2);if(event.key==='-')this.zoom(1/1.2);if(event.key==='0')this.reset();this.draw();
     });
   }
-  hit(event){return this.outputLabels?.find(p=>event.offsetX>=p.x&&event.offsetX<=p.x+62&&event.offsetY>=p.y&&event.offsetY<=p.y+22)??this.points.filter(p=>Math.hypot(p.x-event.offsetX,p.y-event.offsetY)<Math.max(6,p.radius+3)).sort((a,b)=>b.z-a.z)[0];}
+  hit(event){return this.points.filter(p=>Math.hypot(p.x-event.offsetX,p.y-event.offsetY)<Math.max(6,p.radius+3)).sort((a,b)=>b.z-a.z)[0];}
   setScene(scene){this.scene=scene;this.nodesById=new Map((scene?.nodes??[]).map(n=>[n.id,n]));this.edgesBySource=new Map();for(const edge of scene?.edges??[]){if(!this.edgesBySource.has(edge.source))this.edgesBySource.set(edge.source,[]);this.edgesBySource.get(edge.source).push(edge);}this.selectedId=null;this.clearActivity();this.reset();}
   setDomain(domain){this.domain=domain;this.selectedId=null;this.onSelect(null);this.draw();}
   focusDomain(){this.target={...(this.scene?.volume?.center??{x:400,y:400,z:400})};this.magnification=1;this.pan={x:0,y:0};this.draw();}
@@ -49,7 +49,6 @@ export class VolumeView {
     const dpr=Math.min(devicePixelRatio||1,2);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);
     const bg=ctx.createRadialGradient(w*.5,h*.45,10,w*.5,h*.5,Math.max(w,h)*.8);bg.addColorStop(0,'#0d2732');bg.addColorStop(1,'#050f16');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
     ctx.lineWidth=1;ctx.strokeStyle='#7da9bb0b';for(let x=0;x<w;x+=32){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke();}for(let y=0;y<h;y+=32){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke();}
-    this.outputLabels=[];
     if(!this.scene){this.points=[];return;}
     const scale=Math.max(80,Math.min(w-60,h-70))/800*this.magnification;
     const project=node=>{const x=node.x-this.target.x,y=node.y-this.target.y,z=node.z-this.target.z;const rx=x*Math.cos(this.yaw)+z*Math.sin(this.yaw),rz=-x*Math.sin(this.yaw)+z*Math.cos(this.yaw),ry=y*Math.cos(this.pitch)-rz*Math.sin(this.pitch),depth=y*Math.sin(this.pitch)+rz*Math.cos(this.pitch);return{x:w/2+this.pan.x+rx*scale,y:h/2+this.pan.y+ry*scale,z:depth,node};};
@@ -79,17 +78,6 @@ export class VolumeView {
       p.radius=drawMorphology(ctx,p,project,scale,{active:recent,selected,observed:latest.has(p.node.id),emphasized:Boolean(this.selectedId&&connected.has(p.node.id))});
       if(focused&&p.x>=0&&p.x<=w&&p.y>=0&&p.y<=h)this.points.push(p);
     }ctx.globalAlpha=1;
-    // Screen-space callouts distinguish co-located outputs without moving cells.
-    const outputs=points.filter(p=>p.node.role==='output');
-    for(const [index,p] of outputs.entries()){
-      if(p.x<0||p.x>w||p.y<0||p.y>h)continue;
-      const x=Math.max(6,Math.min(w-68,p.x+(index===0?-82:20))),y=Math.max(35,Math.min(h-60,p.y-55));
-      const active=latest.has(p.node.id)&&this.time-latest.get(p.node.id)<.055,selected=p.node.id===this.selectedId;
-      ctx.strokeStyle=active?'#e2fff3':selected?'#ffe2ac':'#bb9968';ctx.fillStyle='#10232e';ctx.lineWidth=selected?1.5:1;
-      ctx.beginPath();ctx.moveTo(x+31,y+22);ctx.lineTo(p.x,p.y);ctx.stroke();ctx.fillRect(x,y,62,22);ctx.strokeRect(x,y,62,22);
-      ctx.fillStyle=active?'#e2fff3':'#f3c181';ctx.font='11px Consolas,monospace';ctx.textAlign='center';ctx.fillText(p.node.label.split(' · ')[0],x+31,y+15);
-      this.outputLabels.push({x,y,node:p.node,radius:12,z:p.z});
-    }
     ctx.textAlign='left';
     if(this.magnification<=1.6&&this.scene.ports){
       const center=project(this.scene.volume.center),radius=this.scene.volume.radius*scale;

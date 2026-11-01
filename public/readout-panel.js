@@ -21,7 +21,8 @@ export class ReadoutPanel {
   setMemory(memory){
     this.memory=memory?.kind==='readout'?memory:null;this.result=null;this.mode='full';
     const active=Boolean(this.memory);
-    for(const id of ['readout-learning','readout-probes','readout-legend'])$(id).hidden=!active;
+    for(const id of ['readout-learning','readout-probes','readout-legend','readout-rail'])$(id).hidden=!active;
+    $('readout-shortcuts').replaceChildren();
     $('standard-legend').hidden=active;$('readout-button').setAttribute('aria-pressed',String(active));
     $('volume-panel').classList.toggle('readout-mode',active);
     $('metric-domain-label').textContent=active?'VOLUME':'DOMAINS';
@@ -29,6 +30,12 @@ export class ReadoutPanel {
     for(const option of document.querySelectorAll('[data-readout-links]')){option.disabled=!active;option.hidden=!active;}
     if(!active){$('readout-cells').replaceChildren();return;}
     $('readout-seed').value=memory.seed;
+    for(const cue of ['A','B']){
+      const info=memory.outputs[cue],button=el('button','readout-shortcut',info.name);
+      button.type='button';button.dataset.outputCue=cue;button.dataset.neuronId=info.id;
+      button.title='Inspect '+info.name+' · '+info.word;button.setAttribute('aria-label',button.title);button.setAttribute('aria-pressed','false');
+      button.addEventListener('click',()=>this.inspect(info.id));$('readout-shortcuts').append(button);
+    }
     $('readout-proof').textContent='3 seeds confirmed · R1–R4 + all controls pass';
     $('readout-origin').textContent='Formation '+memory.formationEpoch+' rounds · Readout '+memory.epochs+' rounds';
     for(const button of document.querySelectorAll('[data-readout-word]'))button.textContent=button.dataset.readoutWord+' · '+memory.cues[button.dataset.readoutWord];
@@ -72,5 +79,6 @@ export class ReadoutPanel {
     area.append(el('p','readout-codebook','Word label from the firing cell’s vocabulary ID.'));
     $('readout-note').textContent='Sent bits '+result.inputBits.join(', ')+' · '+result.trace.length+' measured spikes. Scrub the timeline or inspect an output below.';
   }
-  frame(time){if(!this.result)return;for(const card of $('readout-cells').children){const o=this.result.outputs[card.dataset.outputCue];card.classList.toggle('firing',o.spikeTimes.some(t=>time>=t&&time-t<.06));}}
+  select(id){for(const button of $('readout-shortcuts').children)button.setAttribute('aria-pressed',String(Number(button.dataset.neuronId)===id));}
+  frame(time){if(!this.result)return;for(const card of [...$('readout-cells').children,...$('readout-shortcuts').children]){const o=this.result.outputs[card.dataset.outputCue];card.classList.toggle('firing',o.spikeTimes.some(t=>time>=t&&time-t<.06));}}
 }

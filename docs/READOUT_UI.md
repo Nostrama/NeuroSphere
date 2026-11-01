@@ -26,14 +26,14 @@ as **No response**; multiple firing outputs are shown as ambiguous.
 The 192 input neurons, 500 pool neurons and two output neurons retain their
 saved coordinates and connections. Core A is teal, core B purple, their overlap
 pale gold, and outputs amber. Both output cells occupy the center in the actual
-circuit; screen-space O_A/O_B callouts point to that position without moving
-the neurons. Unassigned pool cells remain visible.
+circuit; the O_A/O_B buttons sit in a fixed strip to the right of the canvas, so they
+stay accessible while zooming without covering the neurons. Unassigned pool cells remain visible.
 
 Use play/pause, the timeline, replay speed, zoom, slice and expanded view to
 inspect the measured response. Links can show strong connections, all links,
 selected-cell links, grown pool links, or output projections.
 
-Click O_A/O_B in the volume or their cards to inspect threshold, core activation,
+Click O_A/O_B beside the volume or their cards to inspect threshold, core activation,
 peak membrane margin, first spike and incoming weights/delays. The meter is the
 fraction of frozen core cells that fired, not a confidence probability. Output
 traces show native potential before firing/reset, with the effective threshold;

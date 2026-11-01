@@ -257,6 +257,7 @@ function populateNeuronPicker() {
   }
 }
 function inspectNode(node) {
+  readoutPanel.select(node?.id??null);
   dashboard.setNeuron(node);
   inspectedNode=node;$('inspect-content').replaceChildren();$('inspect-dynamic').hidden=!node;$('focus-neuron').disabled=!node;$('clear-neuron').disabled=!node;$('neuron-picker').value=node?.id??'';
   $('inspect-title').textContent=node?'Neuron #'+node.id:scope?(domains.get(scope)?.name??'Domain'):'Shared volume';
