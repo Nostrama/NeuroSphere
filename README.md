@@ -169,6 +169,6 @@ under `outputs/formation/2026-10-31T23-05-24-523Z-stage1g/`.
 - `docs/REUSE_SCAN.md` and `docs/SCAN_COVERAGE.json`: local/GitHub reuse decisions.
 - `docs/ARCHITECTURE.md`: current layers and the route toward richer engrams.
 
-Private repository: [Nostrama/NeuroSphere](https://github.com/Nostrama/NeuroSphere).
+Public repository: [Nostrama/NeuroSphere](https://github.com/Nostrama/NeuroSphere).
 Source checkouts remain separate and unchanged. Use `npm run verify` before changing the extracted
 baseline; deliberate source changes should be recorded as a NeuroSphere fork.
