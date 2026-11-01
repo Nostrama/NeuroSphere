@@ -1,10 +1,12 @@
 import { VolumeView } from './volume.js';
 import { Dashboard } from './dashboard.js';
+import { ReadoutPanel } from './readout-panel.js';
+import { potentialSeries } from './telemetry-model.mjs';
 const $ = id => document.getElementById(id);
 const element = (tag, className, text) => { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; };
 let data, memory, records = new Map(), domains = new Map(), selected = new Set(), draft = new Set(), scope = '', shown = 50;
 let training = false, recalling = false, switching = false, pollTimer, lastTrace = [], toastTimer, handledJob;
-let currentScene=null, inspectedNode=null, textLessons=[];
+let currentScene=null, inspectedNode=null, textLessons=[],lastResult=null;
 const dashboard=new Dashboard(id=>view.select(id));
 const view = new VolumeView($('volume'), {
   onHover(node, x, y) {
@@ -17,12 +19,14 @@ const view = new VolumeView($('volume'), {
   onReplay(text) { $('replay-label').textContent = text; },
   onFrame({time,playing,available}) {
     dashboard.frame(time);
+    readoutPanel.frame(time);
     $('activity-time').disabled=!available;$('play-activity').disabled=!available;
     $('activity-time').value=Math.round(time/(view.duration??1)*1000);$('activity-clock').textContent=time.toFixed(2)+' / '+(view.duration??1).toFixed(2)+' s';
     $('play-activity').textContent=playing?'Ⅱ Pause':'▶ Play';$('play-activity').setAttribute('aria-label',playing?'Pause recorded activity':'Play recorded activity');
     if(inspectedNode) drawPotential();
   }
 });
+const readoutPanel=new ReadoutPanel({open:openReadout,probe:doRecall,inspect:id=>view.select(id)});
 view.boundaries=true;
 function toast(message, error = false) { clearTimeout(toastTimer); $('toast').textContent = message; $('toast').className = 'toast' + (error ? ' error' : ''); $('toast').hidden = false; toastTimer = setTimeout(() => { $('toast').hidden = true; }, error ? 9000 : 5000); }
 async function api(url, body) {
@@ -30,8 +34,10 @@ async function api(url, body) {
   const value = await response.json(); if (!response.ok) throw new Error(value.error ?? 'The request failed.'); return value;
 }
 function controls() {
+  readoutPanel.sync(training||switching||recalling);
   for (const id of ['saved-button','import-button','edit-words','epochs','seed','text-button','teach-button','teach-submit','facts-button','fact-teach-button','fact-submit','facts-explore-button']) $(id).disabled = training || switching || recalling;
-  $('train-button').disabled = training || switching || recalling || !selected.size;
+  $('train-button').disabled = training || switching || recalling || memory?.kind==='readout' || !selected.size;
+  $('recall-word').disabled=memory?.kind==='readout'&&(recalling||switching);
   $('recall-submit').disabled = recalling || switching || !memory || (training&&['text','facts'].includes(memory?.kind));
   $('recall-submit').textContent = recalling ? 'Sensing…' : 'Send →';
   $('cancel-training').disabled = !training;
@@ -40,7 +46,8 @@ function controls() {
 }
 function renderDomains() {
   $('domains').replaceChildren(); $('mobile-domain').replaceChildren();$('viewer-domain').replaceChildren();
-  for (const domain of [{ id:'', name:'All domains' }, ...data.domains]) {
+  const shownDomains=memory?.kind==='readout'?[{id:'readout',name:'Shared memory pool'}]:data.domains;
+  for (const domain of [{ id:'', name:memory?.kind==='readout'?'Whole circuit':'All domains' }, ...shownDomains]) {
     const count = (memory?.conceptIds ?? []).filter(id => !domain.id || records.get(id)?.domainId === domain.id).length;
     const button = element('button','domain-button'); button.setAttribute('aria-pressed', String(scope === domain.id));
     button.append(element('span','domain-dot'), element('span','',domain.name), element('span','count',String(count)));
@@ -56,7 +63,7 @@ function setScope(id) {
   scope = id; view.setDomain(id); renderDomains(); renderSelection(); controls();
   const label = domains.get(id)?.name; $('volume-scope').textContent = label ? 'Inspecting: '+label : 'Single volume · all neurons';
   populateNeuronPicker();inspectNode(null);
-  $('volume-caption').textContent = scope ? 'Inspection filter only · Sense Input still reaches all domains' : 'One volume · one Sense Input · one Output';
+  $('volume-caption').textContent = memory?.kind==='readout'?'Confirmed circuit · input features → memory assemblies → output cells':scope ? 'Inspection filter only · Sense Input still reaches all domains' : 'One volume · one Sense Input · one Output';
 }
 function renderSelection() {
   $('selection-count').textContent = selected.size;
@@ -72,8 +79,9 @@ function renderSelection() {
   controls();
 }
 function renderMemory() {
-  const textMode=memory?.kind==='text',factMode=memory?.kind==='facts';$('fact-learning').hidden=!factMode;$('facts-button').setAttribute('aria-pressed',String(factMode));$('text-learning').hidden=!textMode;$('vocabulary-learning').hidden=textMode||factMode;$('text-button').setAttribute('aria-pressed',String(textMode));
-  document.querySelector('.try-row').hidden=textMode||factMode;
+  const textMode=memory?.kind==='text',factMode=memory?.kind==='facts',readoutMode=memory?.kind==='readout';$('fact-learning').hidden=!factMode;$('facts-button').setAttribute('aria-pressed',String(factMode));$('text-learning').hidden=!textMode;$('vocabulary-learning').hidden=textMode||factMode||readoutMode;$('text-button').setAttribute('aria-pressed',String(textMode));
+  readoutPanel.setMemory(memory);
+  document.querySelector('.try-row').hidden=textMode||factMode||readoutMode;
   $('memory-name').textContent = memory?.name ?? 'No memory yet';
   $('memory-status').textContent = memory?.origin ?? 'Ready to begin';
   for (const [id,key] of [['metric-words','words'],['metric-domains','domains'],['metric-neurons','neurons'],['metric-rounds','epochs']]) $(id).textContent = memory?.[key]?.toLocaleString() ?? '—';
@@ -83,21 +91,26 @@ function renderMemory() {
   $('volume-empty').hidden = Boolean(memory?.neurons);$('volume-empty').textContent=factMode?'Teach a fact to build shared concept neurons.':textMode?'Teach a phrase to build the shared neural volume.':'Choose words and train a memory.'; renderDomains(); renderSelection();
 }
 async function refreshScene(resetSelection = true) {
-  const value = await api('/api/scene');for(const record of value.records??[])records.set(record.id,record); memory = value.memory;currentScene=value.scene; view.setScene(value.scene);dashboard.setScene(value.scene,memory);
+  const value = await api('/api/scene');records=new Map(data.records.map(record=>[record.id,record]));for(const record of value.records??[])records.set(record.id,record); memory = value.memory;currentScene=value.scene; view.setScene(value.scene);dashboard.setScene(value.scene,memory);
+  if(memory?.kind!=='readout'&&['formed','readout'].includes(view.edgeMode)){$('edge-mode').value='learned';view.edgeMode='learned';}
   if (resetSelection) selected = new Set(memory?.conceptIds ?? data.defaults);
   if(scope&&!currentScene?.regions.some(region=>region.domainId===scope))scope='';
   renderMemory(); setScope(scope); resetRecall();if(memory?.kind==='text')await refreshLessons();if(memory?.kind==='facts')await refreshFacts();
 }
 function resetRecall() {
+  lastResult=null;
   view.clearActivity();
   lastTrace = []; $('replay-button').hidden = true;
   const idle = element('div','result-idle'); idle.append(element('span','idle-orbit','◎'),element('strong','', 'Awaiting Sense Input'),element('p','',memory?.kind==='facts'?'Teach a fact, then ask about it here.':memory?.kind==='text'?'Teach a phrase, then send its question here.':'Send a word to measure the network response.'));
   $('output-status').textContent='AWAITING INPUT';$('recall-result').replaceChildren(idle); $('replay-label').textContent = 'Inverted orbit · Shift-drag to pan';
 }
 function renderRecall(result) {
+  lastResult=result;
   dashboard.setActivity(result);$('output-status').textContent=result.status==='recalled'?'ENGRAM RESPONSE':result.status==='ambiguous'?'MULTIPLE RESPONSES':result.status==='unsupported'?'UNSUPPORTED QUESTION':'NO MATCH';
   const area = $('recall-result'); area.replaceChildren();
-  if(result.kind==='text'||result.kind==='facts'){
+  if(result.kind==='readout'){
+    readoutPanel.render(result,area);
+  }else if(result.kind==='text'||result.kind==='facts'){
     area.append(element('div','result-badge '+result.status,result.status==='recalled'?(result.kind==='facts'?'✓ Learned fact response':'✓ Learned text response'):result.status==='ambiguous'?'Multiple learned responses':result.status==='unsupported'?'Question pattern not supported':'No learned response'));
     if(result.status==='unknown')area.append(element('p','unknown-message',result.kind==='facts'?'I don’t know yet. No learned fact answered that question.':'I do not have a learned response for that phrasing.'));
     if(result.status==='unsupported')area.append(element('p','unknown-message','Try “What color is the lamp?”, “Where is the cup?”, or “What is the robin?”. See Facts & links for reverse questions.'));
@@ -122,15 +135,16 @@ function renderRecall(result) {
     }
   }
   }
-  if(!inspectedNode&&result.recalled.length){const id=result.kind==='facts'?result.recalled[0].gate:currentScene.concepts.find(c=>c.conceptId===result.recalled[0].conceptId)?.assembly[0];if(id&&(!scope||currentScene.nodes.find(n=>n.id===id)?.domainId===scope)){const cue=$('recall-word').value;view.select(id);$('recall-word').value=cue;}}
+  if(!inspectedNode&&result.recalled.length){const id=result.kind==='readout'?result.recalled[0].id:result.kind==='facts'?result.recalled[0].gate:currentScene.concepts.find(c=>c.conceptId===result.recalled[0].conceptId)?.assembly[0];if(id&&(!scope||currentScene.nodes.find(n=>n.id===id)?.domainId===scope)){const cue=$('recall-word').value;view.select(id);$('recall-word').value=cue;}}
   lastTrace = result.trace; $('replay-button').hidden = !lastTrace.length; view.setActivity(result);
+  if(inspectedNode){const word=$('recall-word').value;inspectNode(inspectedNode);$('recall-word').value=word;}
   $('volume-caption').textContent = result.trace.length + ' measured spikes · '+result.seconds.toFixed(2)+' seconds of simulated recall';
 }
 async function doRecall() {
   if (recalling || switching || !memory || training&&['text','facts'].includes(memory.kind)) return;
   const word = $('recall-word').value.trim(); if (!word) { $('recall-word').focus(); return; }
   recalling = true; controls();$('output-status').textContent='PROCESSING'; const memoryId = memory.id;
-  try { const result = await api('/api/sense',{ word }); if(memory?.id===memoryId&&result.memoryId===memoryId&&(!['text','facts'].includes(memory.kind)||memory.revision===result.revision))renderRecall(result);else{await refreshScene();toast('The active memory changed. Send the cue again.');} }
+  try { const result = await api('/api/sense',{ word,...readoutPanel.request() }); if(memory?.id===memoryId&&result.memoryId===memoryId&&(!['text','facts'].includes(memory.kind)||memory.revision===result.revision))renderRecall(result);else{await refreshScene();toast('The active memory changed. Send the cue again.');} }
   catch (error) { $('output-status').textContent='INPUT FAILED';toast(error.message,true); }
   finally { recalling = false; controls(); }
 }
@@ -185,17 +199,24 @@ async function startTraining() {
 }
 async function openMemory(id) {
   switching=true; controls();
-  try { await api('/api/load',{id}); await refreshScene(); $('saved-dialog').close(); toast('Memory opened.'); }
+  try { await api('/api/load',{id}); await refreshScene(); if(memory?.kind==='readout')$('recall-word').value=memory.cues.A; $('saved-dialog').close(); toast('Memory opened.'); }
   catch(error) { toast(error.message,true); }
   finally { switching=false; controls(); }
+}
+async function openReadout(seed=1){
+  if(training||switching||recalling)return;
+  switching=true;controls();
+  try{await api('/api/readout/open',{seed});await refreshScene();$('recall-word').value=memory.cues.A;readoutPanel.sync(true);toast('Learned memory ready · Seed '+seed);}
+  catch(error){toast(error.message,true);}
+  finally{switching=false;controls();}
 }
 async function showSaved() {
   try {
     const {runs}=await api('/api/runs'); $('saved-list').replaceChildren();
-    const options=[...(data.demoAvailable?[{id:'demo',name:'18-word pilot',words:18,domains:9,createdAt:'Original development memory'}]:[]),...runs];
+    const options=[...(data.readout?.cells??[]).map(cell=>({id:cell.id,kind:'readout',name:'Learned memory · Seed '+cell.seed,words:2,domains:1})),...(data.demoAvailable?[{id:'demo',name:'18-word pilot',words:18,domains:9,createdAt:'Original development memory'}]:[]),...runs];
     for(const run of options) {
       const row=element('div','saved-row'+(memory?.id===run.id?' active':'')),copy=element('div');
-      copy.append(element('strong','',run.name),element('small','',run.words+(run.kind==='facts'?' facts':run.kind==='text'?' lessons':' meanings')+' · '+run.domains+' domains · '+(['text','facts'].includes(run.kind)?'Autosaved · revision '+run.revision:run.id==='demo'?run.createdAt:new Date(run.createdAt).toLocaleString())));
+      copy.append(element('strong','',run.name),element('small','',run.kind==='readout'?'2 self-formed memories · confirmed readout · epoch 70':run.words+(run.kind==='facts'?' facts':run.kind==='text'?' lessons':' meanings')+' · '+run.domains+' domains · '+(['text','facts'].includes(run.kind)?'Autosaved · revision '+run.revision:run.id==='demo'?run.createdAt:new Date(run.createdAt).toLocaleString())));
       const button=element('button','button outline',memory?.id===run.id?'Open now':'Open'); button.disabled=memory?.id===run.id; button.addEventListener('click',()=>openMemory(run.id)); row.append(copy,button); $('saved-list').append(row);
     }
     if(!options.length) $('saved-list').append(element('p','empty-message','Completed training runs will appear here.'));
@@ -244,17 +265,20 @@ function inspectNode(node) {
   if(!node) {
     const nodes=(currentScene?.nodes??[]).filter(item=>!scope||item.domainId===scope),ids=new Set(nodes.map(item=>item.id));
     $('inspect-description').textContent='Click a neuron or choose one below. Scroll to zoom inside; Shift-drag to pan.';
-    stat('Neurons',nodes.length.toLocaleString());stat('Synapses',(currentScene?.edges??[]).filter(edge=>ids.has(edge.source)).length.toLocaleString());stat('Logical domains',scope?1:currentScene?.regions.length??0);stat('Cross-domain links',0);
-    $('inspect-content').append(stats,element('p','isolation-note',scope?'These neurons belong to one logical domain and are spread through the common volume. Sense Input reaches every domain.':'All neurons inhabit one continuous volume. Domains are logical memberships with isolated learning and recall, not separate spheres.'));
+    stat('Neurons',nodes.length.toLocaleString());stat('Synapses',(currentScene?.edges??[]).filter(edge=>ids.has(edge.source)).length.toLocaleString());
+    if(memory?.kind==='readout'){stat('Reference memories',2);stat('Shared core cells',nodes.filter(n=>n.memberships?.length===2).length);}else{stat('Logical domains',scope?1:currentScene?.regions.length??0);stat('Cross-domain links',0);}
+    $('inspect-content').append(stats,element('p','isolation-note',memory?.kind==='readout'?'One shared pool, two self-formed assemblies. Colors mark frozen reference membership. Both output cells occupy the circuit center; labels point to their actual position.':scope?'These neurons belong to one logical domain and are spread through the common volume. Sense Input reaches every domain.':'All neurons inhabit one continuous volume. Domains are logical memberships with isolated learning and recall, not separate spheres.'));
     return;
   }
   const record=records.get(node.conceptId),incoming=currentScene.edges.filter(edge=>edge.target===node.id),outgoing=currentScene.edges.filter(edge=>edge.source===node.id);
   $('inspect-description').textContent=(domains.get(node.domainId)?.name??'')+' · '+(node.label??(node.role==='memory'?'Engram cell '+(node.member+1)+' for “'+record?.word+'”':'Word feature '+node.bit));
   stat('Base threshold',node.threshold.toFixed(3));stat('Leak / second',node.leakRate.toFixed(2));stat('Inputs',incoming.length);stat('Outputs',outgoing.length);
+  const measured=Object.values(lastResult?.outputs??{}).find(o=>o.id===node.id);
+  if(measured){stat('Peak membrane margin',measured.peakMargin.toFixed(3));stat('Core cells active',measured.coreCellsFired+' / '+measured.coreSize);stat('First spike',measured.fired?measured.spikeTimes[0].toFixed(2)+' s':'Silent');}
   $('inspect-content').append(stats,element('p','','Position '+[node.x,node.y,node.z].map(n=>n.toFixed(1)).join(' / ')));
   const edges=[...incoming,...outgoing].sort((a,b)=>Math.abs(b.weight)-Math.abs(a.weight));
   if(edges.length){const list=element('div','synapse-list');list.append(element('h4','','Strongest synapses · '+Math.min(8,edges.length)+' / '+edges.length));for(const edge of edges.slice(0,8)){const other=edge.source===node.id?edge.target:edge.source,button=element('button');button.append(element('span','',(edge.source===node.id?'→ ':'← ')+'#'+other),element('span','',edge.weight.toFixed(3)+' · '+(edge.delay*1000).toFixed(0)+' ms'));button.title='Inspect neuron '+other+' · weight and transmission delay';button.addEventListener('click',()=>view.select(other));list.append(button);}$('inspect-content').append(list);}
-  if(record)$('recall-word').value=record.word;
+  if(record&&memory?.kind!=='readout')$('recall-word').value=record.word;
   drawPotential();
 }
 function drawPotential() {
@@ -263,9 +287,10 @@ function drawPotential() {
   const canvas=$('membrane-plot'),ctx=canvas.getContext('2d'),w=canvas.width,h=canvas.height,pad=14;
   ctx.clearRect(0,0,w,h);ctx.fillStyle='#071923';ctx.fillRect(0,0,w,h);
   if(!view.samples.length){ctx.fillStyle='#7d929e';ctx.font='18px Segoe UI';ctx.fillText('Run recall to record this neuron',pad,h/2);return;}
-  const values=view.samples.map(sample=>({time:sample.time,value:sample.values.find(value=>value[0]===inspectedNode.id)?.[1]??inspectedNode.restLevel}));
+  const values=potentialSeries(view.samples,inspectedNode,lastResult?.outputs);
   const top=Math.max(inspectedNode.threshold*1.2,...values.map(p=>p.value),.1),bottom=Math.min(0,...values.map(p=>p.value)),y=value=>h-pad-(value-bottom)/(top-bottom)*(h-pad*2),x=time=>pad+time/(view.duration??1)*(w-pad*2);
-  ctx.strokeStyle='#a4b9c3';ctx.setLineDash([6,5]);ctx.beginPath();ctx.moveTo(pad,y(inspectedNode.threshold));ctx.lineTo(w-pad,y(inspectedNode.threshold));ctx.stroke();ctx.setLineDash([]);
+  ctx.strokeStyle='#a4b9c3';ctx.setLineDash([6,5]);ctx.beginPath();values.forEach((p,i)=>i?ctx.lineTo(x(p.time),y(p.threshold??inspectedNode.threshold)):ctx.moveTo(x(p.time),y(p.threshold??inspectedNode.threshold)));ctx.stroke();ctx.setLineDash([]);
+  document.querySelector('.plot-note').textContent=inspectedNode.role==='output'?'Native pre-reset potential · dashed: effective threshold · amber: spikes':'Recorded samples · dashed: threshold · amber: spikes';
   ctx.strokeStyle='#61cbd0';ctx.lineWidth=2;ctx.beginPath();values.forEach((point,index)=>index?ctx.lineTo(x(point.time),y(point.value)):ctx.moveTo(x(point.time),y(point.value)));ctx.stroke();
   for(const event of view.trace.filter(event=>event.neuronId===inspectedNode.id)){ctx.strokeStyle='#d6a148';ctx.beginPath();ctx.moveTo(x(event.time),pad);ctx.lineTo(x(event.time),h-pad);ctx.stroke();}
   ctx.strokeStyle='#90bed0';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x(view.time),0);ctx.lineTo(x(view.time),h);ctx.stroke();
@@ -333,11 +358,11 @@ $('fact-teach-form').addEventListener('submit',async event=>{event.preventDefaul
 
 async function boot() {
   try {
-    data=await api('/api/bootstrap');records=new Map(data.records.map(record=>[record.id,record]));domains=new Map(data.domains.map(domain=>[domain.id,domain]));
+    data=await api('/api/bootstrap');data.readout=await api('/api/readout');readoutPanel.setCatalog(data.readout);records=new Map(data.records.map(record=>[record.id,record]));domains=new Map([...data.domains.map(domain=>[domain.id,domain]),['readout',{id:'readout',name:'Shared memory pool'}]]);
     $('picker-domain').replaceChildren();for(const domain of [{id:'',name:'All domains'},...data.domains]){const option=element('option','',domain.name);option.value=domain.id;$('picker-domain').append(option);}
     $('teach-domain').replaceChildren();for(const domain of data.domains){const option=element('option','',domain.name);option.value=domain.id;$('teach-domain').append(option);}$('teach-domain').value='005';
     $('fact-domain').replaceChildren();for(const domain of data.domains){const option=element('option','',domain.name);option.value=domain.id;$('fact-domain').append(option);}$('fact-domain').value='007';
-    await refreshScene();$('connection-status').textContent='Local engine ready';dashboard.log('NEURON MORPHOLOGY','Original soma / axon / dendrite geometry loaded','success');view.reset();$('recall-word').value=currentScene?.concepts[0]?.word??'';
+    await refreshScene();$('connection-status').textContent='Local engine ready';dashboard.log('NEURON MORPHOLOGY','Original soma / axon / dendrite geometry loaded','success');view.reset();$('recall-word').value=currentScene?.concepts[0]?.word??'';controls();
     if(data.job?.status==='running'){showJob(data.job);pollJob();}else handledJob=data.job?.id;
   } catch(error) { $('connection-status').textContent='Unable to connect';$('memory-name').textContent='Start the local engine';toast(error.message+'. Refresh to reconnect.',true); }
 }

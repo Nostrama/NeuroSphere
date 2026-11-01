@@ -11,24 +11,46 @@ const textView=require('./text-view.cjs');
 const {FactMemory,SCHEMA:FACT_SCHEMA,LIMITS:FACT_LIMITS}=require('../src/fact-memory.cjs');
 const {parseFact}=require('../src/fact-language.cjs');
 const factView=require('./fact-view.cjs');
+const readoutView=require('./readout-view.cjs');
 const ROOT = path.resolve(__dirname, '..');
 const MAX_BODY = 8 * 1024 * 1024;
 const staticFiles = new Map([
   ['/', ['index.html', 'text/html']], ['/index.html', ['index.html', 'text/html']],
   ['/app.js', ['app.js', 'text/javascript']], ['/volume.js', ['volume.js', 'text/javascript']],
   ['/morphology.js', ['morphology.js','text/javascript']], ['/dashboard.js', ['dashboard.js','text/javascript']],
+  ['/readout-panel.js', ['readout-panel.js','text/javascript']],
   ['/telemetry-model.mjs', ['telemetry-model.mjs','text/javascript']], ['/upstream/neuron-volume.js', ['upstream/neuron-volume.js','text/javascript']],
   ['/style.css', ['style.css', 'text/css']], ['/icon.svg', ['icon.svg', 'image/svg+xml']]
 ]);
 const failure = (message, status = 400) => Object.assign(new Error(message), { status });
 
-function createApp({ dataDir = path.join(ROOT, 'outputs/ui'), demoPath = path.join(ROOT, 'outputs/pilot-v3/engram-memory.json') } = {}) {
+function createApp({ dataDir = path.join(ROOT, 'outputs/ui'), demoPath = path.join(ROOT, 'outputs/pilot-v3/engram-memory.json'), readoutDir=readoutView.DEFAULT_DIRECTORY } = {}) {
   const vocabulary = loadVocabulary();
   const runs = new Map();
   let active = null, demo = null, job = null, trainer = null, textMemory=null, factMemory=null;
   const textFile=path.join(dataDir,'text-workspace.json');
   const factFile=path.join(dataDir,'fact-workspace.json');
   const recallWorkers = new Set();
+  const readoutCatalog=readoutView.createCatalog(readoutDir);
+  function openReadout(seed) {
+    assertIdle(); if(recallWorkers.size)throw failure('Wait for the current response.',409);
+    const loaded=readoutCatalog.load(seed);
+    active={...loaded,summary:readoutView.summary(loaded,vocabulary)};
+    return {memory:active.summary};
+  }
+  function senseReadout(body) {
+    if(recallWorkers.size)throw failure('A response is already running.',409);
+    readoutView.request(active.memory,body);
+    const used=active;
+    return new Promise((resolve,reject)=>{
+      const worker=new Worker(path.join(__dirname,'readout-worker.cjs'),{workerData:{memory:used.memory,request:body}});
+      recallWorkers.add(worker);let settled=false;
+      const finish=(error,value)=>{if(settled)return;settled=true;clearTimeout(timer);recallWorkers.delete(worker);worker.terminate();error?reject(error):resolve(value);};
+      const timer=setTimeout(()=>finish(failure('Readout probe timed out. Try again.',503)),30000);
+      worker.on('message',message=>{if(message.type==='error')finish(failure(message.error));else if(message.type==='complete')finish(null,message.result);});
+      worker.on('error',error=>finish(error));worker.on('exit',code=>{if(!settled)finish(failure('Readout probe stopped ('+code+').',503));});
+    });
+  }
   const compactRecord = record => ({ id: record.id, word: record.word, sense: record.sense, gloss: record.gloss, domainId: record.domainId, branchId: record.branchId });
   const records = vocabulary.records.map(compactRecord);
   const domains = Object.entries(vocabulary.domains).map(([id, domain]) => ({ id, name: domain.name, count: records.filter(record => record.domainId === id).length }));
@@ -168,7 +190,7 @@ function createApp({ dataDir = path.join(ROOT, 'outputs/ui'), demoPath = path.jo
     return { ...current };
   }
   async function recall(body) {
-    if (!active||['text','facts'].includes(active.kind)) throw failure('Open a vocabulary memory for this endpoint; text uses Sense Input.', 409);
+    if (!active||['text','facts','readout'].includes(active.kind)) throw failure('Open a vocabulary memory for this endpoint; other modes use Sense Input.', 409);
     if (recallWorkers.size) throw failure('A recall is already running. Try again in a moment.', 409);
     if (typeof body.word !== 'string' || !body.word.trim() || body.word.length > 200) throw failure('Enter a word or short phrase, up to 200 characters.');
     const domainId = body.domainId ?? null;
@@ -208,7 +230,8 @@ function createApp({ dataDir = path.join(ROOT, 'outputs/ui'), demoPath = path.jo
       }
       if (req.method === 'GET' && url.pathname === '/api/health') return send(res, 200, { app: 'NeuroSphere', version: '0.7.0' });
       if (req.method === 'GET' && url.pathname === '/api/bootstrap') return send(res, 200, { domains, records, textAvailable:Boolean(textMemory),factAvailable:Boolean(factMemory), defaults: vocabulary.samplePerDomain(2).map(record => record.id), memory: active?.summary ?? null, runs: listRuns(), demoAvailable: Boolean(demo), job });
-      if (req.method === 'GET' && url.pathname === '/api/scene') return send(res, 200, { memory: active?.summary ?? null, scene: active?.kind==='facts'?factView.scene(factMemory,vocabulary):active?.kind==='text'?textView.scene(textMemory,vocabulary):active?scene(active.memory,vocabulary):null, records:active?.kind==='facts'?factView.records(factMemory):active?.kind==='text'?textView.records(textMemory):[] });
+      if (req.method === 'GET' && url.pathname === '/api/scene') return send(res, 200, { memory: active?.summary ?? null, scene: active?.kind==='readout'?readoutView.scene(active.memory,vocabulary):active?.kind==='facts'?factView.scene(factMemory,vocabulary):active?.kind==='text'?textView.scene(textMemory,vocabulary):active?scene(active.memory,vocabulary):null, records:active?.kind==='readout'?readoutView.records(active.memory,vocabulary):active?.kind==='facts'?factView.records(factMemory):active?.kind==='text'?textView.records(textMemory):[] });
+      if(req.method==='GET'&&url.pathname==='/api/readout')return send(res,200,readoutCatalog.status());
       if(req.method==='GET'&&url.pathname==='/api/facts')return send(res,200,{memory:factMemory?factView.summary(factMemory):null,facts:factMemory?factView.facts(factMemory):[],history:factMemory?.history??[],limits:FACT_LIMITS});
       if(req.method==='GET'&&url.pathname==='/api/text')return send(res,200,{memory:textMemory?textView.summary(textMemory):null,lessons:textMemory?.lessons.map(({id,question,answer,domainId})=>({id,question,answer,domainId}))??[],limits:TEXT_LIMITS});
       if (req.method === 'GET' && url.pathname === '/api/job') return send(res, 200, { job });
@@ -220,6 +243,7 @@ function createApp({ dataDir = path.join(ROOT, 'outputs/ui'), demoPath = path.jo
       if (req.method !== 'POST') throw failure('Not found.', 404);
       const body = await readJSON(req);
       if (!body || typeof body !== 'object' || Array.isArray(body)) throw failure('Expected a JSON object.');
+      if(url.pathname==='/api/readout/open')return send(res,200,openReadout(body.seed??1));
       if(url.pathname==='/api/facts/open'){assertIdle();if(!factMemory)factMemory=new FactMemory();active={kind:'facts',summary:factView.summary(factMemory)};return send(res,200,{memory:active.summary});}
       if(url.pathname==='/api/facts/teach')return send(res,202,factJob(body));
       if(url.pathname==='/api/text/open'){assertIdle();if(!textMemory)textMemory=new TextMemory();active={kind:'text',summary:textView.summary(textMemory)};return send(res,200,{memory:active.summary});}
@@ -233,6 +257,7 @@ function createApp({ dataDir = path.join(ROOT, 'outputs/ui'), demoPath = path.jo
         // One public sensory bus. Domain filtering belongs to the inspector;
         // it cannot silently suppress another domain's response to this cue.
         if(body.domainId!==undefined&&body.domainId!==null)throw failure('Sense Input addresses the whole volume.');
+        if(active?.kind==='readout')return send(res,200,await senseReadout(body));
         if(active?.kind==='facts')return send(res,200,await senseFact(body));
         if(active?.kind==='text')return send(res,200,await senseText(body));
         const result=await recall({...body,domainId:null});
@@ -241,6 +266,7 @@ function createApp({ dataDir = path.join(ROOT, 'outputs/ui'), demoPath = path.jo
       if (url.pathname === '/api/recall') return send(res, 200, await recall(body));
       if (url.pathname === '/api/load') {
         assertIdle();
+        if(typeof body.id==='string'&&/^readout-[123]$/.test(body.id))return send(res,200,openReadout(Number(body.id.at(-1))));
         if(body.id==='facts'&&factMemory)active={kind:'facts',summary:factView.summary(factMemory)};
         else if(body.id==='text'&&textMemory)active={kind:'text',summary:textView.summary(textMemory)};
         else if (body.id === 'demo' && demo) active = demo;
@@ -252,6 +278,7 @@ function createApp({ dataDir = path.join(ROOT, 'outputs/ui'), demoPath = path.jo
       }
       if (url.pathname === '/api/import') {
         assertIdle();
+        if(body.memory?.schema==='neurosphere-readout/v1')throw failure('Open the confirmed circuits with Learned memory. Exported readout files can also be used by the readout CLI.');
         if(body.memory?.schema===FACT_SCHEMA){const record=saveFact(body.memory,null,true);return send(res,200,{memory:record});}
         if(body.memory?.schema===TEXT_SCHEMA){const record=saveText(body.memory,null,true);return send(res,200,{memory:record});}
         const memory = validateMemory(body.memory, vocabulary);

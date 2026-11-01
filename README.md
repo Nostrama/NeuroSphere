@@ -231,6 +231,19 @@ npm run demo:inhibitory
 
 ## Learned readout experiment
 
+The browser now exposes the confirmed circuits through **Learned memory** in
+the header. Choose seed 1–3, select either learned word, and test **Full cue**,
+**Half 1**, **Half 2**, or **Untrained cue** through Sense Input. The two halves
+send the experiment's fixed four-feature subsets. **After 60 s** probes retained
+recall from an independently idled circuit.
+
+The shared volume replays measured input, pool and output spikes. Colors show
+the two frozen reference cores and their overlap; O_A/O_B labels make both
+co-located output cells selectable. Click an output to inspect its membrane
+trace, threshold, firing time, core activity and incoming connections. Output
+labels use the vocabulary codebook. Existing fact, text and vocabulary modes
+remain available. See [the UI guide](docs/READOUT_UI.md).
+
 **Stage 3 confirmation is GO at teacher tick 24 / threshold factor 0.25.** All three seeds pass R1–R4 and every required control. Seed 1 is reused byte-for-byte; seeds 2 and 3 are new confirmation runs.
 
 Readout plasticity is confined to two teacher-trained output neurons; the
@@ -255,7 +268,7 @@ no alternative tick or factor. Exit codes are 0 for GO, 1 for scientific NO-GO
 and 2 for execution error.
 
 Every byte under `src/neuron` is preserved, and no runtime dependencies were
-added. The browser's Sense Input path is unchanged.
+added. Learned-memory probes use fresh locked copies of the confirmed circuits.
 
 ## Project map
 

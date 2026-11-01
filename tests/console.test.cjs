@@ -17,6 +17,6 @@ test('telemetry reconstructs omitted resting cells and scopes population means',
 });
 test('console markup has unique IDs and all literal controls used by its scripts exist',()=>{
   const root=path.join(__dirname,'../public'),html=fs.readFileSync(path.join(root,'index.html'),'utf8'),ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]);assert.equal(ids.length,new Set(ids).size);
-  for(const file of ['app.js','dashboard.js']){const code=fs.readFileSync(path.join(root,file),'utf8');for(const match of code.matchAll(/\$\('([^']+)'\)/g))assert.ok(ids.includes(match[1]),'Missing control '+match[1]);}
+  for(const file of ['app.js','dashboard.js','readout-panel.js']){const code=fs.readFileSync(path.join(root,file),'utf8');for(const match of code.matchAll(/\$\('([^']+)'\)/g))assert.ok(ids.includes(match[1]),'Missing control '+match[1]);}
   assert.equal([...html.matchAll(/id="recall-form"/g)].length,1);assert.equal([...html.matchAll(/id="teach-form"/g)].length,1);assert.ok(html.includes('Sense Input'));assert.ok(ids.includes('output-title'));
 });

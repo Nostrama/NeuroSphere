@@ -3,12 +3,12 @@
 // Procedural anatomy is illustrative; it never adds simulation connections.
 const shapes=new Map();
 export function drawMorphology(ctx,p,project,scale,{active=false,selected=false,observed=false,emphasized=false}={}) {
-  const node=p.node,isMemory=node.role==='memory';
+  const node=p.node,isMemory=['memory','pool','output'].includes(node.role);
   if(!shapes.has(node.id))shapes.set(node.id,globalThis.NeuronVolume.neuronShape(node.id));
-  const shape=shapes.get(node.id),factor=emphasized?(isMemory?.75:.55):(isMemory?.40:.16),radius=Math.max(.8,(isMemory?7.5:6.5)*factor*scale);
-  const color=active?'#d9fff6':isMemory?'#f4bd79':'#5dcfdf';
+  const shape=shapes.get(node.id),factor=node.role==='output'?.85:emphasized?(isMemory?.75:.55):(isMemory?.40:.16),radius=Math.max(.8,(isMemory?7.5:6.5)*factor*scale);
+  const color=active?'#d9fff6':node.color??(isMemory?'#f4bd79':'#5dcfdf');
   if(scale>.65||selected){ctx.lineCap='round';for(const stem of shape.stems){
-    ctx.strokeStyle=active?'#9df4e2':isMemory?'#bf884eaa':stem.kind==='axon'?'#6dbacb99':'#3b99b3aa';
+    ctx.strokeStyle=active?'#9df4e2':node.color?node.color+'99':isMemory?'#bf884eaa':stem.kind==='axon'?'#6dbacb99':'#3b99b3aa';
     for(let i=1;i<stem.points.length;i++){
       const world=v=>({x:node.x+v[0]*factor,y:node.y-v[1]*factor,z:node.z+v[2]*factor});
       const a=project(world(stem.points[i-1])),b=project(world(stem.points[i]));ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.lineWidth=Math.max(.35,stem.radius*.65**(i-1)*factor*scale);ctx.stroke();

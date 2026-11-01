@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "node server.cjs",
-    "test": "node --test examples/stdp-timing-probe.cjs tests/formation.test.cjs tests/formation-v2.test.cjs tests/inhibitory.test.cjs tests/readout.test.cjs tests/readout-confirmation.test.cjs tests/association.test.cjs tests/fact-memory.test.cjs tests/fact-server.test.cjs tests/text-memory.test.cjs tests/text-server.test.cjs tests/api.test.cjs tests/engrams.test.cjs tests/server.test.cjs tests/console.test.cjs tests/domain-layout.test.cjs tests/upstream/spiking.test.cjs tests/upstream/geometry.test.cjs tests/upstream/population.test.cjs tests/upstream/controller.test.cjs",
+    "test": "node --test examples/stdp-timing-probe.cjs tests/formation.test.cjs tests/formation-v2.test.cjs tests/inhibitory.test.cjs tests/readout.test.cjs tests/readout-confirmation.test.cjs tests/readout-ui.test.cjs tests/association.test.cjs tests/fact-memory.test.cjs tests/fact-server.test.cjs tests/text-memory.test.cjs tests/text-server.test.cjs tests/api.test.cjs tests/engrams.test.cjs tests/server.test.cjs tests/console.test.cjs tests/domain-layout.test.cjs tests/upstream/spiking.test.cjs tests/upstream/geometry.test.cjs tests/upstream/population.test.cjs tests/upstream/controller.test.cjs",
     "verify": "node scripts/verify-source.cjs",
     "demo": "node examples/relay.cjs",
     "demo:growth": "node examples/growth.cjs",

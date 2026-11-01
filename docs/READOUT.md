@@ -80,7 +80,7 @@ node examples/readout.cjs --cue aardvark
 node examples/readout.cjs --cue "abominable snowman" --idle 60
 ```
 
-With no arguments, the readout CLI now runs this fixed confirmation. `--confirm` is explicit; parameter overrides are rejected. `--study` remains the original historical grid for intentional reproduction and was not run during this confirmation. `--memory FILE` and `--idle 0|60` select an explicit saved probe. The emitted word remains a host `vocabulary.get(conceptId).word` codebook lookup, not generated language. The browser Sense Input path is unchanged.
+With no arguments, the readout CLI now runs this fixed confirmation. `--confirm` is explicit; parameter overrides are rejected. `--study` remains the original historical grid for intentional reproduction and was not run during this confirmation. `--memory FILE` and `--idle 0|60` select an explicit saved probe. The emitted word remains a host `vocabulary.get(conceptId).word` codebook lookup, not generated language. The browser now offers a Learned memory mode for these confirmed circuits; see [the UI guide](READOUT_UI.md).
 
 Verified default CLI: `aardvark` produces O_A at 0.34 s (16 ticks after cue), with 68 reference-core cells fired, input margin 20.120569 and peak membrane margin 4.953170. The untrained C word at 60 s is silent. Both command outputs are saved with the evidence.
 
