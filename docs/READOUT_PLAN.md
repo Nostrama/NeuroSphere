@@ -65,6 +65,12 @@ clock: pool→O delays are 0.04 s + d/1800 with d ≤ ~400, so most core arrival
 0.32 s window before the teacher spike); 10 s gap; then the same for B with `O_B`. No forced
 spikes anywhere else. C is never presented.
 
+**Clarified 2026-11-01:** the teacher is the native `env.forcedSpike` at the declared tick; O
+cells are **not clamped** and may fire naturally from their inputs. Once an O cell fires before
+the teacher tick, the forced spike is vetoed by refractoriness — record every delivered teacher
+spike and every veto per epoch, and report the first epoch at which each O cell fired naturally
+before the teacher. That curve is the readout's own learning curve.
+
 **Train to criterion**: every 10 readout epochs lock a clone and probe (synchronous, no teacher,
 0 and 60 s): full A, full B, 4-of-8 halves of A and B, full C. Stop at the first checkpoint ≥ 20
 where R1–R3 below all pass; max 80. Evaluate everything on that snapshot; continue to 80 for the
