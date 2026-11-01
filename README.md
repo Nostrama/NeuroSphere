@@ -5,6 +5,29 @@ memory. The neuron dynamics come from **Neuron**; vocabulary comes from
 **a-concept-lab**. A browser interface runs on this computer, with no package installation.
 Requires Node.js 20 or newer; verified locally with Node.js 24.
 
+## UI preview
+
+**Proof of concept, under active development.** These screenshots show the
+current supervised fact-learning workspace. The teacher-free formation experiment
+is documented separately below in [Teacher-free formation experiment](#teacher-free-formation-experiment).
+
+### Neural console
+
+One shared volume connects Sense Input to Output. The console displays stored
+synaptic weights, recorded spike activity, learning controls and a neuron inspector.
+Here, the saved fact `The lamp is blue.` answers `What color is the lamp?` with `blue`.
+
+![NeuroSphere console showing the shared neural volume, synaptic matrix, measured telemetry, and the learned response blue](docs/images/neurosphere-console.jpg)
+
+### Inside the volume
+
+The expanded view zooms into an individual neuron and its connections. The
+inspector shows its threshold, incoming and outgoing links, weights, delays and
+recorded membrane potential. Neuron shapes are procedural illustrations;
+the displayed activity and connection values come from the simulation.
+
+![Expanded NeuroSphere view showing neuron 13, its synaptic connections, and the circuit inspector](docs/images/neurosphere-neuron-inspector.jpg)
+
 ## Run
 
 Double-click **Start NeuroSphere.cmd**, or run `npm start` and open
