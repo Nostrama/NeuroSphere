@@ -39,9 +39,14 @@ field and assert byte-identity against the 1g evidence (exactly as Stage 2 did).
   the rest of the run. The two new slots can therefore be used **only** by the declared readout
   projections. Record both in the effective config; the snapshot carries 10. This is a phase
   change recorded in the artifact, not a temporary mutation.
-- Protect readout projections from structural competition with `Synapse.fixScaffold(source)`
-  (engine API used by `AssemblyTask` tracts; fixed synapses are skipped by competition and
-  pruning but **still potentiate**). Growth is off anyway; this is belt and braces. Document it.
+- ~~Protect readout projections with `Synapse.fixScaffold`~~ **Corrected 2026-11-01 (Codex):**
+  `fixScaffold` is the tract-scaffold API (0.3 floor in the depression path, tract-slot
+  semantics) and cannot represent a fixed 0.02 projection. Use **ordinary native projections at
+  0.02** within the permanent 10-edge capacity, and set **`weightFloor = 0` permanently at the
+  readout phase boundary** together with the `maxSynapses` raise and the growth freeze — three
+  recorded phase-boundary settings carried in the snapshot. With growth frozen and decay off,
+  the floor change is inert for pool→pool edges; R4's exact-weight-equality check demonstrates
+  that and stays strict.
 - **Readout threshold**: per-cell host property (precedent: 0.7 pilot leading cells at 1.6).
   Set `O.threshold = 0.4 · |ref core| · maxWeight` per seed (≈ 0.4·60·1.65 ≈ 40) and record it.
   Meaning: the output fires when ≳ 40 % of a fully potentiated assembly is active. This is the
