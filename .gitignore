@@ -28,3 +28,9 @@ Thumbs.db
 !outputs/formation/*/training-curves.svg
 !outputs/formation/2026-10-31T23-05-24-523Z-stage1g/
 !outputs/formation/2026-10-31T23-05-24-523Z-stage1g/**
+
+# Complete declared Stage 2 association evidence
+!outputs/association/
+outputs/association/*
+!outputs/association/2026-11-01T17-09-44-115Z-stage2/
+!outputs/association/2026-11-01T17-09-44-115Z-stage2/**

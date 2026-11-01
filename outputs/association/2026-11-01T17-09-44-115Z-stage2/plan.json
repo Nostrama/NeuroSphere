@@ -1,0 +1,159 @@
+{
+  "stage": "2",
+  "sourcePlan": "docs/ASSOCIATION_PLAN.md",
+  "formation": {
+    "pool": 500,
+    "poolRadius": 120,
+    "radius": 60,
+    "featureRadius": 600,
+    "k": 8,
+    "w0": 1.1,
+    "initialWeight": 0.4,
+    "maxSynapses": 8,
+    "growthPeriod": 1.8,
+    "inhibitionStrength": 0.5,
+    "inhibitionRadiusFactor": 0.6,
+    "epochs": 80,
+    "seed": 1,
+    "gap": 10,
+    "secretion": 0,
+    "jitter": 15,
+    "competitionMargin": 1,
+    "exploration": 0.1,
+    "pairingClock": "arrival",
+    "decay": "off",
+    "cues": "disjoint",
+    "featureGrowth": false,
+    "homeostasis": false,
+    "activityScaledInhibition": false
+  },
+  "formationStops": {
+    "1": 70,
+    "2": 60,
+    "3": 70
+  },
+  "evidence": "outputs/formation/2026-10-31T23-05-24-523Z-stage1g",
+  "cells": [
+    {
+      "id": "baseline-1",
+      "role": "baseline",
+      "seed": 1,
+      "delta": 12,
+      "jitter": 5
+    },
+    {
+      "id": "baseline-2",
+      "role": "baseline",
+      "seed": 2,
+      "delta": 12,
+      "jitter": 5
+    },
+    {
+      "id": "baseline-3",
+      "role": "baseline",
+      "seed": 3,
+      "delta": 12,
+      "jitter": 5
+    },
+    {
+      "id": "diagnostic-6-5",
+      "role": "diagnostic",
+      "seed": 1,
+      "delta": 6,
+      "jitter": 5
+    },
+    {
+      "id": "diagnostic-6-15",
+      "role": "diagnostic",
+      "seed": 1,
+      "delta": 6,
+      "jitter": 15
+    },
+    {
+      "id": "diagnostic-12-15",
+      "role": "diagnostic",
+      "seed": 1,
+      "delta": 12,
+      "jitter": 15
+    },
+    {
+      "id": "diagnostic-24-5",
+      "role": "diagnostic",
+      "seed": 1,
+      "delta": 24,
+      "jitter": 5
+    },
+    {
+      "id": "diagnostic-24-15",
+      "role": "diagnostic",
+      "seed": 1,
+      "delta": 24,
+      "jitter": 15
+    }
+  ],
+  "diagnosticPrimary": "baseline-1 is also the 12/5 diagnostic cell; the same saved run is reused.",
+  "stopping": {
+    "checkpoints": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40
+    ],
+    "minimum": 5,
+    "maximum": 40,
+    "threshold": 0.5,
+    "idleSeconds": [
+      0,
+      60
+    ],
+    "rule": "First checkpoint whose A-alone recruitment of refB is >=0.5 at both delays. Nothing else is consulted. Evaluate there and continue to 40 only for the curve."
+  },
+  "acceptance": {
+    "forward": 0.5,
+    "reverse": "<= its Stage 1g baseline + 0.15",
+    "halfSelfCompletion": 0.8,
+    "fullSelfRecall": 0.9,
+    "cReadback": "Nearest-ref-core Jaccard <0.5 (reject)",
+    "cJaccardMaximum": 0.25,
+    "cRelativeSpillover": "<= matched unpaired fraction + 0.10",
+    "absoluteSpilloverCap": {
+      "value": 0.25,
+      "gated": false
+    },
+    "requiredControls": {
+      "unpaired-continuation": "forward <= baseline + 0.15",
+      "hebbian-off-association": "forward <= baseline + 0.15",
+      "prune-cross": "forward <0.3 and below pre-prune; all four self half completions change by no more than 0.05 at both delays"
+    },
+    "go": "Every gated condition and required control passes on all three baseline seeds. Diagnostics and reported controls cannot change this decision."
+  },
+  "controls": {
+    "required": [
+      "unpaired-continuation",
+      "hebbian-off-association",
+      "prune-cross"
+    ],
+    "reportedSeed1": [
+      "reverse-order",
+      "growth-off-association"
+    ],
+    "baseline": "untrained = exact Stage 1g stop before association",
+    "exposure": "Controls evaluated at primary stop. Unpaired continuation proceeds to 40 separately for the dashed curve, with A then B each epoch, jitter 15 and 10-second gaps exactly as Stage 1g.",
+    "hebbian": "Native field.setFeatures({hebbian:false}) at the verified unlocked boundary; permanent for the phase and recorded in featureHistory.",
+    "growth": "Pool nextGrowthAt=1e12 at the boundary only.",
+    "pruning": "Native prune() on the union of surviving formed A-to-B and B-to-A edges; remove inactive references from source.synapses, preserving all other edges."
+  },
+  "measurement": {
+    "refs": "Frozen Stage 1g cores; all Stage 2 gates and metrics use these exact IDs.",
+    "cross": "Inclusive ref memberships: source in A and target in B, or reverse. Shared members can make an edge count in both directions; prune the union once. Report shared counts explicitly.",
+    "contemporaneous": "80% presence in last ten responses. Paired whole-trial activity is assigned to both co-presented cues, with no causal attribution; never used for gates.",
+    "prediction": "Stage 1e earliest continuous-time afferent model, combined A/B schedule per paired trial, actual afferent and recurrent delays, lag 0..0.32 s, source after edge birth; predicted counts distinguished from observed positive native STDP events.",
+    "phases": "Reproduce each seed in an unlocked field once, validate exact cores/edges/weights/full export/trials/draws, then native DevelopmentSession checkpoint/restore for identical independent controls. No unlocking or snapshot rewriting.",
+    "randomness": "Dedicated association LCG: seed XOR 0xd1b54a35. Unpaired resumes the Stage 1g jitter stream after formationEpoch*16 draws. Every draw is saved.",
+    "figures": "Per baseline seed: forward, reverse, min A half, min B half and C spillover; primary solid, unpaired dashed. Show both delays when they differ."
+  }
+}

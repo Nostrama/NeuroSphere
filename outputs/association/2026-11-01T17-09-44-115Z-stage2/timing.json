@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-11-01T17:09:44.115Z",
+  "nodeVersion": "v24.16.0",
+  "wallTimeMs": 791794.8470000001,
+  "implementationHash": "5e140666d7b821d2b481e50f1b8fee65099148f71f164ac95a8ba972ed0bc105",
+  "sourcePlanHash": "fce6b70736dcb39c7914722b66e3b6eb0caecc6eaf7c39dc09b7d93601f147d7",
+  "concurrency": 8
+}

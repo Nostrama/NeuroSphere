@@ -177,6 +177,22 @@ Read [the formation report](docs/FORMATION.md) for the complete curves, controls
 limits and earlier findings. The complete verified Stage 1g evidence is included
 under `outputs/formation/2026-10-31T23-05-24-523Z-stage1g/`.
 
+## Association experiment
+
+**Stage 2 is NO-GO under its declared criteria.** Starting from the exact Stage 1g
+circuits, sequential A→B training raises forward recruitment to 0.20, 0.53 and
+0.60 on seeds 1–3. Seed 1 misses the target; required controls also fail. These
+results do not change Stage 1g's formation result.
+
+```powershell
+npm run demo:association -- --study
+```
+
+Read [the association report](docs/ASSOCIATION.md) for all controls, the fixed
+timing diagnostic, cross-edge audits and per-seed curves. The complete evidence
+is included under `outputs/association/2026-11-01T17-09-44-115Z-stage2/`.
+The experiment exits 1 for this scientific NO-GO; execution errors exit 2.
+
 ## Project map
 
 - `public/`: browser interface and actual-position 3D volume renderer.
