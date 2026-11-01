@@ -1,0 +1,17 @@
+{
+  "id": "v1-f20-1",
+  "options": {
+    "seed": 1,
+    "fraction": 0.2,
+    "scaffold": "v1",
+    "epochs": 120,
+    "g": 1,
+    "w0": 1.1,
+    "maxWeight": 1.65,
+    "maxSynapses": 8,
+    "k": 8,
+    "jitter": 15,
+    "gap": 10,
+    "pool": 625
+  }
+}

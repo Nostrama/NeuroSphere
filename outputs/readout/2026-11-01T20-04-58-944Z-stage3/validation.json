@@ -1,0 +1,113 @@
+{
+  "allEvidenceChecks": true,
+  "scientificPass": false,
+  "nativeSourceByteIdentical": true,
+  "nativeFiles": 11,
+  "sourcePlanByteIdenticalToPreregistration": true,
+  "cells": [
+    {
+      "id": "baseline-1",
+      "scientificPass": false,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 80
+    },
+    {
+      "id": "baseline-2",
+      "scientificPass": false,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 80
+    },
+    {
+      "id": "baseline-3",
+      "scientificPass": false,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 80
+    },
+    {
+      "id": "diagnostic-t16-f0.25",
+      "scientificPass": false,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 80
+    },
+    {
+      "id": "diagnostic-t16-f0.4",
+      "scientificPass": false,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 80
+    },
+    {
+      "id": "diagnostic-t24-f0.25",
+      "scientificPass": true,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 70
+    },
+    {
+      "id": "diagnostic-t32-f0.25",
+      "scientificPass": true,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 70
+    },
+    {
+      "id": "diagnostic-t32-f0.4",
+      "scientificPass": false,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 80
+    }
+  ],
+  "nativeProbeResponses": 1520,
+  "replayedCircuits": 112,
+  "tests": {
+    "distinctTestsPassed": 188,
+    "newInhibitoryTests": 6,
+    "newReadoutTests": 10,
+    "initialFullSuite": {
+      "tests": 178,
+      "passed": 163,
+      "failed": 15,
+      "reason": "All 15 failures were localhost EACCES under the sandbox; the same 15 server tests passed with local-network permission."
+    },
+    "serverRerun": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "readoutTests": {
+      "tests": 10,
+      "passed": 10,
+      "failed": 0
+    },
+    "coverage": "Seeded schedules and byte-identical fixture summaries; native snapshots; permanent phase settings; passive observation; E-only metrics; native teacher delivery/refractory veto; exact edge ablations; strict gate and control logic; codebook lookup."
+  },
+  "dependencyCheck": {
+    "copiedSourceFiles": 24,
+    "copiedUiFiles": 1,
+    "runtimeModules": 20,
+    "thirdPartyRuntimeDependencies": 0,
+    "uiDependencies": 0
+  },
+  "notes": "Independent verifiers reconstruct native responses and gates from saved artifacts. A verified scientific NO-GO remains NO-GO. O margin reconstruction uses 1e-8 floating-point tolerance; R4 edge weights and original Stage 1g circuit identity use exact equality."
+}

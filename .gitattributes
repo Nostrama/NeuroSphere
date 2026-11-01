@@ -5,3 +5,12 @@ tests/fixtures/** -text
 tests/upstream/* -text
 src/vocabulary/upstream-engine.js -text
 data/a-concept-brain.json -text
+
+# Preserve the working-copy byte hashes of the executed experiment harnesses.
+examples/formation.cjs eol=crlf
+examples/formation-v2.cjs eol=crlf
+examples/inhibitory-formation.cjs eol=crlf
+
+# Scientific evidence and archived declarations retain their original bytes.
+outputs/inhibitory/2026-11-01T19-44-51-536Z-inhibitory/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+outputs/readout/2026-11-01T20-04-58-944Z-stage3/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

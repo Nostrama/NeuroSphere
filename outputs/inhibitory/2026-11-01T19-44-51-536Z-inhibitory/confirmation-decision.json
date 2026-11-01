@@ -1,0 +1,68 @@
+{
+  "schema": "neurosphere-inhibitory-confirmation-decision/v1",
+  "cells": [
+    {
+      "id": "v2-f20-1",
+      "stopping": {
+        "epoch": 50,
+        "reached": true,
+        "minimum": 30,
+        "maximum": 120,
+        "checkpointEvery": 10,
+        "threshold": 0.8,
+        "cConsulted": false,
+        "otherGatesConsulted": false
+      },
+      "failedGates": [
+        "2-specificity",
+        "3-size",
+        "4-negative-cue",
+        "10-potentiation",
+        "11-continued-stability"
+      ]
+    },
+    {
+      "id": "v2-f30-1",
+      "stopping": {
+        "epoch": 120,
+        "reached": false,
+        "minimum": 30,
+        "maximum": 120,
+        "checkpointEvery": 10,
+        "threshold": 0.8,
+        "cConsulted": false,
+        "otherGatesConsulted": false
+      },
+      "failedGates": [
+        "2-specificity",
+        "4-negative-cue",
+        "9-pattern-completion",
+        "10-potentiation",
+        "11-continued-stability"
+      ]
+    },
+    {
+      "id": "v1-f20-1",
+      "stopping": {
+        "epoch": 120,
+        "reached": false,
+        "minimum": 30,
+        "maximum": 120,
+        "checkpointEvery": 10,
+        "threshold": 0.8,
+        "cConsulted": false,
+        "otherGatesConsulted": false
+      },
+      "failedGates": [
+        "2-specificity",
+        "4-negative-cue",
+        "9-pattern-completion",
+        "11-continued-stability"
+      ]
+    }
+  ],
+  "eligibleSeed1": [],
+  "confirmation": "No seeds2/3: all three completed primary trajectories fail gated criteria including11.",
+  "controlsPendingAtDecision": true,
+  "scope": "Confirmation decision only; complete controls and final report remain required."
+}

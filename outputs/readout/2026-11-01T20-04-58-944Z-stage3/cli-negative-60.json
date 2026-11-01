@@ -1,0 +1,46 @@
+{
+  "input": "abominable snowman",
+  "interpretation": "Host vocabulary.get(conceptId).word lookup for the firing output cell; not generated language.",
+  "status": "silent",
+  "outputs": [],
+  "coreCellsFired": {
+    "A": 11,
+    "B": 8
+  },
+  "outputMeasurements": {
+    "A": {
+      "id": 693,
+      "name": "O_A",
+      "conceptId": "001-001-001",
+      "threshold": 44.88,
+      "spikeTimes": [],
+      "spikeTicks": [],
+      "latencyTicks": [],
+      "fired": false,
+      "arrivingWeight": 10.196654847377257,
+      "integratedWeight": 10.196654847377257,
+      "peakPotential": 9.32540151806881,
+      "peakEffectiveThreshold": 44.879999999735986,
+      "peakMargin": -35.55459848166718,
+      "firstSpike": null,
+      "inputMargin": -34.68334515262275
+    },
+    "B": {
+      "id": 694,
+      "name": "O_B",
+      "conceptId": "001-001-002",
+      "threshold": 40.26,
+      "spikeTimes": [],
+      "spikeTicks": [],
+      "latencyTicks": [],
+      "fired": false,
+      "arrivingWeight": 7.3730096203175775,
+      "integratedWeight": 7.3730096203175775,
+      "peakPotential": 6.769506391399986,
+      "peakEffectiveThreshold": 40.25999999973598,
+      "peakMargin": -33.490493608335996,
+      "firstSpike": null,
+      "inputMargin": -32.88699037968242
+    }
+  }
+}

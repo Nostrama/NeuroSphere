@@ -1,0 +1,68 @@
+{
+  "allEvidenceChecks": true,
+  "scientificPass": false,
+  "nativeSourceByteIdentical": true,
+  "nativeFiles": 11,
+  "sourcePlanByteIdenticalToPreregistration": true,
+  "cells": [
+    {
+      "id": "v2-f20-1",
+      "scientificPass": false,
+      "allEvidenceChecks": true,
+      "replayedCircuits": 24,
+      "nativeProbeResponses": 656,
+      "liveLedgerWeightsChecked": 10448,
+      "stoppingEpoch": 50
+    },
+    {
+      "id": "v2-f30-1",
+      "scientificPass": false,
+      "allEvidenceChecks": true,
+      "replayedCircuits": 18,
+      "nativeProbeResponses": 516,
+      "liveLedgerWeightsChecked": 7974,
+      "stoppingEpoch": 120
+    },
+    {
+      "id": "v1-f20-1",
+      "scientificPass": false,
+      "allEvidenceChecks": true,
+      "replayedCircuits": 18,
+      "nativeProbeResponses": 516,
+      "liveLedgerWeightsChecked": 5352,
+      "stoppingEpoch": 120
+    }
+  ],
+  "nativeProbeResponses": 1688,
+  "replayedCircuits": 60,
+  "tests": {
+    "distinctTestsPassed": 188,
+    "newInhibitoryTests": 6,
+    "newReadoutTests": 10,
+    "initialFullSuite": {
+      "tests": 178,
+      "passed": 163,
+      "failed": 15,
+      "reason": "All 15 failures were localhost EACCES under the sandbox; the same 15 server tests passed with local-network permission."
+    },
+    "serverRerun": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "readoutTests": {
+      "tests": 10,
+      "passed": 10,
+      "failed": 0
+    },
+    "coverage": "Seeded schedules and byte-identical fixture summaries; native snapshots; permanent phase settings; passive observation; E-only metrics; native teacher delivery/refractory veto; exact edge ablations; strict gate and control logic; codebook lookup."
+  },
+  "dependencyCheck": {
+    "copiedSourceFiles": 24,
+    "copiedUiFiles": 1,
+    "runtimeModules": 20,
+    "thirdPartyRuntimeDependencies": 0,
+    "uiDependencies": 0
+  },
+  "notes": "Independent verifiers reconstruct native responses and gates from saved artifacts. A verified scientific NO-GO remains NO-GO. O margin reconstruction uses 1e-8 floating-point tolerance; R4 edge weights and original Stage 1g circuit identity use exact equality."
+}

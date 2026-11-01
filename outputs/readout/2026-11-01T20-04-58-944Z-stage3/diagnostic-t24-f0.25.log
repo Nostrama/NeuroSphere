@@ -1,0 +1,15 @@
+diagnostic-t24-f0.25/primary
+diagnostic-t24-f0.25/epoch 0: R1=false R2=false R3=true R4=true
+diagnostic-t24-f0.25/epoch 10: R1=false R2=false R3=true R4=true
+diagnostic-t24-f0.25/epoch 20: R1=false R2=false R3=true R4=true
+diagnostic-t24-f0.25/epoch 30: R1=false R2=false R3=true R4=true
+diagnostic-t24-f0.25/epoch 40: R1=false R2=false R3=true R4=true
+diagnostic-t24-f0.25/epoch 50: R1=true R2=false R3=true R4=true
+diagnostic-t24-f0.25/epoch 60: R1=true R2=false R3=true R4=true
+diagnostic-t24-f0.25/epoch 70: R1=true R2=true R3=true R4=true
+diagnostic-t24-f0.25/epoch 80: R1=true R2=true R3=true R4=true
+diagnostic-t24-f0.25/readout-hebbian-off
+diagnostic-t24-f0.25/swapped-teacher
+diagnostic-t24-f0.25/untrained-readout
+diagnostic-t24-f0.25/prune-readout
+diagnostic-t24-f0.25/prune-formed

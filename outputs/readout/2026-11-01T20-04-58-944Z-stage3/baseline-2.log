@@ -1,0 +1,15 @@
+baseline-2/primary
+baseline-2/epoch 0: R1=false R2=false R3=true R4=true
+baseline-2/epoch 10: R1=false R2=false R3=true R4=true
+baseline-2/epoch 20: R1=false R2=false R3=true R4=true
+baseline-2/epoch 30: R1=false R2=false R3=true R4=true
+baseline-2/epoch 40: R1=false R2=false R3=true R4=true
+baseline-2/epoch 50: R1=false R2=false R3=true R4=true
+baseline-2/epoch 60: R1=false R2=false R3=true R4=true
+baseline-2/epoch 70: R1=false R2=false R3=true R4=true
+baseline-2/epoch 80: R1=false R2=false R3=true R4=true
+baseline-2/readout-hebbian-off
+baseline-2/swapped-teacher
+baseline-2/untrained-readout
+baseline-2/prune-readout
+baseline-2/prune-formed

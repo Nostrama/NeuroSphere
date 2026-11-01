@@ -1,0 +1,67 @@
+{
+  "input": "aardvark",
+  "interpretation": "Host vocabulary.get(conceptId).word lookup for the firing output cell; not generated language.",
+  "status": "decoded",
+  "outputs": [
+    {
+      "conceptId": "001-001-001",
+      "word": "aardvark",
+      "outputCell": "O_A",
+      "spikeTime": 0.38,
+      "latencyTicks": 18,
+      "margin": 9.730170007786072,
+      "peakMembraneMargin": 1.9242387757278863,
+      "coreCellsFired": 68
+    }
+  ],
+  "coreCellsFired": {
+    "A": 68,
+    "B": 3
+  },
+  "outputMeasurements": {
+    "A": {
+      "id": 693,
+      "name": "O_A",
+      "conceptId": "001-001-001",
+      "threshold": 44.88,
+      "spikeTimes": [
+        0.38
+      ],
+      "spikeTicks": [
+        19
+      ],
+      "latencyTicks": [
+        18
+      ],
+      "fired": true,
+      "arrivingWeight": 54.610170007786074,
+      "integratedWeight": 50.17829169346019,
+      "peakPotential": 46.80423877546387,
+      "peakEffectiveThreshold": 44.879999999735986,
+      "peakMargin": 1.9242387757278863,
+      "firstSpike": {
+        "potential": 46.80423877546387,
+        "effectiveThreshold": 44.879999999735986,
+        "integratedWeight": 50.17829169346019
+      },
+      "inputMargin": 9.730170007786072
+    },
+    "B": {
+      "id": 694,
+      "name": "O_B",
+      "conceptId": "001-001-002",
+      "threshold": 40.26,
+      "spikeTimes": [],
+      "spikeTicks": [],
+      "latencyTicks": [],
+      "fired": false,
+      "arrivingWeight": 3.980620004505017,
+      "integratedWeight": 3.980620004505017,
+      "peakPotential": 3.5222989669447236,
+      "peakEffectiveThreshold": 40.25999999973598,
+      "peakMargin": -36.73770103279126,
+      "firstSpike": null,
+      "inputMargin": -36.27937999549498
+    }
+  }
+}

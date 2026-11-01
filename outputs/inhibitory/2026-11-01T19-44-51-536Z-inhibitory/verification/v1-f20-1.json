@@ -1,0 +1,9 @@
+{
+  "id": "v1-f20-1",
+  "scientificPass": false,
+  "allEvidenceChecks": true,
+  "replayedCircuits": 18,
+  "nativeProbeResponses": 516,
+  "liveLedgerWeightsChecked": 5352,
+  "stoppingEpoch": 120
+}

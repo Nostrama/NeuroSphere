@@ -1,0 +1,15 @@
+diagnostic-t32-f0.4/primary
+diagnostic-t32-f0.4/epoch 0: R1=false R2=false R3=true R4=true
+diagnostic-t32-f0.4/epoch 10: R1=false R2=false R3=true R4=true
+diagnostic-t32-f0.4/epoch 20: R1=false R2=false R3=true R4=true
+diagnostic-t32-f0.4/epoch 30: R1=false R2=false R3=true R4=true
+diagnostic-t32-f0.4/epoch 40: R1=false R2=false R3=true R4=true
+diagnostic-t32-f0.4/epoch 50: R1=false R2=false R3=true R4=true
+diagnostic-t32-f0.4/epoch 60: R1=false R2=false R3=true R4=true
+diagnostic-t32-f0.4/epoch 70: R1=false R2=false R3=true R4=true
+diagnostic-t32-f0.4/epoch 80: R1=false R2=false R3=true R4=true
+diagnostic-t32-f0.4/readout-hebbian-off
+diagnostic-t32-f0.4/swapped-teacher
+diagnostic-t32-f0.4/untrained-readout
+diagnostic-t32-f0.4/prune-readout
+diagnostic-t32-f0.4/prune-formed

@@ -1,0 +1,11 @@
+{
+  "source": "outputs/formation-v2/2026-11-01T17-59-30-265Z-stage1v2/cases/baseline-1",
+  "hashes": {
+    "primary/summary.json": "4f8d11b0b818a20dac163b0234dc6a84b83a4b740b32c47d00bc72fc4b4b1a8c",
+    "primary/memory.json": "076c6cbd2bb8eceb3436eaeea717150f9b604310edfc2236a4360a8d5e160250",
+    "primary/trials.json": "0ee3ffc41044f366371d2ca7e4e800a4d7fe055a6a56539e29f840fcf43c1ff3",
+    "primary/curve.json": "d00384a19abca3f4d9c5ffaced78288b0b5867dc278fc3855d58799061b8985a",
+    "controls/continued-plastic/summary.json": "263ddc79ff7e7e042aee3432088f5584fcc1316b8d57e2e5474cb52586378a16",
+    "controls/continued-plastic/memory.json": "108f32a2da8659e58f30d1d9d7da9fa430bdbc45cf23aaa2d3e3467da882c917"
+  }
+}

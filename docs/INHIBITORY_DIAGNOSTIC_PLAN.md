@@ -79,3 +79,36 @@ GO requires all three. If no cell passes, stop and report. No other settings.
 - **No improvement over v2:** the fork is the path — add feedforward (input-proportional)
   inhibition or a per-neighbourhood k-winners rule to Neuron on a NeuroSphere branch, with the
   harness unchanged. Record that decision in both plan files.
+
+
+## Post-result decision (2026-11-01; acceptance rules unchanged)
+
+The inhibitory diagnostic is NO-GO: none of the three seed-1 settings passes
+all v2 gates including 11. No confirmation seeds or extra inhibitory fractions
+were run. The v2 20% cell reaches half-cue criterion at epoch 50 but fails
+specificity, size, containment, potentiation and continued stability. The 30% cell
+reduces overlap but loses completion; its specificity/containment gates still
+fail. The v1 comparison also fails specificity/containment and misreads C as A.
+Some individual measurements improve, but no tested setting solves the joint
+stability problem. The declared branch permitting one more fraction after
+successful specificity/containment therefore does not apply.
+
+For the next stability experiment, the path is a separately declared Neuron
+fork with input-proportional feedforward inhibition or a per-neighbourhood
+k-winners rule, retaining the harness. No such fork or engine modification is
+part of this implementation. Inhibitory firing and plasticity were observed;
+the report distinguishes late inhibition and refractory-discarded charge from
+absence of inhibition. These results do not establish that every inhibitory
+design fails.
+
+Stage 3 remains independent and starts from the byte-identical original 1g
+stops. Its primary is NO-GO: all three seeds fail R2 by epoch 80. Both predeclared
+seed-1 cells at threshold factor 0.25 and teacher ticks 24/32 pass R1–R4 and all
+five controls at epoch 70. These diagnostic successes do not replace the
+primary or constitute three-seed confirmation. Native teacher delivery and
+refractory vetoes are retained; no output clamp or threshold retuning was added.
+
+See INHIBITORY_DIAGNOSTIC.md and READOUT.md for complete evidence. The original
+preregistrations are archived byte-for-byte as source-plan.md in their study
+directories, with the original hashes. This post-result note changes no gate,
+setting, stopping rule or control from those runs.

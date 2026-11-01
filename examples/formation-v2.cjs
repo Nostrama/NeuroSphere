@@ -286,4 +286,4 @@ function runSuite(values={},progress=()=>{}){
 }
 module.exports={BITS,DELAYS,COUNTS,CONTROLS,DEFAULTS,options,topology,setup,exportMemory,liveEdges,restoreStop,subsetBits,probeBattery,basinProbes,basinReport,
   metrics,stoppingCriterion,checkpoint,save,continuedAssessment,runCondition,pruneFormed,decision,runSuite};
-if(require.main===module)require('./formation-v2-study.cjs').main(process.argv.slice(2)).then(code=>{process.exitCode=code;}).catch(error=>{process.stderr.write(error.stack+'\n');process.exitCode=2;});
+if(require.main===module)require(process.argv.includes('--inhibitoryPopulation')?'./inhibitory-study.cjs':'./formation-v2-study.cjs').main(process.argv.slice(2).filter(arg=>arg!=='--inhibitoryPopulation')).then(code=>{process.exitCode=code;}).catch(error=>{process.stderr.write(error.stack+'\n');process.exitCode=2;});

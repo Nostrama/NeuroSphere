@@ -1,0 +1,124 @@
+{
+  "schema": "neurosphere-inhibitory-declaration/v1",
+  "sourcePlan": "docs/INHIBITORY_DIAGNOSTIC_PLAN.md",
+  "cells": [
+    {
+      "id": "v2-f20-1",
+      "options": {
+        "seed": 1,
+        "fraction": 0.2,
+        "scaffold": "v2",
+        "epochs": 120,
+        "g": 4,
+        "w0": 0.7,
+        "maxWeight": 0.7,
+        "maxSynapses": 10,
+        "k": 8,
+        "jitter": 8,
+        "gap": 10,
+        "pool": 625
+      }
+    },
+    {
+      "id": "v2-f30-1",
+      "options": {
+        "seed": 1,
+        "fraction": 0.3,
+        "scaffold": "v2",
+        "epochs": 120,
+        "g": 4,
+        "w0": 0.7,
+        "maxWeight": 0.7,
+        "maxSynapses": 10,
+        "k": 8,
+        "jitter": 8,
+        "gap": 10,
+        "pool": 714
+      }
+    },
+    {
+      "id": "v1-f20-1",
+      "options": {
+        "seed": 1,
+        "fraction": 0.2,
+        "scaffold": "v1",
+        "epochs": 120,
+        "g": 1,
+        "w0": 1.1,
+        "maxWeight": 1.65,
+        "maxSynapses": 8,
+        "k": 8,
+        "jitter": 15,
+        "gap": 10,
+        "pool": 625
+      }
+    }
+  ],
+  "inherited": {
+    "stop": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10
+    ],
+    "stability": 0.7,
+    "specificity": 0.2,
+    "size": [
+      5,
+      "0.25*P"
+    ],
+    "negative": "C rejects, each Jaccard <=0.25, spillover <=25% of smaller core, both delays.",
+    "recurrent": "Within-core count >=core size and density >=3*pool density for both cores.",
+    "retention": "Unchanged Stage 1 criterion 8: full A at 60 seconds has Jaccard >=0.8 with A; B also reported.",
+    "completion": "Each of four fixed halves at both delays >=0.8 and gain >=0.25 vs untrained on the same core.",
+    "median": 0.6,
+    "capFractionThreshold": 0.69,
+    "continued": {
+      "epoch": 120,
+      "reference": "Frozen stopping cores for specificity, spillover, completion, retention and within-core median.",
+      "gates": [
+        2,
+        4,
+        8,
+        9
+      ],
+      "median": 0.65,
+      "drift": "Jaccard(frozen stopping core, contemporaneous epoch-120 core) >=0.8 for BOTH A/B.",
+      "contemporaneous": "Report separately; never substitute into gate 11."
+    },
+    "reported": [
+      5,
+      6,
+      "strict stability",
+      "cap fraction",
+      "primed and truly-neutral recruits",
+      "direct overlaps",
+      "churn",
+      "weight versus predicted pairings",
+      "fan-in"
+    ]
+  },
+  "population": "Declare every feature ID as an endpoint before addNeuron. Native per-ID seeded assignment applies only to ordinary pool cells. P=round(500/(1-f)); report actual E/I. No type reassignment.",
+  "v1": "Exact Stage 1g scaffold parameters: g1, w0=1.1, maxWeight=1.65, maxSynapses8, jitter15; diagnostic stopping horizon/continued gate extends to120. One-hit cells are also direct, not subthreshold primed in this comparison.",
+  "excitatoryMetrics": "All v2 gates and pool density denominators use E only. Native growth, competition and pruning still involve the physical E+I pool. Prune-formed removes all physical pool->pool edges, including I edges. Report the complete typed audit separately.",
+  "controls": "Growth-off, Hebbian-off, shuffled, untrained, prune-formed, continued-plastic, continued-Hebbian-off; all same inhibitory scaffold. Inhibition-off is the saved 500-E lateral-inhibition v2 primary, at its own stop and epoch120, a common reference rather than a matched-size toggle. Save once and reference explicitly.",
+  "reference": {
+    "path": "outputs/formation-v2/2026-11-01T17-59-30-265Z-stage1v2",
+    "baseline": "baseline-<seed>",
+    "verified": "Saved v2 primary summary/memory/trials/curve and continued-plastic summary/memory; byte hashes recorded before running."
+  },
+  "measurement": {
+    "edges": "At every checkpoint: E->E, E->I, I->E, I->I counts and magnitude/signed quantiles; per-epoch births from native formed events.",
+    "trials": "Capture window only, 50+J ticks. I cell IDs and spikes; per-E signed incoming charges, physical arrival times, refractory-discarded inhibitory charge.",
+    "inhibitionBeforeAfferent": "Strict native message timestamp < first seed-afferent timestamp, among E with exactly one seed hit. Report both arrived messages and membrane-integrated messages (refractory drops excluded), fired IDs/fraction; simultaneous arrivals do not count as before.",
+    "charge": "Unweighted sum of integrated inhibitory magnitudes divided by total E population, not only receivers. Separately report total excitatory charge.",
+    "proxy": "For each E spike, raw integrated excitation minus inhibition over ticks [spikeTick-9,spikeTick], including current-tick inputs. This is an effective-threshold proxy, not a reconstructed leaky potential.",
+    "passivity": "Non-enumerable native-method observers; no altered calls, return values, config or random draws. Compare observed vs unobserved native circuit bytes in tests."
+  },
+  "confirmation": "For every seed1 cell whose stopping criterion and all v2 gates including11 pass, run that exact setting on seeds2/3. No other settings. GO requires all gates and inherited required controls on all3 at one setting. If none passes seed1, stop.",
+  "exit": "0 diagnostic GO;1 scientific NO-GO;2 execution error. No automatic engine fork."
+}

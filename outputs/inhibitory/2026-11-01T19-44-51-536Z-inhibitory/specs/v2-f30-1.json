@@ -1,0 +1,17 @@
+{
+  "id": "v2-f30-1",
+  "options": {
+    "seed": 1,
+    "fraction": 0.3,
+    "scaffold": "v2",
+    "epochs": 120,
+    "g": 4,
+    "w0": 0.7,
+    "maxWeight": 0.7,
+    "maxSynapses": 10,
+    "k": 8,
+    "jitter": 8,
+    "gap": 10,
+    "pool": 714
+  }
+}

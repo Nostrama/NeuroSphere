@@ -216,6 +216,44 @@ Complete evidence is included under
 `outputs/formation-v2/2026-11-01T17-59-30-265Z-stage1v2/`.
 Exit codes are 0 for GO, 1 for scientific NO-GO and 2 for execution error.
 
+## Inhibitory-population diagnostic
+
+The engine's native inhibitory population is tested on two bounded scaffolds and
+one Stage 1g scaffold, with every memory gate evaluated on excitatory cells only.
+**The diagnostic is NO-GO:** no seed-1 setting passes all gates, so the declared
+confirmation rule stops before seeds 2–3. Inhibitory activity, arrival timing,
+typed edges, all controls and continued-training results are retained in
+[the inhibitory diagnostic report](docs/INHIBITORY_DIAGNOSTIC.md).
+
+```powershell
+npm run demo:inhibitory
+```
+
+## Learned readout experiment
+
+Stage 3 adds two teacher-trained output neurons to exact reproductions of the
+Stage 1g stopping circuits. Plasticity is confined to the readout projections;
+the original memories pass strict preservation checks.
+
+**The primary protocol is NO-GO:** all three seeds miss the required partial-cue
+readout gate. Two predeclared lower-threshold seed-1 diagnostics pass every gate
+and control; they do not replace the primary or constitute three-seed confirmation.
+Read [the readout report](docs/READOUT.md) for
+native spike times, teacher deliveries and refractory vetoes, controls, margins
+and the complete timing diagnostic.
+
+```powershell
+npm run demo:readout -- --study
+node examples/readout.cjs --cue aardvark
+```
+
+The second command probes the saved seed-1 primary and prints `aardvark` from the
+firing output neuron's concept ID. This is explicitly a vocabulary codebook
+lookup, not generated language. An unrecognized cue can produce silence.
+The study exits 1 for scientific NO-GO; this does not prevent inspecting the
+saved circuit. Both experiments preserve every byte under `src/neuron` and add
+no runtime dependencies. The browser's Sense Input path is unchanged.
+
 ## Project map
 
 - `public/`: browser interface and actual-position 3D volume renderer.

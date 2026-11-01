@@ -1,0 +1,9 @@
+{
+  "id": "diagnostic-t32-f0.4",
+  "scientificPass": false,
+  "allEvidenceChecks": true,
+  "startingIdentity": true,
+  "replayedCircuits": 14,
+  "nativeProbeResponses": 190,
+  "stoppingEpoch": 80
+}

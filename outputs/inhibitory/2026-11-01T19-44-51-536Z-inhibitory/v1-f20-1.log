@@ -1,0 +1,19 @@
+v1-f20-1/primary
+v1-f20-1/epoch 10: minimum half 0.6275, E cores 51/51, spill 4
+v1-f20-1/epoch 20: minimum half 0.6545, E cores 55/53, spill 4
+v1-f20-1/epoch 30: minimum half 0.6491, E cores 57/53, spill 9
+v1-f20-1/epoch 40: minimum half 0.7049, E cores 61/53, spill 14
+v1-f20-1/epoch 50: minimum half 0.7049, E cores 61/53, spill 27
+v1-f20-1/epoch 60: minimum half 0.6825, E cores 63/53, spill 32
+v1-f20-1/epoch 70: minimum half 0.6719, E cores 64/55, spill 36
+v1-f20-1/epoch 80: minimum half 0.6719, E cores 64/56, spill 37
+v1-f20-1/epoch 90: minimum half 0.6875, E cores 64/80, spill 45
+v1-f20-1/epoch 100: minimum half 0.7467, E cores 75/81, spill 50
+v1-f20-1/epoch 110: minimum half 0.7500, E cores 76/84, spill 52
+v1-f20-1/epoch 120: minimum half 0.7792, E cores 77/88, spill 58
+v1-f20-1/growth-off
+v1-f20-1/hebbian-off
+v1-f20-1/shuffled
+v1-f20-1/untrained
+v1-f20-1/prune-formed
+v1-f20-1/continued-hebbian-off
