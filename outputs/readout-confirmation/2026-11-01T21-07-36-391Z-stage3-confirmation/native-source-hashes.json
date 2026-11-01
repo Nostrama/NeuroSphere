@@ -1,0 +1,13 @@
+{
+  "src/neuron/assembly-task.js": "3b25df070ae03c8a393db0a5a04bafcb1b9b8b6313f03b8404a31e139469de35",
+  "src/neuron/controller.js": "77bc74dae59889ac2362d2bf0d73d82798c27ed8fbf8ff9eede164b3fb1b9566",
+  "src/neuron/development.js": "c7c6a8d852d21c465906e38c6ccea2c4c52905a633f4ba05b7a9c1ad9c42e453",
+  "src/neuron/field.js": "7161c8975ed8bb13376e2068d2fce43b70249900a42cdfed9eafd37333ea6d80",
+  "src/neuron/logic-task.js": "bd627e5fd0b4b151f58fffbe57641502fb670bec7443a460647716ac01218421",
+  "src/neuron/neuron.js": "6974f6e4d90395847d80018d4b755e3b53eb70f664d68cb242ce40aec6968e79",
+  "src/neuron/population.js": "9f38bbc5c5e36727423f7f77828dc57aa51f8b189851981120b23bdb919628fd",
+  "src/neuron/presets.js": "34dcab5890ed0a054973723daaece15d88eb20b2042bb194fe738122afcb4de9",
+  "src/neuron/simulation.js": "495f3f1fa4da0b0e69f314e6c2742b8a4c21b2a143380da807a3725f699a34d3",
+  "src/neuron/spatial.js": "3313fae0f38314c37a4baaaf14cb0b430da5a979531f8204e00328dfef31aafe",
+  "src/neuron/spike-io.js": "5161e8de011c388e9aefc1fa653748035f188d1a30600a72f10b6ee83f603a08"
+}

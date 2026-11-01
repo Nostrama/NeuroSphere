@@ -51,3 +51,9 @@ outputs/inhibitory/*
 outputs/readout/*
 !outputs/readout/2026-11-01T20-04-58-944Z-stage3/
 !outputs/readout/2026-11-01T20-04-58-944Z-stage3/**
+
+# Complete fixed-setting Stage 3 confirmation, including the unchanged seed-1 case
+!outputs/readout-confirmation/
+outputs/readout-confirmation/*
+!outputs/readout-confirmation/2026-11-01T21-07-36-391Z-stage3-confirmation/
+!outputs/readout-confirmation/2026-11-01T21-07-36-391Z-stage3-confirmation/**

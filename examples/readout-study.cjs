@@ -50,10 +50,12 @@ async function runStudy(output){
   const cells=results.map(x=>x.value),summary={schema:'neurosphere-readout-study/v1',stage:3,plan,cells,...decide(cells)};
   write(directory,'summary',summary);write(directory,'timing',timing());return {directory,summary};
 }
-function latestMemory(){const base=path.join(ROOT,'outputs/readout');if(fs.existsSync(base))for(const name of fs.readdirSync(base).sort().reverse()){
+function latestMemory(){const confirmed=require('./readout-confirmation.cjs').latestConfirmedMemory();if(confirmed)return confirmed;const base=path.join(ROOT,'outputs/readout');if(fs.existsSync(base))for(const name of fs.readdirSync(base).sort().reverse()){
   const directory=path.join(base,name),memory=path.join(directory,'cases/baseline-1/primary/memory.json');if(fs.existsSync(path.join(directory,'summary.json'))&&fs.existsSync(memory))return memory;
 }throw new Error('No completed Stage3 primary evidence. Run node examples/readout.cjs --study first, or pass --memory FILE.');}
 async function main(argv){
+  if(argv.length===0)return require('./readout-confirmation.cjs').main(['--confirm']);
+  if(argv.includes('--confirm'))return require('./readout-confirmation.cjs').main(argv);
   if(argv[0]==='--origin'){
     const [,directory,value]=argv,seed=Number(value),started=performance.now();assert.ok([1,2,3].includes(seed));
     const {origin}=a.reproduce(seed);write(path.join(directory,'origins'),String(seed),origin);
@@ -80,7 +82,7 @@ async function main(argv){
     if(['--output','--cue','--memory','--idle'].includes(argv[i])&&argv[i+1]&&!argv[i+1].startsWith('--')){
       const key=argv[i],value=argv[++i];if(key==='--output')output=value;else if(key==='--cue')cue=value;else if(key==='--memory')memory=value;else{seconds=Number(value);if(![0,60].includes(seconds))throw new Error('Idle delay must be0 or60.');}continue;
     }
-    if(argv[i]==='--help'){process.stdout.write('node examples/readout.cjs --study [--output DIRECTORY]\nnode examples/readout.cjs --cue aardvark [--memory FILE] [--idle 0|60]\nDecoded words are host vocabulary codebook lookups.\n');return 0;}
+    if(argv[i]==='--help'){process.stdout.write('node examples/readout.cjs --confirm [--output DIRECTORY] (default with no arguments)\nnode examples/readout.cjs --study [--output DIRECTORY] (original historical grid)\nnode examples/readout.cjs --cue aardvark [--memory FILE] [--idle 0|60]\nInference uses the latest completed confirmation only if it passes; otherwise the original primary. Decoded words are host vocabulary codebook lookups.\n');return 0;}
     throw new Error('Unknown readout option: '+argv[i]);
   }
   if(cue!==null){const selected=path.resolve(memory||latestMemory()),saved=JSON.parse(fs.readFileSync(selected));assert.equal(saved.schema,'neurosphere-readout/v1');process.stdout.write(f.json(r.decoded(saved,cue,seconds)));return 0;}

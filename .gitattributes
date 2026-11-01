@@ -14,3 +14,4 @@ examples/inhibitory-formation.cjs eol=crlf
 # Scientific evidence and archived declarations retain their original bytes.
 outputs/inhibitory/2026-11-01T19-44-51-536Z-inhibitory/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 outputs/readout/2026-11-01T20-04-58-944Z-stage3/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+outputs/readout-confirmation/2026-11-01T21-07-36-391Z-stage3-confirmation/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

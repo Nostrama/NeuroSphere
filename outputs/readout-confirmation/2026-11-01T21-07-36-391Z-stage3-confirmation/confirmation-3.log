@@ -1,0 +1,14 @@
+confirmation-3/epoch 0: R1=false R2=false R3=true R4=true
+confirmation-3/epoch 10: R1=false R2=false R3=true R4=true
+confirmation-3/epoch 20: R1=false R2=false R3=true R4=true
+confirmation-3/epoch 30: R1=false R2=false R3=true R4=true
+confirmation-3/epoch 40: R1=false R2=false R3=true R4=true
+confirmation-3/epoch 50: R1=true R2=false R3=true R4=true
+confirmation-3/epoch 60: R1=true R2=false R3=true R4=true
+confirmation-3/epoch 70: R1=true R2=true R3=true R4=true
+confirmation-3/epoch 80: R1=true R2=true R3=true R4=true
+confirmation-3/readout-hebbian-off
+confirmation-3/swapped-teacher
+confirmation-3/untrained-readout
+confirmation-3/prune-readout
+confirmation-3/prune-formed

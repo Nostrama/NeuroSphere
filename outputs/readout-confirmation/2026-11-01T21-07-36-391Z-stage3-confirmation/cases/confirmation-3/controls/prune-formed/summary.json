@@ -1,0 +1,7704 @@
+{
+  "schema": "neurosphere-readout-condition/v1",
+  "condition": "prune-formed",
+  "seed": 3,
+  "options": {
+    "teacherTick": 24,
+    "thresholdFactor": 0.25,
+    "epochs": 80
+  },
+  "epoch": 70,
+  "formationEpoch": 70,
+  "referenceIdentity": {
+    "byteIdentical": true,
+    "coresSHA256": "19ac5c263ce012fe4ca4bacf9e446379c4d30c1888fae07e50cd5b4501505b75",
+    "formedEdgesSHA256": "86a08a108fc1399c2c3fa2426f3baa42a516a98a09d1ed54eeb452285b8b7a99",
+    "memorySHA256": "4cac02661ec801325d840f1d200bf1c3333a9528392c8f5819ddd6669a3230cc",
+    "scope": "Exact UTF-8 serialization of cores, ordered formed edges and weights, full locked native export, A/B responses and jitter schedule; training field remains unlocked."
+  },
+  "refs": {
+    "A": [
+      199,
+      212,
+      214,
+      216,
+      218,
+      219,
+      225,
+      228,
+      279,
+      293,
+      307,
+      314,
+      321,
+      339,
+      340,
+      344,
+      357,
+      358,
+      365,
+      367,
+      370,
+      383,
+      404,
+      431,
+      434,
+      437,
+      441,
+      444,
+      447,
+      460,
+      464,
+      485,
+      490,
+      491,
+      492,
+      512,
+      518,
+      527,
+      530,
+      532,
+      538,
+      553,
+      575,
+      581,
+      595,
+      596,
+      602,
+      615,
+      625,
+      635,
+      637,
+      643,
+      649,
+      657,
+      665,
+      682,
+      686
+    ],
+    "B": [
+      196,
+      208,
+      212,
+      215,
+      218,
+      227,
+      236,
+      239,
+      247,
+      248,
+      256,
+      283,
+      321,
+      322,
+      328,
+      330,
+      342,
+      345,
+      357,
+      367,
+      371,
+      378,
+      391,
+      400,
+      405,
+      414,
+      415,
+      421,
+      424,
+      439,
+      445,
+      447,
+      469,
+      470,
+      474,
+      489,
+      502,
+      521,
+      540,
+      554,
+      572,
+      574,
+      580,
+      583,
+      584,
+      592,
+      606,
+      614,
+      615,
+      620,
+      621,
+      622,
+      625,
+      634,
+      642,
+      650,
+      651,
+      659,
+      661,
+      668,
+      681,
+      682
+    ]
+  },
+  "effective": {
+    "tick": 79100,
+    "time": 1582,
+    "configBefore": {
+      "dimensions": 3,
+      "extent": {
+        "x": 800,
+        "y": 800,
+        "z": 800
+      },
+      "dt": 0.02,
+      "radius": 60,
+      "restLevel": 0,
+      "threshold": 1.02,
+      "leakRate": 1.4,
+      "refractory": 1.35,
+      "inputPeriod": 1.8,
+      "initialWeight": 0.4,
+      "weightFloor": 0.15,
+      "maxWeight": 1.65,
+      "weightDecay": 0,
+      "unusedDecay": 0,
+      "hebbianRate": 0.018,
+      "stdpWindow": 0.32,
+      "eligibilityTau": 1.8,
+      "growthPeriod": 1.8,
+      "maxSynapses": 8,
+      "healthLoss": 0,
+      "healthGain": 0.016,
+      "maturation": 90,
+      "rewardRate": 0.07,
+      "outputRateTau": 60,
+      "youthAttraction": 0.65,
+      "gradientAttraction": 2.8,
+      "competitionMargin": 1,
+      "competitionCost": 0.12,
+      "demandAttraction": 1.4,
+      "exploration": 0.1,
+      "maxCells": 2000,
+      "pairingClock": "arrival",
+      "inhibitionStrength": 0.5,
+      "inhibitionRadiusFactor": 0.6
+    },
+    "configAfter": {
+      "dimensions": 3,
+      "extent": {
+        "x": 800,
+        "y": 800,
+        "z": 800
+      },
+      "dt": 0.02,
+      "radius": 60,
+      "restLevel": 0,
+      "threshold": 1.02,
+      "leakRate": 1.4,
+      "refractory": 1.35,
+      "inputPeriod": 1.8,
+      "initialWeight": 0.4,
+      "weightFloor": 0,
+      "maxWeight": 1.65,
+      "weightDecay": 0,
+      "unusedDecay": 0,
+      "hebbianRate": 0.018,
+      "stdpWindow": 0.32,
+      "eligibilityTau": 1.8,
+      "growthPeriod": 1.8,
+      "maxSynapses": 10,
+      "healthLoss": 0,
+      "healthGain": 0.016,
+      "maturation": 90,
+      "rewardRate": 0.07,
+      "outputRateTau": 60,
+      "youthAttraction": 0.65,
+      "gradientAttraction": 2.8,
+      "competitionMargin": 1,
+      "competitionCost": 0.12,
+      "demandAttraction": 1.4,
+      "exploration": 0.1,
+      "maxCells": 2000,
+      "pairingClock": "arrival",
+      "inhibitionStrength": 0.5,
+      "inhibitionRadiusFactor": 0.6
+    },
+    "maxSynapses": 10,
+    "weightFloor": 0,
+    "poolGrowthAt": 1000000000000,
+    "poolGrowthIds": [
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      376,
+      377,
+      378,
+      379,
+      380,
+      381,
+      382,
+      383,
+      384,
+      385,
+      386,
+      387,
+      388,
+      389,
+      390,
+      391,
+      392,
+      393,
+      394,
+      395,
+      396,
+      397,
+      398,
+      399,
+      400,
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408,
+      409,
+      410,
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420,
+      421,
+      422,
+      423,
+      424,
+      425,
+      426,
+      427,
+      428,
+      429,
+      430,
+      431,
+      432,
+      433,
+      434,
+      435,
+      436,
+      437,
+      438,
+      439,
+      440,
+      441,
+      442,
+      443,
+      444,
+      445,
+      446,
+      447,
+      448,
+      449,
+      450,
+      451,
+      452,
+      453,
+      454,
+      455,
+      456,
+      457,
+      458,
+      459,
+      460,
+      461,
+      462,
+      463,
+      464,
+      465,
+      466,
+      467,
+      468,
+      469,
+      470,
+      471,
+      472,
+      473,
+      474,
+      475,
+      476,
+      477,
+      478,
+      479,
+      480,
+      481,
+      482,
+      483,
+      484,
+      485,
+      486,
+      487,
+      488,
+      489,
+      490,
+      491,
+      492,
+      493,
+      494,
+      495,
+      496,
+      497,
+      498,
+      499,
+      500,
+      501,
+      502,
+      503,
+      504,
+      505,
+      506,
+      507,
+      508,
+      509,
+      510,
+      511,
+      512,
+      513,
+      514,
+      515,
+      516,
+      517,
+      518,
+      519,
+      520,
+      521,
+      522,
+      523,
+      524,
+      525,
+      526,
+      527,
+      528,
+      529,
+      530,
+      531,
+      532,
+      533,
+      534,
+      535,
+      536,
+      537,
+      538,
+      539,
+      540,
+      541,
+      542,
+      543,
+      544,
+      545,
+      546,
+      547,
+      548,
+      549,
+      550,
+      551,
+      552,
+      553,
+      554,
+      555,
+      556,
+      557,
+      558,
+      559,
+      560,
+      561,
+      562,
+      563,
+      564,
+      565,
+      566,
+      567,
+      568,
+      569,
+      570,
+      571,
+      572,
+      573,
+      574,
+      575,
+      576,
+      577,
+      578,
+      579,
+      580,
+      581,
+      582,
+      583,
+      584,
+      585,
+      586,
+      587,
+      588,
+      589,
+      590,
+      591,
+      592,
+      593,
+      594,
+      595,
+      596,
+      597,
+      598,
+      599,
+      600,
+      601,
+      602,
+      603,
+      604,
+      605,
+      606,
+      607,
+      608,
+      609,
+      610,
+      611,
+      612,
+      613,
+      614,
+      615,
+      616,
+      617,
+      618,
+      619,
+      620,
+      621,
+      622,
+      623,
+      624,
+      625,
+      626,
+      627,
+      628,
+      629,
+      630,
+      631,
+      632,
+      633,
+      634,
+      635,
+      636,
+      637,
+      638,
+      639,
+      640,
+      641,
+      642,
+      643,
+      644,
+      645,
+      646,
+      647,
+      648,
+      649,
+      650,
+      651,
+      652,
+      653,
+      654,
+      655,
+      656,
+      657,
+      658,
+      659,
+      660,
+      661,
+      662,
+      663,
+      664,
+      665,
+      666,
+      667,
+      668,
+      669,
+      670,
+      671,
+      672,
+      673,
+      674,
+      675,
+      676,
+      677,
+      678,
+      679,
+      680,
+      681,
+      682,
+      683,
+      684,
+      685,
+      686,
+      687,
+      688,
+      689,
+      690,
+      691,
+      692
+    ],
+    "outputGrowthAt": 1000000000000,
+    "plasticityScope": [
+      693,
+      694
+    ],
+    "readoutHebbian": true,
+    "nativeFeatures": {
+      "hebbian": true,
+      "reward": false,
+      "gradient": false,
+      "consolidation": false,
+      "lateralInhibition": true,
+      "activityScaledInhibition": false,
+      "homeostasis": false
+    },
+    "wiring": "Dense ordinary native Synapse projections at0.02; preserved pool radius60 and native geometric delays; no fixed flags.",
+    "teacher": "Native env.forcedSpike only; natural output activity retained, refractoriness respected, no output clamp.",
+    "inputAdapter": "Existing feature ports retained; add O_A/O_B output channels, start readout IO counters at the phase boundary.",
+    "jitterStream": 2496678328,
+    "jitter": "Dedicated seeded stream, one U{0..15} draw per cue bit; shared across matched controls."
+  },
+  "stopping": null,
+  "gates": {
+    "R1": true,
+    "R2": false,
+    "R3": true,
+    "R4": false
+  },
+  "reached": false,
+  "observed": {
+    "probes": {
+      "0": [
+        {
+          "cue": "A",
+          "half": null,
+          "bits": [
+            21,
+            99,
+            107,
+            111,
+            117,
+            140,
+            165,
+            171
+          ],
+          "idleSeconds": 0,
+          "t0": 1,
+          "active": [
+            199,
+            212,
+            214,
+            216,
+            218,
+            219,
+            225,
+            228,
+            279,
+            293,
+            307,
+            314,
+            321,
+            339,
+            340,
+            344,
+            357,
+            358,
+            365,
+            367,
+            370,
+            383,
+            404,
+            431,
+            434,
+            437,
+            441,
+            444,
+            447,
+            460,
+            464,
+            485,
+            490,
+            491,
+            492,
+            512,
+            518,
+            527,
+            530,
+            532,
+            538,
+            553,
+            575,
+            581,
+            595,
+            596,
+            602,
+            615,
+            625,
+            635,
+            637,
+            643,
+            649,
+            657,
+            665,
+            682,
+            686
+          ],
+          "spikes": [
+            {
+              "neuronId": 357,
+              "time": 0.18
+            },
+            {
+              "neuronId": 367,
+              "time": 0.18
+            },
+            {
+              "neuronId": 216,
+              "time": 0.2
+            },
+            {
+              "neuronId": 225,
+              "time": 0.2
+            },
+            {
+              "neuronId": 314,
+              "time": 0.2
+            },
+            {
+              "neuronId": 358,
+              "time": 0.2
+            },
+            {
+              "neuronId": 370,
+              "time": 0.2
+            },
+            {
+              "neuronId": 485,
+              "time": 0.2
+            },
+            {
+              "neuronId": 595,
+              "time": 0.2
+            },
+            {
+              "neuronId": 625,
+              "time": 0.2
+            },
+            {
+              "neuronId": 665,
+              "time": 0.2
+            },
+            {
+              "neuronId": 199,
+              "time": 0.22
+            },
+            {
+              "neuronId": 212,
+              "time": 0.22
+            },
+            {
+              "neuronId": 218,
+              "time": 0.22
+            },
+            {
+              "neuronId": 321,
+              "time": 0.22
+            },
+            {
+              "neuronId": 340,
+              "time": 0.22
+            },
+            {
+              "neuronId": 365,
+              "time": 0.22
+            },
+            {
+              "neuronId": 434,
+              "time": 0.22
+            },
+            {
+              "neuronId": 460,
+              "time": 0.22
+            },
+            {
+              "neuronId": 464,
+              "time": 0.22
+            },
+            {
+              "neuronId": 512,
+              "time": 0.22
+            },
+            {
+              "neuronId": 596,
+              "time": 0.22
+            },
+            {
+              "neuronId": 637,
+              "time": 0.22
+            },
+            {
+              "neuronId": 657,
+              "time": 0.22
+            },
+            {
+              "neuronId": 682,
+              "time": 0.22
+            },
+            {
+              "neuronId": 219,
+              "time": 0.24
+            },
+            {
+              "neuronId": 279,
+              "time": 0.24
+            },
+            {
+              "neuronId": 344,
+              "time": 0.24
+            },
+            {
+              "neuronId": 444,
+              "time": 0.24
+            },
+            {
+              "neuronId": 447,
+              "time": 0.24
+            },
+            {
+              "neuronId": 490,
+              "time": 0.24
+            },
+            {
+              "neuronId": 491,
+              "time": 0.24
+            },
+            {
+              "neuronId": 553,
+              "time": 0.24
+            },
+            {
+              "neuronId": 602,
+              "time": 0.24
+            },
+            {
+              "neuronId": 214,
+              "time": 0.26
+            },
+            {
+              "neuronId": 293,
+              "time": 0.26
+            },
+            {
+              "neuronId": 431,
+              "time": 0.26
+            },
+            {
+              "neuronId": 518,
+              "time": 0.26
+            },
+            {
+              "neuronId": 530,
+              "time": 0.26
+            },
+            {
+              "neuronId": 532,
+              "time": 0.26
+            },
+            {
+              "neuronId": 538,
+              "time": 0.26
+            },
+            {
+              "neuronId": 575,
+              "time": 0.26
+            },
+            {
+              "neuronId": 581,
+              "time": 0.26
+            },
+            {
+              "neuronId": 615,
+              "time": 0.26
+            },
+            {
+              "neuronId": 635,
+              "time": 0.26
+            },
+            {
+              "neuronId": 643,
+              "time": 0.26
+            },
+            {
+              "neuronId": 649,
+              "time": 0.26
+            },
+            {
+              "neuronId": 228,
+              "time": 0.28
+            },
+            {
+              "neuronId": 307,
+              "time": 0.28
+            },
+            {
+              "neuronId": 339,
+              "time": 0.28
+            },
+            {
+              "neuronId": 383,
+              "time": 0.28
+            },
+            {
+              "neuronId": 404,
+              "time": 0.28
+            },
+            {
+              "neuronId": 437,
+              "time": 0.28
+            },
+            {
+              "neuronId": 441,
+              "time": 0.28
+            },
+            {
+              "neuronId": 492,
+              "time": 0.28
+            },
+            {
+              "neuronId": 527,
+              "time": 0.28
+            },
+            {
+              "neuronId": 686,
+              "time": 0.28
+            },
+            {
+              "neuronId": 693,
+              "time": 0.36
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [
+                0.36
+              ],
+              "spikeTicks": [
+                18
+              ],
+              "latencyTicks": [
+                17
+              ],
+              "fired": true,
+              "arrivingWeight": 40.22193339363682,
+              "integratedWeight": 33.21964918102085,
+              "peakPotential": 31.619188770332833,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": 8.106688773585176,
+              "firstSpike": {
+                "potential": 31.619188770332833,
+                "effectiveThreshold": 23.512499996747657,
+                "integratedWeight": 33.21964918102085
+              },
+              "inputMargin": 16.709433393636818
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 7.7969069112250216,
+              "integratedWeight": 7.7969069112250216,
+              "peakPotential": 7.097689292481832,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -18.477310704265825,
+              "firstSpike": null,
+              "inputMargin": -17.778093088774977
+            }
+          },
+          "io": {
+            "duration": 1,
+            "values": {
+              "O_A": 1,
+              "O_B": 0
+            },
+            "counts": [
+              1,
+              0
+            ]
+          },
+          "scores": {
+            "A": 1,
+            "B": 0.08181818181818182
+          },
+          "label": "A",
+          "coreCellsFired": {
+            "A": 57,
+            "B": 9
+          }
+        },
+        {
+          "cue": "B",
+          "half": null,
+          "bits": [
+            3,
+            23,
+            29,
+            33,
+            36,
+            110,
+            116,
+            185
+          ],
+          "idleSeconds": 0,
+          "t0": 1,
+          "active": [
+            196,
+            208,
+            212,
+            215,
+            218,
+            227,
+            236,
+            239,
+            248,
+            256,
+            283,
+            321,
+            322,
+            328,
+            330,
+            342,
+            345,
+            357,
+            367,
+            378,
+            391,
+            400,
+            405,
+            414,
+            415,
+            421,
+            424,
+            439,
+            445,
+            447,
+            469,
+            470,
+            474,
+            489,
+            521,
+            540,
+            554,
+            572,
+            574,
+            580,
+            583,
+            584,
+            592,
+            606,
+            614,
+            615,
+            620,
+            621,
+            622,
+            634,
+            642,
+            650,
+            651,
+            659,
+            661,
+            668,
+            681,
+            682
+          ],
+          "spikes": [
+            {
+              "neuronId": 215,
+              "time": 0.18
+            },
+            {
+              "neuronId": 239,
+              "time": 0.2
+            },
+            {
+              "neuronId": 283,
+              "time": 0.2
+            },
+            {
+              "neuronId": 345,
+              "time": 0.2
+            },
+            {
+              "neuronId": 367,
+              "time": 0.2
+            },
+            {
+              "neuronId": 405,
+              "time": 0.2
+            },
+            {
+              "neuronId": 469,
+              "time": 0.2
+            },
+            {
+              "neuronId": 521,
+              "time": 0.2
+            },
+            {
+              "neuronId": 554,
+              "time": 0.2
+            },
+            {
+              "neuronId": 615,
+              "time": 0.2
+            },
+            {
+              "neuronId": 659,
+              "time": 0.2
+            },
+            {
+              "neuronId": 682,
+              "time": 0.2
+            },
+            {
+              "neuronId": 212,
+              "time": 0.22
+            },
+            {
+              "neuronId": 256,
+              "time": 0.22
+            },
+            {
+              "neuronId": 321,
+              "time": 0.22
+            },
+            {
+              "neuronId": 322,
+              "time": 0.22
+            },
+            {
+              "neuronId": 328,
+              "time": 0.22
+            },
+            {
+              "neuronId": 342,
+              "time": 0.22
+            },
+            {
+              "neuronId": 424,
+              "time": 0.22
+            },
+            {
+              "neuronId": 445,
+              "time": 0.22
+            },
+            {
+              "neuronId": 470,
+              "time": 0.22
+            },
+            {
+              "neuronId": 540,
+              "time": 0.22
+            },
+            {
+              "neuronId": 572,
+              "time": 0.22
+            },
+            {
+              "neuronId": 583,
+              "time": 0.22
+            },
+            {
+              "neuronId": 584,
+              "time": 0.22
+            },
+            {
+              "neuronId": 614,
+              "time": 0.22
+            },
+            {
+              "neuronId": 620,
+              "time": 0.22
+            },
+            {
+              "neuronId": 622,
+              "time": 0.22
+            },
+            {
+              "neuronId": 650,
+              "time": 0.22
+            },
+            {
+              "neuronId": 208,
+              "time": 0.24
+            },
+            {
+              "neuronId": 236,
+              "time": 0.24
+            },
+            {
+              "neuronId": 248,
+              "time": 0.24
+            },
+            {
+              "neuronId": 400,
+              "time": 0.24
+            },
+            {
+              "neuronId": 447,
+              "time": 0.24
+            },
+            {
+              "neuronId": 474,
+              "time": 0.24
+            },
+            {
+              "neuronId": 489,
+              "time": 0.24
+            },
+            {
+              "neuronId": 634,
+              "time": 0.24
+            },
+            {
+              "neuronId": 651,
+              "time": 0.24
+            },
+            {
+              "neuronId": 681,
+              "time": 0.24
+            },
+            {
+              "neuronId": 196,
+              "time": 0.26
+            },
+            {
+              "neuronId": 218,
+              "time": 0.26
+            },
+            {
+              "neuronId": 330,
+              "time": 0.26
+            },
+            {
+              "neuronId": 357,
+              "time": 0.26
+            },
+            {
+              "neuronId": 378,
+              "time": 0.26
+            },
+            {
+              "neuronId": 414,
+              "time": 0.26
+            },
+            {
+              "neuronId": 421,
+              "time": 0.26
+            },
+            {
+              "neuronId": 574,
+              "time": 0.26
+            },
+            {
+              "neuronId": 580,
+              "time": 0.26
+            },
+            {
+              "neuronId": 592,
+              "time": 0.26
+            },
+            {
+              "neuronId": 606,
+              "time": 0.26
+            },
+            {
+              "neuronId": 642,
+              "time": 0.26
+            },
+            {
+              "neuronId": 668,
+              "time": 0.26
+            },
+            {
+              "neuronId": 227,
+              "time": 0.28
+            },
+            {
+              "neuronId": 391,
+              "time": 0.28
+            },
+            {
+              "neuronId": 415,
+              "time": 0.28
+            },
+            {
+              "neuronId": 439,
+              "time": 0.28
+            },
+            {
+              "neuronId": 621,
+              "time": 0.28
+            },
+            {
+              "neuronId": 661,
+              "time": 0.28
+            },
+            {
+              "neuronId": 694,
+              "time": 0.34
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 7.481988603311785,
+              "integratedWeight": 7.481988603311785,
+              "peakPotential": 6.877311424948823,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -16.635188571798835,
+              "firstSpike": null,
+              "inputMargin": -16.030511396688215
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [
+                0.34
+              ],
+              "spikeTicks": [
+                17
+              ],
+              "latencyTicks": [
+                16
+              ],
+              "fired": true,
+              "arrivingWeight": 41.37527038459076,
+              "integratedWeight": 30.49151466481445,
+              "peakPotential": 29.49983839445488,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": 3.924838397707223,
+              "firstSpike": {
+                "potential": 29.49983839445488,
+                "effectiveThreshold": 25.574999996747657,
+                "integratedWeight": 30.49151466481445
+              },
+              "inputMargin": 15.800270384590764
+            }
+          },
+          "io": {
+            "duration": 1,
+            "values": {
+              "O_A": 0,
+              "O_B": 1
+            },
+            "counts": [
+              0,
+              1
+            ]
+          },
+          "scores": {
+            "A": 0.07476635514018691,
+            "B": 0.9354838709677419
+          },
+          "label": "B",
+          "coreCellsFired": {
+            "A": 8,
+            "B": 58
+          }
+        },
+        {
+          "cue": "C",
+          "half": null,
+          "bits": [
+            17,
+            98,
+            105,
+            108,
+            119,
+            137,
+            155,
+            167
+          ],
+          "idleSeconds": 0,
+          "t0": 1,
+          "active": [
+            194,
+            204,
+            229,
+            239,
+            262,
+            264,
+            265,
+            266,
+            279,
+            301,
+            322,
+            324,
+            325,
+            327,
+            328,
+            338,
+            344,
+            362,
+            363,
+            366,
+            368,
+            374,
+            378,
+            381,
+            395,
+            400,
+            437,
+            446,
+            451,
+            454,
+            456,
+            462,
+            471,
+            472,
+            503,
+            530,
+            536,
+            537,
+            547,
+            550,
+            558,
+            563,
+            568,
+            575,
+            578,
+            582,
+            593,
+            597,
+            598,
+            601,
+            602,
+            605,
+            629,
+            630,
+            645,
+            654,
+            673,
+            689
+          ],
+          "spikes": [
+            {
+              "neuronId": 366,
+              "time": 0.18
+            },
+            {
+              "neuronId": 451,
+              "time": 0.18
+            },
+            {
+              "neuronId": 266,
+              "time": 0.2
+            },
+            {
+              "neuronId": 378,
+              "time": 0.2
+            },
+            {
+              "neuronId": 381,
+              "time": 0.2
+            },
+            {
+              "neuronId": 446,
+              "time": 0.2
+            },
+            {
+              "neuronId": 462,
+              "time": 0.2
+            },
+            {
+              "neuronId": 503,
+              "time": 0.2
+            },
+            {
+              "neuronId": 537,
+              "time": 0.2
+            },
+            {
+              "neuronId": 547,
+              "time": 0.2
+            },
+            {
+              "neuronId": 558,
+              "time": 0.2
+            },
+            {
+              "neuronId": 563,
+              "time": 0.2
+            },
+            {
+              "neuronId": 582,
+              "time": 0.2
+            },
+            {
+              "neuronId": 593,
+              "time": 0.2
+            },
+            {
+              "neuronId": 597,
+              "time": 0.2
+            },
+            {
+              "neuronId": 598,
+              "time": 0.2
+            },
+            {
+              "neuronId": 602,
+              "time": 0.2
+            },
+            {
+              "neuronId": 645,
+              "time": 0.2
+            },
+            {
+              "neuronId": 229,
+              "time": 0.22
+            },
+            {
+              "neuronId": 301,
+              "time": 0.22
+            },
+            {
+              "neuronId": 324,
+              "time": 0.22
+            },
+            {
+              "neuronId": 327,
+              "time": 0.22
+            },
+            {
+              "neuronId": 338,
+              "time": 0.22
+            },
+            {
+              "neuronId": 362,
+              "time": 0.22
+            },
+            {
+              "neuronId": 368,
+              "time": 0.22
+            },
+            {
+              "neuronId": 472,
+              "time": 0.22
+            },
+            {
+              "neuronId": 194,
+              "time": 0.24
+            },
+            {
+              "neuronId": 204,
+              "time": 0.24
+            },
+            {
+              "neuronId": 265,
+              "time": 0.24
+            },
+            {
+              "neuronId": 279,
+              "time": 0.24
+            },
+            {
+              "neuronId": 328,
+              "time": 0.24
+            },
+            {
+              "neuronId": 344,
+              "time": 0.24
+            },
+            {
+              "neuronId": 400,
+              "time": 0.24
+            },
+            {
+              "neuronId": 437,
+              "time": 0.24
+            },
+            {
+              "neuronId": 454,
+              "time": 0.24
+            },
+            {
+              "neuronId": 536,
+              "time": 0.24
+            },
+            {
+              "neuronId": 550,
+              "time": 0.24
+            },
+            {
+              "neuronId": 568,
+              "time": 0.24
+            },
+            {
+              "neuronId": 601,
+              "time": 0.24
+            },
+            {
+              "neuronId": 239,
+              "time": 0.26
+            },
+            {
+              "neuronId": 262,
+              "time": 0.26
+            },
+            {
+              "neuronId": 264,
+              "time": 0.26
+            },
+            {
+              "neuronId": 322,
+              "time": 0.26
+            },
+            {
+              "neuronId": 363,
+              "time": 0.26
+            },
+            {
+              "neuronId": 456,
+              "time": 0.26
+            },
+            {
+              "neuronId": 530,
+              "time": 0.26
+            },
+            {
+              "neuronId": 575,
+              "time": 0.26
+            },
+            {
+              "neuronId": 578,
+              "time": 0.26
+            },
+            {
+              "neuronId": 605,
+              "time": 0.26
+            },
+            {
+              "neuronId": 629,
+              "time": 0.26
+            },
+            {
+              "neuronId": 630,
+              "time": 0.26
+            },
+            {
+              "neuronId": 689,
+              "time": 0.26
+            },
+            {
+              "neuronId": 325,
+              "time": 0.28
+            },
+            {
+              "neuronId": 374,
+              "time": 0.28
+            },
+            {
+              "neuronId": 395,
+              "time": 0.28
+            },
+            {
+              "neuronId": 471,
+              "time": 0.28
+            },
+            {
+              "neuronId": 654,
+              "time": 0.28
+            },
+            {
+              "neuronId": 673,
+              "time": 0.28
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 5.030057418808829,
+              "integratedWeight": 5.030057418808829,
+              "peakPotential": 4.729344743559362,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -18.783155253188294,
+              "firstSpike": null,
+              "inputMargin": -18.482442581191172
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 4.662944422065455,
+              "integratedWeight": 4.662944422065455,
+              "peakPotential": 4.320547460878844,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -21.254452535868815,
+              "firstSpike": null,
+              "inputMargin": -20.912055577934545
+            }
+          },
+          "io": {
+            "duration": 1,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.05504587155963303,
+            "B": 0.043478260869565216
+          },
+          "label": "reject",
+          "coreCellsFired": {
+            "A": 6,
+            "B": 5
+          }
+        }
+      ],
+      "60": [
+        {
+          "cue": "A",
+          "half": null,
+          "bits": [
+            21,
+            99,
+            107,
+            111,
+            117,
+            140,
+            165,
+            171
+          ],
+          "idleSeconds": 60,
+          "t0": 3001,
+          "active": [
+            199,
+            212,
+            214,
+            216,
+            218,
+            219,
+            225,
+            228,
+            279,
+            293,
+            307,
+            314,
+            321,
+            339,
+            340,
+            344,
+            357,
+            358,
+            365,
+            367,
+            370,
+            383,
+            404,
+            431,
+            434,
+            437,
+            441,
+            444,
+            447,
+            460,
+            464,
+            485,
+            490,
+            491,
+            492,
+            512,
+            518,
+            527,
+            530,
+            532,
+            538,
+            553,
+            575,
+            581,
+            595,
+            596,
+            602,
+            615,
+            625,
+            635,
+            637,
+            643,
+            649,
+            657,
+            665,
+            682,
+            686
+          ],
+          "spikes": [
+            {
+              "neuronId": 357,
+              "time": 60.18
+            },
+            {
+              "neuronId": 367,
+              "time": 60.18
+            },
+            {
+              "neuronId": 216,
+              "time": 60.2
+            },
+            {
+              "neuronId": 225,
+              "time": 60.2
+            },
+            {
+              "neuronId": 314,
+              "time": 60.2
+            },
+            {
+              "neuronId": 358,
+              "time": 60.2
+            },
+            {
+              "neuronId": 370,
+              "time": 60.2
+            },
+            {
+              "neuronId": 485,
+              "time": 60.2
+            },
+            {
+              "neuronId": 595,
+              "time": 60.2
+            },
+            {
+              "neuronId": 625,
+              "time": 60.2
+            },
+            {
+              "neuronId": 665,
+              "time": 60.2
+            },
+            {
+              "neuronId": 199,
+              "time": 60.22
+            },
+            {
+              "neuronId": 212,
+              "time": 60.22
+            },
+            {
+              "neuronId": 218,
+              "time": 60.22
+            },
+            {
+              "neuronId": 321,
+              "time": 60.22
+            },
+            {
+              "neuronId": 340,
+              "time": 60.22
+            },
+            {
+              "neuronId": 365,
+              "time": 60.22
+            },
+            {
+              "neuronId": 434,
+              "time": 60.22
+            },
+            {
+              "neuronId": 460,
+              "time": 60.22
+            },
+            {
+              "neuronId": 464,
+              "time": 60.22
+            },
+            {
+              "neuronId": 512,
+              "time": 60.22
+            },
+            {
+              "neuronId": 596,
+              "time": 60.22
+            },
+            {
+              "neuronId": 637,
+              "time": 60.22
+            },
+            {
+              "neuronId": 657,
+              "time": 60.22
+            },
+            {
+              "neuronId": 682,
+              "time": 60.22
+            },
+            {
+              "neuronId": 219,
+              "time": 60.24
+            },
+            {
+              "neuronId": 279,
+              "time": 60.24
+            },
+            {
+              "neuronId": 344,
+              "time": 60.24
+            },
+            {
+              "neuronId": 444,
+              "time": 60.24
+            },
+            {
+              "neuronId": 447,
+              "time": 60.24
+            },
+            {
+              "neuronId": 490,
+              "time": 60.24
+            },
+            {
+              "neuronId": 491,
+              "time": 60.24
+            },
+            {
+              "neuronId": 553,
+              "time": 60.24
+            },
+            {
+              "neuronId": 602,
+              "time": 60.24
+            },
+            {
+              "neuronId": 214,
+              "time": 60.26
+            },
+            {
+              "neuronId": 293,
+              "time": 60.26
+            },
+            {
+              "neuronId": 431,
+              "time": 60.26
+            },
+            {
+              "neuronId": 518,
+              "time": 60.26
+            },
+            {
+              "neuronId": 530,
+              "time": 60.26
+            },
+            {
+              "neuronId": 532,
+              "time": 60.26
+            },
+            {
+              "neuronId": 538,
+              "time": 60.26
+            },
+            {
+              "neuronId": 575,
+              "time": 60.26
+            },
+            {
+              "neuronId": 581,
+              "time": 60.26
+            },
+            {
+              "neuronId": 615,
+              "time": 60.26
+            },
+            {
+              "neuronId": 635,
+              "time": 60.26
+            },
+            {
+              "neuronId": 643,
+              "time": 60.26
+            },
+            {
+              "neuronId": 649,
+              "time": 60.26
+            },
+            {
+              "neuronId": 228,
+              "time": 60.28
+            },
+            {
+              "neuronId": 307,
+              "time": 60.28
+            },
+            {
+              "neuronId": 339,
+              "time": 60.28
+            },
+            {
+              "neuronId": 383,
+              "time": 60.28
+            },
+            {
+              "neuronId": 404,
+              "time": 60.28
+            },
+            {
+              "neuronId": 437,
+              "time": 60.28
+            },
+            {
+              "neuronId": 441,
+              "time": 60.28
+            },
+            {
+              "neuronId": 492,
+              "time": 60.28
+            },
+            {
+              "neuronId": 527,
+              "time": 60.28
+            },
+            {
+              "neuronId": 686,
+              "time": 60.28
+            },
+            {
+              "neuronId": 693,
+              "time": 60.36
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [
+                60.36
+              ],
+              "spikeTicks": [
+                3018
+              ],
+              "latencyTicks": [
+                17
+              ],
+              "fired": true,
+              "arrivingWeight": 40.22193339363682,
+              "integratedWeight": 33.21964918102085,
+              "peakPotential": 31.619188770332833,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": 8.106688773585176,
+              "firstSpike": {
+                "potential": 31.619188770332833,
+                "effectiveThreshold": 23.512499996747657,
+                "integratedWeight": 33.21964918102085
+              },
+              "inputMargin": 16.709433393636818
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 7.7969069112250216,
+              "integratedWeight": 7.7969069112250216,
+              "peakPotential": 7.097689292481832,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -18.477310704265825,
+              "firstSpike": null,
+              "inputMargin": -17.778093088774977
+            }
+          },
+          "io": {
+            "duration": 61,
+            "values": {
+              "O_A": 1,
+              "O_B": 0
+            },
+            "counts": [
+              1,
+              0
+            ]
+          },
+          "scores": {
+            "A": 1,
+            "B": 0.08181818181818182
+          },
+          "label": "A",
+          "coreCellsFired": {
+            "A": 57,
+            "B": 9
+          }
+        },
+        {
+          "cue": "B",
+          "half": null,
+          "bits": [
+            3,
+            23,
+            29,
+            33,
+            36,
+            110,
+            116,
+            185
+          ],
+          "idleSeconds": 60,
+          "t0": 3001,
+          "active": [
+            196,
+            208,
+            212,
+            215,
+            218,
+            227,
+            236,
+            239,
+            248,
+            256,
+            283,
+            321,
+            322,
+            328,
+            330,
+            342,
+            345,
+            357,
+            367,
+            378,
+            391,
+            400,
+            405,
+            414,
+            415,
+            421,
+            424,
+            439,
+            445,
+            447,
+            469,
+            470,
+            474,
+            489,
+            521,
+            540,
+            554,
+            572,
+            574,
+            580,
+            583,
+            584,
+            592,
+            606,
+            614,
+            615,
+            620,
+            621,
+            622,
+            634,
+            642,
+            650,
+            651,
+            659,
+            661,
+            668,
+            681,
+            682
+          ],
+          "spikes": [
+            {
+              "neuronId": 215,
+              "time": 60.18
+            },
+            {
+              "neuronId": 239,
+              "time": 60.2
+            },
+            {
+              "neuronId": 283,
+              "time": 60.2
+            },
+            {
+              "neuronId": 345,
+              "time": 60.2
+            },
+            {
+              "neuronId": 367,
+              "time": 60.2
+            },
+            {
+              "neuronId": 405,
+              "time": 60.2
+            },
+            {
+              "neuronId": 469,
+              "time": 60.2
+            },
+            {
+              "neuronId": 521,
+              "time": 60.2
+            },
+            {
+              "neuronId": 554,
+              "time": 60.2
+            },
+            {
+              "neuronId": 615,
+              "time": 60.2
+            },
+            {
+              "neuronId": 659,
+              "time": 60.2
+            },
+            {
+              "neuronId": 682,
+              "time": 60.2
+            },
+            {
+              "neuronId": 212,
+              "time": 60.22
+            },
+            {
+              "neuronId": 256,
+              "time": 60.22
+            },
+            {
+              "neuronId": 321,
+              "time": 60.22
+            },
+            {
+              "neuronId": 322,
+              "time": 60.22
+            },
+            {
+              "neuronId": 328,
+              "time": 60.22
+            },
+            {
+              "neuronId": 342,
+              "time": 60.22
+            },
+            {
+              "neuronId": 424,
+              "time": 60.22
+            },
+            {
+              "neuronId": 445,
+              "time": 60.22
+            },
+            {
+              "neuronId": 470,
+              "time": 60.22
+            },
+            {
+              "neuronId": 540,
+              "time": 60.22
+            },
+            {
+              "neuronId": 572,
+              "time": 60.22
+            },
+            {
+              "neuronId": 583,
+              "time": 60.22
+            },
+            {
+              "neuronId": 584,
+              "time": 60.22
+            },
+            {
+              "neuronId": 614,
+              "time": 60.22
+            },
+            {
+              "neuronId": 620,
+              "time": 60.22
+            },
+            {
+              "neuronId": 622,
+              "time": 60.22
+            },
+            {
+              "neuronId": 650,
+              "time": 60.22
+            },
+            {
+              "neuronId": 208,
+              "time": 60.24
+            },
+            {
+              "neuronId": 236,
+              "time": 60.24
+            },
+            {
+              "neuronId": 248,
+              "time": 60.24
+            },
+            {
+              "neuronId": 400,
+              "time": 60.24
+            },
+            {
+              "neuronId": 447,
+              "time": 60.24
+            },
+            {
+              "neuronId": 474,
+              "time": 60.24
+            },
+            {
+              "neuronId": 489,
+              "time": 60.24
+            },
+            {
+              "neuronId": 634,
+              "time": 60.24
+            },
+            {
+              "neuronId": 651,
+              "time": 60.24
+            },
+            {
+              "neuronId": 681,
+              "time": 60.24
+            },
+            {
+              "neuronId": 196,
+              "time": 60.26
+            },
+            {
+              "neuronId": 218,
+              "time": 60.26
+            },
+            {
+              "neuronId": 330,
+              "time": 60.26
+            },
+            {
+              "neuronId": 357,
+              "time": 60.26
+            },
+            {
+              "neuronId": 378,
+              "time": 60.26
+            },
+            {
+              "neuronId": 414,
+              "time": 60.26
+            },
+            {
+              "neuronId": 421,
+              "time": 60.26
+            },
+            {
+              "neuronId": 574,
+              "time": 60.26
+            },
+            {
+              "neuronId": 580,
+              "time": 60.26
+            },
+            {
+              "neuronId": 592,
+              "time": 60.26
+            },
+            {
+              "neuronId": 606,
+              "time": 60.26
+            },
+            {
+              "neuronId": 642,
+              "time": 60.26
+            },
+            {
+              "neuronId": 668,
+              "time": 60.26
+            },
+            {
+              "neuronId": 227,
+              "time": 60.28
+            },
+            {
+              "neuronId": 391,
+              "time": 60.28
+            },
+            {
+              "neuronId": 415,
+              "time": 60.28
+            },
+            {
+              "neuronId": 439,
+              "time": 60.28
+            },
+            {
+              "neuronId": 621,
+              "time": 60.28
+            },
+            {
+              "neuronId": 661,
+              "time": 60.28
+            },
+            {
+              "neuronId": 694,
+              "time": 60.34
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 7.481988603311785,
+              "integratedWeight": 7.481988603311785,
+              "peakPotential": 6.877311424948823,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -16.635188571798835,
+              "firstSpike": null,
+              "inputMargin": -16.030511396688215
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [
+                60.34
+              ],
+              "spikeTicks": [
+                3017
+              ],
+              "latencyTicks": [
+                16
+              ],
+              "fired": true,
+              "arrivingWeight": 41.37527038459076,
+              "integratedWeight": 30.49151466481445,
+              "peakPotential": 29.49983839445488,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": 3.924838397707223,
+              "firstSpike": {
+                "potential": 29.49983839445488,
+                "effectiveThreshold": 25.574999996747657,
+                "integratedWeight": 30.49151466481445
+              },
+              "inputMargin": 15.800270384590764
+            }
+          },
+          "io": {
+            "duration": 61,
+            "values": {
+              "O_A": 0,
+              "O_B": 1
+            },
+            "counts": [
+              0,
+              1
+            ]
+          },
+          "scores": {
+            "A": 0.07476635514018691,
+            "B": 0.9354838709677419
+          },
+          "label": "B",
+          "coreCellsFired": {
+            "A": 8,
+            "B": 58
+          }
+        },
+        {
+          "cue": "C",
+          "half": null,
+          "bits": [
+            17,
+            98,
+            105,
+            108,
+            119,
+            137,
+            155,
+            167
+          ],
+          "idleSeconds": 60,
+          "t0": 3001,
+          "active": [
+            194,
+            204,
+            229,
+            239,
+            262,
+            264,
+            265,
+            266,
+            279,
+            301,
+            322,
+            324,
+            325,
+            327,
+            328,
+            338,
+            344,
+            362,
+            363,
+            366,
+            368,
+            374,
+            378,
+            381,
+            395,
+            400,
+            437,
+            446,
+            451,
+            454,
+            456,
+            462,
+            471,
+            472,
+            503,
+            530,
+            536,
+            537,
+            547,
+            550,
+            558,
+            563,
+            568,
+            575,
+            578,
+            582,
+            593,
+            597,
+            598,
+            601,
+            602,
+            605,
+            629,
+            630,
+            645,
+            654,
+            673,
+            689
+          ],
+          "spikes": [
+            {
+              "neuronId": 366,
+              "time": 60.18
+            },
+            {
+              "neuronId": 451,
+              "time": 60.18
+            },
+            {
+              "neuronId": 266,
+              "time": 60.2
+            },
+            {
+              "neuronId": 378,
+              "time": 60.2
+            },
+            {
+              "neuronId": 381,
+              "time": 60.2
+            },
+            {
+              "neuronId": 446,
+              "time": 60.2
+            },
+            {
+              "neuronId": 462,
+              "time": 60.2
+            },
+            {
+              "neuronId": 503,
+              "time": 60.2
+            },
+            {
+              "neuronId": 537,
+              "time": 60.2
+            },
+            {
+              "neuronId": 547,
+              "time": 60.2
+            },
+            {
+              "neuronId": 558,
+              "time": 60.2
+            },
+            {
+              "neuronId": 563,
+              "time": 60.2
+            },
+            {
+              "neuronId": 582,
+              "time": 60.2
+            },
+            {
+              "neuronId": 593,
+              "time": 60.2
+            },
+            {
+              "neuronId": 597,
+              "time": 60.2
+            },
+            {
+              "neuronId": 598,
+              "time": 60.2
+            },
+            {
+              "neuronId": 602,
+              "time": 60.2
+            },
+            {
+              "neuronId": 645,
+              "time": 60.2
+            },
+            {
+              "neuronId": 229,
+              "time": 60.22
+            },
+            {
+              "neuronId": 301,
+              "time": 60.22
+            },
+            {
+              "neuronId": 324,
+              "time": 60.22
+            },
+            {
+              "neuronId": 327,
+              "time": 60.22
+            },
+            {
+              "neuronId": 338,
+              "time": 60.22
+            },
+            {
+              "neuronId": 362,
+              "time": 60.22
+            },
+            {
+              "neuronId": 368,
+              "time": 60.22
+            },
+            {
+              "neuronId": 472,
+              "time": 60.22
+            },
+            {
+              "neuronId": 194,
+              "time": 60.24
+            },
+            {
+              "neuronId": 204,
+              "time": 60.24
+            },
+            {
+              "neuronId": 265,
+              "time": 60.24
+            },
+            {
+              "neuronId": 279,
+              "time": 60.24
+            },
+            {
+              "neuronId": 328,
+              "time": 60.24
+            },
+            {
+              "neuronId": 344,
+              "time": 60.24
+            },
+            {
+              "neuronId": 400,
+              "time": 60.24
+            },
+            {
+              "neuronId": 437,
+              "time": 60.24
+            },
+            {
+              "neuronId": 454,
+              "time": 60.24
+            },
+            {
+              "neuronId": 536,
+              "time": 60.24
+            },
+            {
+              "neuronId": 550,
+              "time": 60.24
+            },
+            {
+              "neuronId": 568,
+              "time": 60.24
+            },
+            {
+              "neuronId": 601,
+              "time": 60.24
+            },
+            {
+              "neuronId": 239,
+              "time": 60.26
+            },
+            {
+              "neuronId": 262,
+              "time": 60.26
+            },
+            {
+              "neuronId": 264,
+              "time": 60.26
+            },
+            {
+              "neuronId": 322,
+              "time": 60.26
+            },
+            {
+              "neuronId": 363,
+              "time": 60.26
+            },
+            {
+              "neuronId": 456,
+              "time": 60.26
+            },
+            {
+              "neuronId": 530,
+              "time": 60.26
+            },
+            {
+              "neuronId": 575,
+              "time": 60.26
+            },
+            {
+              "neuronId": 578,
+              "time": 60.26
+            },
+            {
+              "neuronId": 605,
+              "time": 60.26
+            },
+            {
+              "neuronId": 629,
+              "time": 60.26
+            },
+            {
+              "neuronId": 630,
+              "time": 60.26
+            },
+            {
+              "neuronId": 689,
+              "time": 60.26
+            },
+            {
+              "neuronId": 325,
+              "time": 60.28
+            },
+            {
+              "neuronId": 374,
+              "time": 60.28
+            },
+            {
+              "neuronId": 395,
+              "time": 60.28
+            },
+            {
+              "neuronId": 471,
+              "time": 60.28
+            },
+            {
+              "neuronId": 654,
+              "time": 60.28
+            },
+            {
+              "neuronId": 673,
+              "time": 60.28
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 5.030057418808829,
+              "integratedWeight": 5.030057418808829,
+              "peakPotential": 4.729344743559362,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -18.783155253188294,
+              "firstSpike": null,
+              "inputMargin": -18.482442581191172
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 4.662944422065455,
+              "integratedWeight": 4.662944422065455,
+              "peakPotential": 4.320547460878844,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -21.254452535868815,
+              "firstSpike": null,
+              "inputMargin": -20.912055577934545
+            }
+          },
+          "io": {
+            "duration": 61,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.05504587155963303,
+            "B": 0.043478260869565216
+          },
+          "label": "reject",
+          "coreCellsFired": {
+            "A": 6,
+            "B": 5
+          }
+        }
+      ]
+    },
+    "halfProbes": {
+      "0": [
+        {
+          "cue": "A",
+          "half": 0,
+          "bits": [
+            21,
+            107,
+            117,
+            165
+          ],
+          "idleSeconds": 0,
+          "t0": 1,
+          "active": [
+            199,
+            212,
+            225,
+            228,
+            279,
+            307,
+            340,
+            357,
+            358,
+            370,
+            431,
+            434,
+            437,
+            447,
+            460,
+            464,
+            491,
+            492,
+            518,
+            532,
+            538,
+            553,
+            575,
+            581,
+            595,
+            615,
+            625,
+            643,
+            649,
+            665,
+            682,
+            686
+          ],
+          "spikes": [
+            {
+              "neuronId": 225,
+              "time": 0.2
+            },
+            {
+              "neuronId": 358,
+              "time": 0.2
+            },
+            {
+              "neuronId": 370,
+              "time": 0.2
+            },
+            {
+              "neuronId": 595,
+              "time": 0.2
+            },
+            {
+              "neuronId": 625,
+              "time": 0.2
+            },
+            {
+              "neuronId": 665,
+              "time": 0.2
+            },
+            {
+              "neuronId": 199,
+              "time": 0.22
+            },
+            {
+              "neuronId": 340,
+              "time": 0.22
+            },
+            {
+              "neuronId": 434,
+              "time": 0.22
+            },
+            {
+              "neuronId": 460,
+              "time": 0.22
+            },
+            {
+              "neuronId": 464,
+              "time": 0.22
+            },
+            {
+              "neuronId": 682,
+              "time": 0.22
+            },
+            {
+              "neuronId": 279,
+              "time": 0.24
+            },
+            {
+              "neuronId": 447,
+              "time": 0.24
+            },
+            {
+              "neuronId": 553,
+              "time": 0.24
+            },
+            {
+              "neuronId": 212,
+              "time": 0.26
+            },
+            {
+              "neuronId": 431,
+              "time": 0.26
+            },
+            {
+              "neuronId": 518,
+              "time": 0.26
+            },
+            {
+              "neuronId": 532,
+              "time": 0.26
+            },
+            {
+              "neuronId": 538,
+              "time": 0.26
+            },
+            {
+              "neuronId": 575,
+              "time": 0.26
+            },
+            {
+              "neuronId": 581,
+              "time": 0.26
+            },
+            {
+              "neuronId": 615,
+              "time": 0.26
+            },
+            {
+              "neuronId": 643,
+              "time": 0.26
+            },
+            {
+              "neuronId": 649,
+              "time": 0.26
+            },
+            {
+              "neuronId": 228,
+              "time": 0.28
+            },
+            {
+              "neuronId": 307,
+              "time": 0.28
+            },
+            {
+              "neuronId": 357,
+              "time": 0.28
+            },
+            {
+              "neuronId": 437,
+              "time": 0.28
+            },
+            {
+              "neuronId": 491,
+              "time": 0.28
+            },
+            {
+              "neuronId": 492,
+              "time": 0.28
+            },
+            {
+              "neuronId": 686,
+              "time": 0.28
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 22.683415819262148,
+              "integratedWeight": 22.683415819262148,
+              "peakPotential": 20.900963654721398,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -2.611536342026259,
+              "firstSpike": null,
+              "inputMargin": -0.8290841807378513
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 5.0138522417259015,
+              "integratedWeight": 5.0138522417259015,
+              "peakPotential": 4.69073736775939,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -20.884262628988267,
+              "firstSpike": null,
+              "inputMargin": -20.561147758274096
+            }
+          },
+          "io": {
+            "duration": 1,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.5614035087719298,
+            "B": 0.06818181818181818
+          },
+          "label": "A",
+          "coreCellsFired": {
+            "A": 32,
+            "B": 6
+          }
+        },
+        {
+          "cue": "A",
+          "half": 1,
+          "bits": [
+            99,
+            111,
+            140,
+            171
+          ],
+          "idleSeconds": 0,
+          "t0": 1,
+          "active": [
+            212,
+            214,
+            216,
+            218,
+            219,
+            293,
+            314,
+            321,
+            339,
+            344,
+            357,
+            365,
+            367,
+            383,
+            404,
+            441,
+            444,
+            460,
+            485,
+            490,
+            491,
+            512,
+            527,
+            530,
+            595,
+            596,
+            602,
+            635,
+            637,
+            657
+          ],
+          "spikes": [
+            {
+              "neuronId": 357,
+              "time": 0.18
+            },
+            {
+              "neuronId": 367,
+              "time": 0.18
+            },
+            {
+              "neuronId": 216,
+              "time": 0.2
+            },
+            {
+              "neuronId": 314,
+              "time": 0.2
+            },
+            {
+              "neuronId": 485,
+              "time": 0.2
+            },
+            {
+              "neuronId": 212,
+              "time": 0.22
+            },
+            {
+              "neuronId": 218,
+              "time": 0.22
+            },
+            {
+              "neuronId": 321,
+              "time": 0.22
+            },
+            {
+              "neuronId": 365,
+              "time": 0.22
+            },
+            {
+              "neuronId": 512,
+              "time": 0.22
+            },
+            {
+              "neuronId": 596,
+              "time": 0.22
+            },
+            {
+              "neuronId": 637,
+              "time": 0.22
+            },
+            {
+              "neuronId": 657,
+              "time": 0.22
+            },
+            {
+              "neuronId": 219,
+              "time": 0.24
+            },
+            {
+              "neuronId": 344,
+              "time": 0.24
+            },
+            {
+              "neuronId": 444,
+              "time": 0.24
+            },
+            {
+              "neuronId": 490,
+              "time": 0.24
+            },
+            {
+              "neuronId": 491,
+              "time": 0.24
+            },
+            {
+              "neuronId": 602,
+              "time": 0.24
+            },
+            {
+              "neuronId": 214,
+              "time": 0.26
+            },
+            {
+              "neuronId": 293,
+              "time": 0.26
+            },
+            {
+              "neuronId": 530,
+              "time": 0.26
+            },
+            {
+              "neuronId": 635,
+              "time": 0.26
+            },
+            {
+              "neuronId": 339,
+              "time": 0.28
+            },
+            {
+              "neuronId": 383,
+              "time": 0.28
+            },
+            {
+              "neuronId": 404,
+              "time": 0.28
+            },
+            {
+              "neuronId": 441,
+              "time": 0.28
+            },
+            {
+              "neuronId": 460,
+              "time": 0.28
+            },
+            {
+              "neuronId": 527,
+              "time": 0.28
+            },
+            {
+              "neuronId": 595,
+              "time": 0.3
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 21.454165970906654,
+              "integratedWeight": 21.454165970906654,
+              "peakPotential": 19.12794310475593,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -4.384556891991728,
+              "firstSpike": null,
+              "inputMargin": -2.058334029093345
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 4.136143265399987,
+              "integratedWeight": 4.136143265399987,
+              "peakPotential": 3.7420618683485936,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -21.832938128399064,
+              "firstSpike": null,
+              "inputMargin": -21.438856734600012
+            }
+          },
+          "io": {
+            "duration": 1,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.5263157894736842,
+            "B": 0.05747126436781609
+          },
+          "label": "A",
+          "coreCellsFired": {
+            "A": 30,
+            "B": 5
+          }
+        },
+        {
+          "cue": "B",
+          "half": 0,
+          "bits": [
+            3,
+            29,
+            36,
+            116
+          ],
+          "idleSeconds": 0,
+          "t0": 1,
+          "active": [
+            212,
+            236,
+            239,
+            256,
+            322,
+            330,
+            345,
+            367,
+            378,
+            421,
+            424,
+            447,
+            470,
+            489,
+            554,
+            572,
+            574,
+            580,
+            583,
+            584,
+            592,
+            606,
+            614,
+            620,
+            622,
+            625,
+            642,
+            659,
+            682
+          ],
+          "spikes": [
+            {
+              "neuronId": 239,
+              "time": 0.2
+            },
+            {
+              "neuronId": 345,
+              "time": 0.2
+            },
+            {
+              "neuronId": 367,
+              "time": 0.2
+            },
+            {
+              "neuronId": 554,
+              "time": 0.2
+            },
+            {
+              "neuronId": 659,
+              "time": 0.2
+            },
+            {
+              "neuronId": 682,
+              "time": 0.2
+            },
+            {
+              "neuronId": 212,
+              "time": 0.22
+            },
+            {
+              "neuronId": 322,
+              "time": 0.22
+            },
+            {
+              "neuronId": 424,
+              "time": 0.22
+            },
+            {
+              "neuronId": 470,
+              "time": 0.22
+            },
+            {
+              "neuronId": 572,
+              "time": 0.22
+            },
+            {
+              "neuronId": 583,
+              "time": 0.22
+            },
+            {
+              "neuronId": 584,
+              "time": 0.22
+            },
+            {
+              "neuronId": 614,
+              "time": 0.22
+            },
+            {
+              "neuronId": 620,
+              "time": 0.22
+            },
+            {
+              "neuronId": 622,
+              "time": 0.22
+            },
+            {
+              "neuronId": 236,
+              "time": 0.24
+            },
+            {
+              "neuronId": 256,
+              "time": 0.24
+            },
+            {
+              "neuronId": 447,
+              "time": 0.24
+            },
+            {
+              "neuronId": 489,
+              "time": 0.24
+            },
+            {
+              "neuronId": 330,
+              "time": 0.26
+            },
+            {
+              "neuronId": 378,
+              "time": 0.26
+            },
+            {
+              "neuronId": 421,
+              "time": 0.26
+            },
+            {
+              "neuronId": 574,
+              "time": 0.26
+            },
+            {
+              "neuronId": 580,
+              "time": 0.26
+            },
+            {
+              "neuronId": 592,
+              "time": 0.26
+            },
+            {
+              "neuronId": 606,
+              "time": 0.26
+            },
+            {
+              "neuronId": 642,
+              "time": 0.26
+            },
+            {
+              "neuronId": 625,
+              "time": 0.28
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 4.2172160371591865,
+              "integratedWeight": 4.2172160371591865,
+              "peakPotential": 3.884062656677001,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -19.628437340070654,
+              "firstSpike": null,
+              "inputMargin": -19.295283962840813
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 21.164835546612537,
+              "integratedWeight": 21.164835546612537,
+              "peakPotential": 19.69077965510237,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -5.884220341645285,
+              "firstSpike": null,
+              "inputMargin": -4.410164453387463
+            }
+          },
+          "io": {
+            "duration": 1,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.06172839506172839,
+            "B": 0.46774193548387094
+          },
+          "label": "reject",
+          "coreCellsFired": {
+            "A": 5,
+            "B": 29
+          }
+        },
+        {
+          "cue": "B",
+          "half": 1,
+          "bits": [
+            23,
+            33,
+            110,
+            185
+          ],
+          "idleSeconds": 0,
+          "t0": 1,
+          "active": [
+            196,
+            208,
+            215,
+            218,
+            227,
+            248,
+            256,
+            283,
+            321,
+            328,
+            342,
+            357,
+            391,
+            400,
+            405,
+            414,
+            415,
+            439,
+            445,
+            469,
+            474,
+            521,
+            540,
+            615,
+            621,
+            634,
+            650,
+            651,
+            661,
+            668,
+            681
+          ],
+          "spikes": [
+            {
+              "neuronId": 215,
+              "time": 0.18
+            },
+            {
+              "neuronId": 283,
+              "time": 0.2
+            },
+            {
+              "neuronId": 405,
+              "time": 0.2
+            },
+            {
+              "neuronId": 469,
+              "time": 0.2
+            },
+            {
+              "neuronId": 521,
+              "time": 0.2
+            },
+            {
+              "neuronId": 615,
+              "time": 0.2
+            },
+            {
+              "neuronId": 256,
+              "time": 0.22
+            },
+            {
+              "neuronId": 321,
+              "time": 0.22
+            },
+            {
+              "neuronId": 328,
+              "time": 0.22
+            },
+            {
+              "neuronId": 342,
+              "time": 0.22
+            },
+            {
+              "neuronId": 445,
+              "time": 0.22
+            },
+            {
+              "neuronId": 540,
+              "time": 0.22
+            },
+            {
+              "neuronId": 650,
+              "time": 0.22
+            },
+            {
+              "neuronId": 208,
+              "time": 0.24
+            },
+            {
+              "neuronId": 248,
+              "time": 0.24
+            },
+            {
+              "neuronId": 400,
+              "time": 0.24
+            },
+            {
+              "neuronId": 474,
+              "time": 0.24
+            },
+            {
+              "neuronId": 634,
+              "time": 0.24
+            },
+            {
+              "neuronId": 651,
+              "time": 0.24
+            },
+            {
+              "neuronId": 681,
+              "time": 0.24
+            },
+            {
+              "neuronId": 196,
+              "time": 0.26
+            },
+            {
+              "neuronId": 218,
+              "time": 0.26
+            },
+            {
+              "neuronId": 357,
+              "time": 0.26
+            },
+            {
+              "neuronId": 414,
+              "time": 0.26
+            },
+            {
+              "neuronId": 668,
+              "time": 0.26
+            },
+            {
+              "neuronId": 227,
+              "time": 0.28
+            },
+            {
+              "neuronId": 391,
+              "time": 0.28
+            },
+            {
+              "neuronId": 415,
+              "time": 0.28
+            },
+            {
+              "neuronId": 439,
+              "time": 0.28
+            },
+            {
+              "neuronId": 621,
+              "time": 0.28
+            },
+            {
+              "neuronId": 661,
+              "time": 0.28
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 4.0310906093321535,
+              "integratedWeight": 4.0310906093321535,
+              "peakPotential": 3.7574476966013943,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -19.75505230014626,
+              "firstSpike": null,
+              "inputMargin": -19.481409390667846
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 21.51115434284621,
+              "integratedWeight": 21.51115434284621,
+              "peakPotential": 19.666913602236104,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -5.908086394511553,
+              "firstSpike": null,
+              "inputMargin": -4.063845657153788
+            }
+          },
+          "io": {
+            "duration": 1,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.047619047619047616,
+            "B": 0.5
+          },
+          "label": "B",
+          "coreCellsFired": {
+            "A": 4,
+            "B": 31
+          }
+        }
+      ],
+      "60": [
+        {
+          "cue": "A",
+          "half": 0,
+          "bits": [
+            21,
+            107,
+            117,
+            165
+          ],
+          "idleSeconds": 60,
+          "t0": 3001,
+          "active": [
+            199,
+            212,
+            225,
+            228,
+            279,
+            307,
+            340,
+            357,
+            358,
+            370,
+            431,
+            434,
+            437,
+            447,
+            460,
+            464,
+            491,
+            492,
+            518,
+            532,
+            538,
+            553,
+            575,
+            581,
+            595,
+            615,
+            625,
+            643,
+            649,
+            665,
+            682,
+            686
+          ],
+          "spikes": [
+            {
+              "neuronId": 225,
+              "time": 60.2
+            },
+            {
+              "neuronId": 358,
+              "time": 60.2
+            },
+            {
+              "neuronId": 370,
+              "time": 60.2
+            },
+            {
+              "neuronId": 595,
+              "time": 60.2
+            },
+            {
+              "neuronId": 625,
+              "time": 60.2
+            },
+            {
+              "neuronId": 665,
+              "time": 60.2
+            },
+            {
+              "neuronId": 199,
+              "time": 60.22
+            },
+            {
+              "neuronId": 340,
+              "time": 60.22
+            },
+            {
+              "neuronId": 434,
+              "time": 60.22
+            },
+            {
+              "neuronId": 460,
+              "time": 60.22
+            },
+            {
+              "neuronId": 464,
+              "time": 60.22
+            },
+            {
+              "neuronId": 682,
+              "time": 60.22
+            },
+            {
+              "neuronId": 279,
+              "time": 60.24
+            },
+            {
+              "neuronId": 447,
+              "time": 60.24
+            },
+            {
+              "neuronId": 553,
+              "time": 60.24
+            },
+            {
+              "neuronId": 212,
+              "time": 60.26
+            },
+            {
+              "neuronId": 431,
+              "time": 60.26
+            },
+            {
+              "neuronId": 518,
+              "time": 60.26
+            },
+            {
+              "neuronId": 532,
+              "time": 60.26
+            },
+            {
+              "neuronId": 538,
+              "time": 60.26
+            },
+            {
+              "neuronId": 575,
+              "time": 60.26
+            },
+            {
+              "neuronId": 581,
+              "time": 60.26
+            },
+            {
+              "neuronId": 615,
+              "time": 60.26
+            },
+            {
+              "neuronId": 643,
+              "time": 60.26
+            },
+            {
+              "neuronId": 649,
+              "time": 60.26
+            },
+            {
+              "neuronId": 228,
+              "time": 60.28
+            },
+            {
+              "neuronId": 307,
+              "time": 60.28
+            },
+            {
+              "neuronId": 357,
+              "time": 60.28
+            },
+            {
+              "neuronId": 437,
+              "time": 60.28
+            },
+            {
+              "neuronId": 491,
+              "time": 60.28
+            },
+            {
+              "neuronId": 492,
+              "time": 60.28
+            },
+            {
+              "neuronId": 686,
+              "time": 60.28
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 22.683415819262148,
+              "integratedWeight": 22.683415819262148,
+              "peakPotential": 20.900963654721398,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -2.611536342026259,
+              "firstSpike": null,
+              "inputMargin": -0.8290841807378513
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 5.0138522417259015,
+              "integratedWeight": 5.0138522417259015,
+              "peakPotential": 4.69073736775939,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -20.884262628988267,
+              "firstSpike": null,
+              "inputMargin": -20.561147758274096
+            }
+          },
+          "io": {
+            "duration": 61,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.5614035087719298,
+            "B": 0.06818181818181818
+          },
+          "label": "A",
+          "coreCellsFired": {
+            "A": 32,
+            "B": 6
+          }
+        },
+        {
+          "cue": "A",
+          "half": 1,
+          "bits": [
+            99,
+            111,
+            140,
+            171
+          ],
+          "idleSeconds": 60,
+          "t0": 3001,
+          "active": [
+            212,
+            214,
+            216,
+            218,
+            219,
+            293,
+            314,
+            321,
+            339,
+            344,
+            357,
+            365,
+            367,
+            383,
+            404,
+            441,
+            444,
+            460,
+            485,
+            490,
+            491,
+            512,
+            527,
+            530,
+            595,
+            596,
+            602,
+            635,
+            637,
+            657
+          ],
+          "spikes": [
+            {
+              "neuronId": 357,
+              "time": 60.18
+            },
+            {
+              "neuronId": 367,
+              "time": 60.18
+            },
+            {
+              "neuronId": 216,
+              "time": 60.2
+            },
+            {
+              "neuronId": 314,
+              "time": 60.2
+            },
+            {
+              "neuronId": 485,
+              "time": 60.2
+            },
+            {
+              "neuronId": 212,
+              "time": 60.22
+            },
+            {
+              "neuronId": 218,
+              "time": 60.22
+            },
+            {
+              "neuronId": 321,
+              "time": 60.22
+            },
+            {
+              "neuronId": 365,
+              "time": 60.22
+            },
+            {
+              "neuronId": 512,
+              "time": 60.22
+            },
+            {
+              "neuronId": 596,
+              "time": 60.22
+            },
+            {
+              "neuronId": 637,
+              "time": 60.22
+            },
+            {
+              "neuronId": 657,
+              "time": 60.22
+            },
+            {
+              "neuronId": 219,
+              "time": 60.24
+            },
+            {
+              "neuronId": 344,
+              "time": 60.24
+            },
+            {
+              "neuronId": 444,
+              "time": 60.24
+            },
+            {
+              "neuronId": 490,
+              "time": 60.24
+            },
+            {
+              "neuronId": 491,
+              "time": 60.24
+            },
+            {
+              "neuronId": 602,
+              "time": 60.24
+            },
+            {
+              "neuronId": 214,
+              "time": 60.26
+            },
+            {
+              "neuronId": 293,
+              "time": 60.26
+            },
+            {
+              "neuronId": 530,
+              "time": 60.26
+            },
+            {
+              "neuronId": 635,
+              "time": 60.26
+            },
+            {
+              "neuronId": 339,
+              "time": 60.28
+            },
+            {
+              "neuronId": 383,
+              "time": 60.28
+            },
+            {
+              "neuronId": 404,
+              "time": 60.28
+            },
+            {
+              "neuronId": 441,
+              "time": 60.28
+            },
+            {
+              "neuronId": 460,
+              "time": 60.28
+            },
+            {
+              "neuronId": 527,
+              "time": 60.28
+            },
+            {
+              "neuronId": 595,
+              "time": 60.300000000000004
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 21.454165970906654,
+              "integratedWeight": 21.454165970906654,
+              "peakPotential": 19.12794310475593,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -4.384556891991728,
+              "firstSpike": null,
+              "inputMargin": -2.058334029093345
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 4.136143265399987,
+              "integratedWeight": 4.136143265399987,
+              "peakPotential": 3.7420618683485936,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -21.832938128399064,
+              "firstSpike": null,
+              "inputMargin": -21.438856734600012
+            }
+          },
+          "io": {
+            "duration": 61,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.5263157894736842,
+            "B": 0.05747126436781609
+          },
+          "label": "A",
+          "coreCellsFired": {
+            "A": 30,
+            "B": 5
+          }
+        },
+        {
+          "cue": "B",
+          "half": 0,
+          "bits": [
+            3,
+            29,
+            36,
+            116
+          ],
+          "idleSeconds": 60,
+          "t0": 3001,
+          "active": [
+            212,
+            236,
+            239,
+            256,
+            322,
+            330,
+            345,
+            367,
+            378,
+            421,
+            424,
+            447,
+            470,
+            489,
+            554,
+            572,
+            574,
+            580,
+            583,
+            584,
+            592,
+            606,
+            614,
+            620,
+            622,
+            625,
+            642,
+            659,
+            682
+          ],
+          "spikes": [
+            {
+              "neuronId": 239,
+              "time": 60.2
+            },
+            {
+              "neuronId": 345,
+              "time": 60.2
+            },
+            {
+              "neuronId": 367,
+              "time": 60.2
+            },
+            {
+              "neuronId": 554,
+              "time": 60.2
+            },
+            {
+              "neuronId": 659,
+              "time": 60.2
+            },
+            {
+              "neuronId": 682,
+              "time": 60.2
+            },
+            {
+              "neuronId": 212,
+              "time": 60.22
+            },
+            {
+              "neuronId": 322,
+              "time": 60.22
+            },
+            {
+              "neuronId": 424,
+              "time": 60.22
+            },
+            {
+              "neuronId": 470,
+              "time": 60.22
+            },
+            {
+              "neuronId": 572,
+              "time": 60.22
+            },
+            {
+              "neuronId": 583,
+              "time": 60.22
+            },
+            {
+              "neuronId": 584,
+              "time": 60.22
+            },
+            {
+              "neuronId": 614,
+              "time": 60.22
+            },
+            {
+              "neuronId": 620,
+              "time": 60.22
+            },
+            {
+              "neuronId": 622,
+              "time": 60.22
+            },
+            {
+              "neuronId": 236,
+              "time": 60.24
+            },
+            {
+              "neuronId": 256,
+              "time": 60.24
+            },
+            {
+              "neuronId": 447,
+              "time": 60.24
+            },
+            {
+              "neuronId": 489,
+              "time": 60.24
+            },
+            {
+              "neuronId": 330,
+              "time": 60.26
+            },
+            {
+              "neuronId": 378,
+              "time": 60.26
+            },
+            {
+              "neuronId": 421,
+              "time": 60.26
+            },
+            {
+              "neuronId": 574,
+              "time": 60.26
+            },
+            {
+              "neuronId": 580,
+              "time": 60.26
+            },
+            {
+              "neuronId": 592,
+              "time": 60.26
+            },
+            {
+              "neuronId": 606,
+              "time": 60.26
+            },
+            {
+              "neuronId": 642,
+              "time": 60.26
+            },
+            {
+              "neuronId": 625,
+              "time": 60.28
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 4.2172160371591865,
+              "integratedWeight": 4.2172160371591865,
+              "peakPotential": 3.884062656677001,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -19.628437340070654,
+              "firstSpike": null,
+              "inputMargin": -19.295283962840813
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 21.164835546612537,
+              "integratedWeight": 21.164835546612537,
+              "peakPotential": 19.69077965510237,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -5.884220341645285,
+              "firstSpike": null,
+              "inputMargin": -4.410164453387463
+            }
+          },
+          "io": {
+            "duration": 61,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.06172839506172839,
+            "B": 0.46774193548387094
+          },
+          "label": "reject",
+          "coreCellsFired": {
+            "A": 5,
+            "B": 29
+          }
+        },
+        {
+          "cue": "B",
+          "half": 1,
+          "bits": [
+            23,
+            33,
+            110,
+            185
+          ],
+          "idleSeconds": 60,
+          "t0": 3001,
+          "active": [
+            196,
+            208,
+            215,
+            218,
+            227,
+            248,
+            256,
+            283,
+            321,
+            328,
+            342,
+            357,
+            391,
+            400,
+            405,
+            414,
+            415,
+            439,
+            445,
+            469,
+            474,
+            521,
+            540,
+            615,
+            621,
+            634,
+            650,
+            651,
+            661,
+            668,
+            681
+          ],
+          "spikes": [
+            {
+              "neuronId": 215,
+              "time": 60.18
+            },
+            {
+              "neuronId": 283,
+              "time": 60.2
+            },
+            {
+              "neuronId": 405,
+              "time": 60.2
+            },
+            {
+              "neuronId": 469,
+              "time": 60.2
+            },
+            {
+              "neuronId": 521,
+              "time": 60.2
+            },
+            {
+              "neuronId": 615,
+              "time": 60.2
+            },
+            {
+              "neuronId": 256,
+              "time": 60.22
+            },
+            {
+              "neuronId": 321,
+              "time": 60.22
+            },
+            {
+              "neuronId": 328,
+              "time": 60.22
+            },
+            {
+              "neuronId": 342,
+              "time": 60.22
+            },
+            {
+              "neuronId": 445,
+              "time": 60.22
+            },
+            {
+              "neuronId": 540,
+              "time": 60.22
+            },
+            {
+              "neuronId": 650,
+              "time": 60.22
+            },
+            {
+              "neuronId": 208,
+              "time": 60.24
+            },
+            {
+              "neuronId": 248,
+              "time": 60.24
+            },
+            {
+              "neuronId": 400,
+              "time": 60.24
+            },
+            {
+              "neuronId": 474,
+              "time": 60.24
+            },
+            {
+              "neuronId": 634,
+              "time": 60.24
+            },
+            {
+              "neuronId": 651,
+              "time": 60.24
+            },
+            {
+              "neuronId": 681,
+              "time": 60.24
+            },
+            {
+              "neuronId": 196,
+              "time": 60.26
+            },
+            {
+              "neuronId": 218,
+              "time": 60.26
+            },
+            {
+              "neuronId": 357,
+              "time": 60.26
+            },
+            {
+              "neuronId": 414,
+              "time": 60.26
+            },
+            {
+              "neuronId": 668,
+              "time": 60.26
+            },
+            {
+              "neuronId": 227,
+              "time": 60.28
+            },
+            {
+              "neuronId": 391,
+              "time": 60.28
+            },
+            {
+              "neuronId": 415,
+              "time": 60.28
+            },
+            {
+              "neuronId": 439,
+              "time": 60.28
+            },
+            {
+              "neuronId": 621,
+              "time": 60.28
+            },
+            {
+              "neuronId": 661,
+              "time": 60.28
+            }
+          ],
+          "outputs": {
+            "A": {
+              "id": 693,
+              "name": "O_A",
+              "conceptId": "001-001-001",
+              "threshold": 23.5125,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 4.0310906093321535,
+              "integratedWeight": 4.0310906093321535,
+              "peakPotential": 3.7574476966013943,
+              "peakEffectiveThreshold": 23.512499996747657,
+              "peakMargin": -19.75505230014626,
+              "firstSpike": null,
+              "inputMargin": -19.481409390667846
+            },
+            "B": {
+              "id": 694,
+              "name": "O_B",
+              "conceptId": "001-001-002",
+              "threshold": 25.575,
+              "spikeTimes": [],
+              "spikeTicks": [],
+              "latencyTicks": [],
+              "fired": false,
+              "arrivingWeight": 21.51115434284621,
+              "integratedWeight": 21.51115434284621,
+              "peakPotential": 19.666913602236104,
+              "peakEffectiveThreshold": 25.574999996747657,
+              "peakMargin": -5.908086394511553,
+              "firstSpike": null,
+              "inputMargin": -4.063845657153788
+            }
+          },
+          "io": {
+            "duration": 61,
+            "values": {
+              "O_A": 0,
+              "O_B": 0
+            },
+            "counts": [
+              0,
+              0
+            ]
+          },
+          "scores": {
+            "A": 0.047619047619047616,
+            "B": 0.5
+          },
+          "label": "B",
+          "coreCellsFired": {
+            "A": 4,
+            "B": 31
+          }
+        }
+      ]
+    }
+  },
+  "formation": {
+    "stability": {
+      "A": {
+        "trials": 10,
+        "pairs": 45,
+        "mean": 0.9932203389830505,
+        "strict": true,
+        "soft": true
+      },
+      "B": {
+        "trials": 10,
+        "pairs": 45,
+        "mean": 0.977861891195224,
+        "strict": true,
+        "soft": true
+      }
+    },
+    "specificity": 0.08181818181818182,
+    "coreSizes": {
+      "A": 57,
+      "B": 62
+    },
+    "negative": [
+      {
+        "idleSeconds": 0,
+        "cells": 58,
+        "readback": "reject",
+        "outsideDirectSet": [],
+        "spilloverLimit": 14.25,
+        "spilloverFractionOfSmallerCore": 0,
+        "A": {
+          "jaccard": 0.05504587155963303,
+          "overlap": 6
+        },
+        "B": {
+          "jaccard": 0.043478260869565216,
+          "overlap": 5
+        }
+      },
+      {
+        "idleSeconds": 60,
+        "cells": 58,
+        "readback": "reject",
+        "outsideDirectSet": [],
+        "spilloverLimit": 14.25,
+        "spilloverFractionOfSmallerCore": 0,
+        "A": {
+          "jaccard": 0.05504587155963303,
+          "overlap": 6
+        },
+        "B": {
+          "jaccard": 0.043478260869565216,
+          "overlap": 5
+        }
+      }
+    ],
+    "compactness": {
+      "A": {
+        "size": 57,
+        "observedMean": 125.0994011923847,
+        "randomMean": 123.8829254649459,
+        "ratio": 1.0098195592562351,
+        "randomSubsets": 200,
+        "valid": true
+      },
+      "B": {
+        "size": 62,
+        "observedMean": 119.13459123596077,
+        "randomMean": 123.80097806170025,
+        "ratio": 0.9623073508885056,
+        "randomSubsets": 200,
+        "valid": true
+      }
+    },
+    "recruitment": {
+      "A": {
+        "recruited": 0,
+        "cells": [],
+        "fraction": 0,
+        "otherCueDirect": {
+          "count": 0,
+          "cells": []
+        },
+        "neutral": {
+          "count": 0,
+          "cells": [],
+          "fraction": 0
+        }
+      },
+      "B": {
+        "recruited": 2,
+        "cells": [
+          247,
+          371
+        ],
+        "fraction": 0.03225806451612903,
+        "otherCueDirect": {
+          "count": 0,
+          "cells": []
+        },
+        "neutral": {
+          "count": 2,
+          "cells": [
+            247,
+            371
+          ],
+          "fraction": 0.03225806451612903
+        }
+      },
+      "overlap": {
+        "sharedRecruits": {
+          "count": 0,
+          "cells": []
+        },
+        "coreAInDirectB": {
+          "count": 10,
+          "cells": [
+            212,
+            218,
+            321,
+            357,
+            367,
+            447,
+            615,
+            625,
+            665,
+            682
+          ]
+        },
+        "coreBInDirectA": {
+          "count": 9,
+          "cells": [
+            212,
+            218,
+            321,
+            357,
+            367,
+            447,
+            615,
+            625,
+            682
+          ]
+        },
+        "sharedCores": 9
+      }
+    },
+    "recurrent": {
+      "A": {
+        "within": 0,
+        "between": 0,
+        "withinBetweenRatio": null,
+        "noBetweenEdges": true,
+        "density": 0,
+        "densityRelativeToPool": null,
+        "pass": false
+      },
+      "B": {
+        "within": 0,
+        "between": 0,
+        "withinBetweenRatio": null,
+        "noBetweenEdges": true,
+        "density": 0,
+        "densityRelativeToPool": null,
+        "pass": false
+      },
+      "liveGrowthPoolEdges": 0,
+      "poolDensity": 0,
+      "formed": 891,
+      "pruned": 0
+    },
+    "retention": {
+      "A": {
+        "at0": 1,
+        "at60": 1
+      },
+      "B": {
+        "at0": 0.9354838709677419,
+        "at60": 0.9354838709677419
+      }
+    },
+    "directAgreement": {
+      "trials": {
+        "A": [
+          0.7894736842105263,
+          0.8070175438596491,
+          0.8421052631578947,
+          0.8947368421052632,
+          0.9122807017543859,
+          0.9824561403508771,
+          0.9824561403508771,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.9824561403508771,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.9827586206896551,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0.9661016949152542
+        ],
+        "B": [
+          0.7540983606557377,
+          0.7540983606557377,
+          0.7704918032786885,
+          0.819672131147541,
+          0.8852459016393442,
+          0.8524590163934426,
+          0.9508196721311475,
+          0.9032258064516129,
+          0.9354838709677419,
+          0.9047619047619048,
+          0.9365079365079365,
+          0.9032258064516129,
+          0.9047619047619048,
+          0.9047619047619048,
+          0.9206349206349206,
+          0.9354838709677419,
+          0.9193548387096774,
+          0.9206349206349206,
+          0.9193548387096774,
+          0.9354838709677419,
+          0.90625,
+          0.9354838709677419,
+          0.9354838709677419,
+          0.9193548387096774,
+          0.9354838709677419,
+          0.9206349206349206,
+          0.9516129032258065,
+          0.9193548387096774,
+          0.9354838709677419,
+          0.9354838709677419,
+          0.9354838709677419,
+          0.9193548387096774,
+          0.9365079365079365,
+          0.9365079365079365,
+          0.9047619047619048,
+          0.9523809523809523,
+          0.9242424242424242,
+          0.9047619047619048,
+          0.9206349206349206,
+          0.953125,
+          0.9365079365079365,
+          0.9523809523809523,
+          0.921875,
+          0.9523809523809523,
+          0.9523809523809523,
+          0.9365079365079365,
+          0.9523809523809523,
+          0.9365079365079365,
+          0.9375,
+          0.9365079365079365,
+          0.9523809523809523,
+          0.9365079365079365,
+          0.9523809523809523,
+          0.9523809523809523,
+          0.9384615384615385,
+          0.9230769230769231,
+          0.9523809523809523,
+          0.9523809523809523,
+          0.9523809523809523,
+          0.9375,
+          0.953125,
+          0.953125,
+          0.9523809523809523,
+          0.953125,
+          0.9375,
+          0.9523809523809523,
+          0.9523809523809523,
+          0.9375,
+          0.953125,
+          0.9523809523809523
+        ]
+      },
+      "probes": {
+        "0": [
+          {
+            "cue": "A",
+            "jaccard": 1,
+            "exact": true
+          },
+          {
+            "cue": "B",
+            "jaccard": 0.9508196721311475,
+            "exact": false
+          },
+          {
+            "cue": "C",
+            "jaccard": 0.9354838709677419,
+            "exact": false
+          }
+        ],
+        "60": [
+          {
+            "cue": "A",
+            "jaccard": 1,
+            "exact": true
+          },
+          {
+            "cue": "B",
+            "jaccard": 0.9508196721311475,
+            "exact": false
+          },
+          {
+            "cue": "C",
+            "jaccard": 0.9354838709677419,
+            "exact": false
+          }
+        ]
+      }
+    },
+    "directOverlap": {
+      "AB": {
+        "count": 10,
+        "cells": [
+          212,
+          218,
+          321,
+          357,
+          367,
+          447,
+          615,
+          625,
+          665,
+          682
+        ]
+      }
+    },
+    "directCInCores": {
+      "A": {
+        "count": 6,
+        "cells": [
+          279,
+          344,
+          437,
+          530,
+          575,
+          602
+        ]
+      },
+      "B": {
+        "count": 5,
+        "cells": [
+          239,
+          322,
+          328,
+          378,
+          400
+        ]
+      }
+    },
+    "patternCompletion": {
+      "references": {
+        "A": [
+          199,
+          212,
+          214,
+          216,
+          218,
+          219,
+          225,
+          228,
+          279,
+          293,
+          307,
+          314,
+          321,
+          339,
+          340,
+          344,
+          357,
+          358,
+          365,
+          367,
+          370,
+          383,
+          404,
+          431,
+          434,
+          437,
+          441,
+          444,
+          447,
+          460,
+          464,
+          485,
+          490,
+          491,
+          492,
+          512,
+          518,
+          527,
+          530,
+          532,
+          538,
+          553,
+          575,
+          581,
+          595,
+          596,
+          602,
+          615,
+          625,
+          635,
+          637,
+          643,
+          649,
+          657,
+          665,
+          682,
+          686
+        ],
+        "B": [
+          196,
+          208,
+          212,
+          215,
+          218,
+          227,
+          236,
+          239,
+          247,
+          248,
+          256,
+          283,
+          321,
+          322,
+          328,
+          330,
+          342,
+          345,
+          357,
+          367,
+          371,
+          378,
+          391,
+          400,
+          405,
+          414,
+          415,
+          421,
+          424,
+          439,
+          445,
+          447,
+          469,
+          470,
+          474,
+          489,
+          502,
+          521,
+          540,
+          554,
+          572,
+          574,
+          580,
+          583,
+          584,
+          592,
+          606,
+          614,
+          615,
+          620,
+          621,
+          622,
+          625,
+          634,
+          642,
+          650,
+          651,
+          659,
+          661,
+          668,
+          681,
+          682
+        ],
+        "C": [
+          194,
+          204,
+          229,
+          239,
+          262,
+          264,
+          265,
+          266,
+          277,
+          279,
+          301,
+          322,
+          324,
+          325,
+          327,
+          328,
+          338,
+          344,
+          362,
+          363,
+          366,
+          368,
+          374,
+          378,
+          381,
+          395,
+          400,
+          437,
+          446,
+          451,
+          454,
+          456,
+          462,
+          471,
+          472,
+          503,
+          530,
+          536,
+          537,
+          547,
+          550,
+          558,
+          563,
+          568,
+          575,
+          578,
+          582,
+          587,
+          593,
+          597,
+          598,
+          601,
+          602,
+          603,
+          605,
+          612,
+          629,
+          630,
+          645,
+          654,
+          673,
+          689
+        ]
+      },
+      "rows": {
+        "0": [
+          {
+            "cue": "A",
+            "half": 0,
+            "bits": [
+              21,
+              107,
+              117,
+              165
+            ],
+            "reference": "trained core A",
+            "referenceSize": 57,
+            "trained": 0.5614035087719298,
+            "untrained": 0.5263157894736842,
+            "gain": 0.03508771929824561,
+            "crossCompletion": null
+          },
+          {
+            "cue": "A",
+            "half": 1,
+            "bits": [
+              99,
+              111,
+              140,
+              171
+            ],
+            "reference": "trained core A",
+            "referenceSize": 57,
+            "trained": 0.5263157894736842,
+            "untrained": 0.5087719298245614,
+            "gain": 0.01754385964912275,
+            "crossCompletion": null
+          },
+          {
+            "cue": "B",
+            "half": 0,
+            "bits": [
+              3,
+              29,
+              36,
+              116
+            ],
+            "reference": "trained core B",
+            "referenceSize": 62,
+            "trained": 0.46774193548387094,
+            "untrained": 0.46774193548387094,
+            "gain": 0,
+            "crossCompletion": null
+          },
+          {
+            "cue": "B",
+            "half": 1,
+            "bits": [
+              23,
+              33,
+              110,
+              185
+            ],
+            "reference": "trained core B",
+            "referenceSize": 62,
+            "trained": 0.5,
+            "untrained": 0.46774193548387094,
+            "gain": 0.03225806451612906,
+            "crossCompletion": null
+          }
+        ],
+        "60": [
+          {
+            "cue": "A",
+            "half": 0,
+            "bits": [
+              21,
+              107,
+              117,
+              165
+            ],
+            "reference": "trained core A",
+            "referenceSize": 57,
+            "trained": 0.5614035087719298,
+            "untrained": 0.5263157894736842,
+            "gain": 0.03508771929824561,
+            "crossCompletion": null
+          },
+          {
+            "cue": "A",
+            "half": 1,
+            "bits": [
+              99,
+              111,
+              140,
+              171
+            ],
+            "reference": "trained core A",
+            "referenceSize": 57,
+            "trained": 0.5263157894736842,
+            "untrained": 0.5087719298245614,
+            "gain": 0.01754385964912275,
+            "crossCompletion": null
+          },
+          {
+            "cue": "B",
+            "half": 0,
+            "bits": [
+              3,
+              29,
+              36,
+              116
+            ],
+            "reference": "trained core B",
+            "referenceSize": 62,
+            "trained": 0.46774193548387094,
+            "untrained": 0.46774193548387094,
+            "gain": 0,
+            "crossCompletion": null
+          },
+          {
+            "cue": "B",
+            "half": 1,
+            "bits": [
+              23,
+              33,
+              110,
+              185
+            ],
+            "reference": "trained core B",
+            "referenceSize": 62,
+            "trained": 0.5,
+            "untrained": 0.46774193548387094,
+            "gain": 0.03225806451612906,
+            "crossCompletion": null
+          }
+        ]
+      },
+      "pass": false,
+      "soft": false,
+      "softRule": "Both halves at both delays: completion >= 0.7, with the same >= 0.25 gain requirement."
+    },
+    "potentiation": {
+      "initialWeight": 0.4,
+      "medianMinimum": 0.6,
+      "ignitionHealthyBelow": 0.1,
+      "ignitionGated": false,
+      "quantileMethod": "Linear interpolation at (n-1)*p; empty quantiles are null.",
+      "definitions": {
+        "within": "Both endpoints in the named core.",
+        "boundary": "Exactly one endpoint in the named core; same boundary as criterion 7.",
+        "betweenCores": "Edges between A-only and B-only members, in either direction; shared-core members excluded.",
+        "poolWide": "All surviving growth-formed pool-to-pool edges."
+      },
+      "cores": {
+        "A": {
+          "within": {
+            "count": 0,
+            "quantiles": {
+              "min": null,
+              "p25": null,
+              "median": null,
+              "p75": null,
+              "max": null
+            },
+            "threshold": 1.02,
+            "atOrAboveThreshold": 0,
+            "fractionAtOrAboveThreshold": 0,
+            "ignitionFraction": 0,
+            "ignitionHealthy": false,
+            "atInitialWeight": 0,
+            "belowInitialWeight": 0,
+            "aboveInitialWeight": 0
+          },
+          "boundary": {
+            "count": 0,
+            "quantiles": {
+              "min": null,
+              "p25": null,
+              "median": null,
+              "p75": null,
+              "max": null
+            },
+            "threshold": 1.02,
+            "atOrAboveThreshold": 0,
+            "fractionAtOrAboveThreshold": 0,
+            "ignitionFraction": 0,
+            "ignitionHealthy": false,
+            "atInitialWeight": 0,
+            "belowInitialWeight": 0,
+            "aboveInitialWeight": 0
+          },
+          "pass": false
+        },
+        "B": {
+          "within": {
+            "count": 0,
+            "quantiles": {
+              "min": null,
+              "p25": null,
+              "median": null,
+              "p75": null,
+              "max": null
+            },
+            "threshold": 1.02,
+            "atOrAboveThreshold": 0,
+            "fractionAtOrAboveThreshold": 0,
+            "ignitionFraction": 0,
+            "ignitionHealthy": false,
+            "atInitialWeight": 0,
+            "belowInitialWeight": 0,
+            "aboveInitialWeight": 0
+          },
+          "boundary": {
+            "count": 0,
+            "quantiles": {
+              "min": null,
+              "p25": null,
+              "median": null,
+              "p75": null,
+              "max": null
+            },
+            "threshold": 1.02,
+            "atOrAboveThreshold": 0,
+            "fractionAtOrAboveThreshold": 0,
+            "ignitionFraction": 0,
+            "ignitionHealthy": false,
+            "atInitialWeight": 0,
+            "belowInitialWeight": 0,
+            "aboveInitialWeight": 0
+          },
+          "pass": false
+        }
+      },
+      "betweenCores": {
+        "count": 0,
+        "quantiles": {
+          "min": null,
+          "p25": null,
+          "median": null,
+          "p75": null,
+          "max": null
+        },
+        "threshold": 1.02,
+        "atOrAboveThreshold": 0,
+        "fractionAtOrAboveThreshold": 0,
+        "ignitionFraction": 0,
+        "ignitionHealthy": false,
+        "atInitialWeight": 0,
+        "belowInitialWeight": 0,
+        "aboveInitialWeight": 0
+      },
+      "poolWide": {
+        "count": 0,
+        "quantiles": {
+          "min": null,
+          "p25": null,
+          "median": null,
+          "p75": null,
+          "max": null
+        },
+        "threshold": 1.02,
+        "atOrAboveThreshold": 0,
+        "fractionAtOrAboveThreshold": 0,
+        "ignitionFraction": 0,
+        "ignitionHealthy": false,
+        "atInitialWeight": 0,
+        "belowInitialWeight": 0,
+        "aboveInitialWeight": 0
+      },
+      "pass": false
+    },
+    "readback": {
+      "0": {
+        "rows": [
+          "A",
+          "B",
+          "C"
+        ],
+        "columns": [
+          "A",
+          "B",
+          "reject"
+        ],
+        "counts": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "60": {
+        "rows": [
+          "A",
+          "B",
+          "C"
+        ],
+        "columns": [
+          "A",
+          "B",
+          "reject"
+        ],
+        "counts": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "criteria": {
+      "1-stability": {
+        "pass": true,
+        "rule": "Both last-ten-trial mean pairwise Jaccards >= 0.7; strict >= 0.8 reported separately.",
+        "gated": true,
+        "status": "PASS"
+      },
+      "2-specificity": {
+        "pass": true,
+        "rule": "Inter-core Jaccard <= 0.2; size is evaluated separately.",
+        "gated": true,
+        "status": "PASS"
+      },
+      "3-size": {
+        "pass": true,
+        "rule": "Each core contains 5 to 0.25*P cells.",
+        "gated": true,
+        "status": "PASS"
+      },
+      "4-negative-cue": {
+        "pass": true,
+        "rule": "At both idle durations: nearest-core readback rejects C (< 0.5), C-to-each-core Jaccard <= 0.25, and spillover outside directSet(C) <= 25% of the smaller core.",
+        "gated": true,
+        "status": "PASS"
+      },
+      "5-compactness": {
+        "pass": false,
+        "gated": false,
+        "rule": "Observation: each core distance / matched random-subset distance < 0.8; not a Stage 1f gate.",
+        "status": "FAIL"
+      },
+      "6-recruitment": {
+        "pass": false,
+        "gated": false,
+        "rule": "Observation: at least 30% of each core is outside both trained cues' initial direct sets; not a Stage 1f gate.",
+        "status": "FAIL"
+      },
+      "7-recurrent-structure": {
+        "pass": false,
+        "rule": "Each core has >= its size surviving growth-formed internal edges, and internal directed density >= 3 times the pool-wide directed density.",
+        "gated": true,
+        "status": "FAIL"
+      },
+      "8-retention": {
+        "pass": true,
+        "rule": "Locked A probe after 60 seconds has Jaccard >= 0.8 with core A; B also reported.",
+        "gated": true,
+        "status": "PASS"
+      },
+      "9-pattern-completion": {
+        "pass": false,
+        "rule": "For A and B, both fixed halves at both delays: completion >= 0.8 and improvement over the untrained circuit on the same core >= 0.25.",
+        "gated": true,
+        "status": "FAIL"
+      },
+      "10-potentiation": {
+        "pass": false,
+        "rule": "Each core: median surviving within-core formed weight >= 0.6. Ignition fraction is reported, not gated.",
+        "gated": true,
+        "status": "FAIL"
+      }
+    },
+    "pass": false
+  },
+  "weights": {
+    "A": {
+      "all": {
+        "count": 500,
+        "mean": 0.0997934757833705,
+        "min": 0.02,
+        "p25": 0.02,
+        "median": 0.02,
+        "p75": 0.02,
+        "max": 0.9225883170594581
+      },
+      "refA": {
+        "count": 57,
+        "mean": 0.7056479542743302,
+        "min": 0.4634473127586631,
+        "p25": 0.6150167790887487,
+        "median": 0.7201669639784888,
+        "p75": 0.8017695755295902,
+        "max": 0.9225883170594581
+      },
+      "refB": {
+        "count": 62,
+        "mean": 0.13368236526598934,
+        "min": 0.02,
+        "p25": 0.02,
+        "median": 0.02,
+        "p75": 0.02,
+        "max": 0.9079364777910671
+      },
+      "other": {
+        "count": 390,
+        "mean": 0.020737566744320802,
+        "min": 0.02,
+        "p25": 0.02,
+        "median": 0.02,
+        "p75": 0.02,
+        "max": 0.3076510302851903
+      },
+      "overlapCount": 9,
+      "selectivity": 0.3466458115202066
+    },
+    "B": {
+      "all": {
+        "count": 500,
+        "mean": 0.10472936029263698,
+        "min": 0.02,
+        "p25": 0.02,
+        "median": 0.02,
+        "p75": 0.02,
+        "max": 0.9357530195759736
+      },
+      "refA": {
+        "count": 57,
+        "mean": 0.1367878405478074,
+        "min": 0.02,
+        "p25": 0.02,
+        "median": 0.02,
+        "p75": 0.02,
+        "max": 0.9057976808894627
+      },
+      "refB": {
+        "count": 62,
+        "mean": 0.691770061170612,
+        "min": 0.156372857268342,
+        "p25": 0.6089896669177891,
+        "median": 0.7031004884058443,
+        "p75": 0.8125967459977196,
+        "max": 0.9357530195759736
+      },
+      "other": {
+        "count": 390,
+        "mean": 0.02020808165400549,
+        "min": 0.02,
+        "p25": 0.02,
+        "median": 0.02,
+        "p75": 0.02,
+        "max": 0.06623830701278505
+      },
+      "overlapCount": 9,
+      "selectivity": 0.3363528609835181
+    }
+  },
+  "memoryPreservation": {
+    "poolWeightsExactlyUnchanged": false,
+    "2-specificity": true,
+    "4-negative-cue": true,
+    "8-retention": true,
+    "9-pattern-completion": false
+  },
+  "teacher": {
+    "epochs": [
+      {
+        "epoch": 1,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 2,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 3,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 4,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 5,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 6,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 7,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 8,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 9,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 10,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 11,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 12,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 13,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 14,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 15,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 16,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 17,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 18,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 19,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 20,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 21,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 22,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 23,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 24,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 25,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 26,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 27,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 28,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 29,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 30,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 31,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 32,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 33,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 34,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 35,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 36,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 37,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 38,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 39,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 40,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 41,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 42,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 43,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 44,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 45,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 46,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 47,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 48,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 49,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 50,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 51,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 52,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 53,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 54,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 55,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 56,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 57,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 58,
+        "A": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        },
+        "B": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        }
+      },
+      {
+        "epoch": 59,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 60,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        }
+      },
+      {
+        "epoch": 61,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 62,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 63,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        }
+      },
+      {
+        "epoch": 64,
+        "A": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 65,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      },
+      {
+        "epoch": 66,
+        "A": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        },
+        "B": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        }
+      },
+      {
+        "epoch": 67,
+        "A": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        },
+        "B": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        }
+      },
+      {
+        "epoch": 68,
+        "A": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        },
+        "B": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        }
+      },
+      {
+        "epoch": 69,
+        "A": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        },
+        "B": {
+          "delivered": false,
+          "refractoryVeto": true,
+          "naturalBefore": true
+        }
+      },
+      {
+        "epoch": 70,
+        "A": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        },
+        "B": {
+          "delivered": true,
+          "refractoryVeto": false,
+          "naturalBefore": false
+        }
+      }
+    ],
+    "firstNaturalBeforeTeacher": {
+      "A": 58,
+      "B": 58
+    }
+  },
+  "pass": false,
+  "ablation": {
+    "removed": [
+      "196/s1",
+      "196/s2",
+      "196/s3",
+      "196/s4",
+      "196/s5",
+      "196/s6",
+      "196/s7",
+      "196/s8",
+      "199/s1",
+      "199/s2",
+      "199/s3",
+      "199/s4",
+      "199/s5",
+      "199/s6",
+      "199/s7",
+      "199/s8",
+      "208/s1",
+      "208/s2",
+      "208/s3",
+      "208/s4",
+      "208/s5",
+      "208/s6",
+      "208/s7",
+      "208/s8",
+      "212/s1",
+      "212/s2",
+      "212/s3",
+      "212/s4",
+      "212/s5",
+      "212/s6",
+      "212/s7",
+      "212/s8",
+      "214/s1",
+      "214/s2",
+      "214/s3",
+      "214/s4",
+      "214/s5",
+      "214/s6",
+      "214/s7",
+      "214/s8",
+      "215/s1",
+      "215/s2",
+      "215/s3",
+      "215/s4",
+      "215/s5",
+      "215/s6",
+      "215/s7",
+      "215/s8",
+      "216/s1",
+      "216/s2",
+      "216/s3",
+      "216/s4",
+      "216/s5",
+      "216/s6",
+      "216/s7",
+      "216/s8",
+      "218/s1",
+      "218/s2",
+      "218/s3",
+      "218/s4",
+      "218/s5",
+      "218/s6",
+      "218/s7",
+      "218/s8",
+      "219/s1",
+      "219/s2",
+      "219/s3",
+      "219/s4",
+      "219/s5",
+      "219/s6",
+      "219/s7",
+      "219/s8",
+      "225/s1",
+      "225/s2",
+      "225/s3",
+      "225/s4",
+      "225/s5",
+      "225/s6",
+      "225/s7",
+      "225/s8",
+      "227/s1",
+      "227/s2",
+      "227/s3",
+      "227/s4",
+      "227/s5",
+      "227/s6",
+      "227/s7",
+      "227/s8",
+      "228/s1",
+      "228/s2",
+      "228/s3",
+      "228/s4",
+      "228/s5",
+      "228/s6",
+      "228/s7",
+      "228/s8",
+      "236/s1",
+      "236/s2",
+      "236/s3",
+      "236/s4",
+      "236/s5",
+      "236/s6",
+      "236/s7",
+      "236/s8",
+      "239/s1",
+      "239/s2",
+      "239/s3",
+      "239/s4",
+      "239/s5",
+      "239/s6",
+      "239/s7",
+      "239/s8",
+      "247/s1",
+      "247/s2",
+      "247/s3",
+      "247/s4",
+      "247/s5",
+      "247/s6",
+      "247/s7",
+      "247/s8",
+      "248/s1",
+      "248/s2",
+      "248/s3",
+      "248/s4",
+      "248/s5",
+      "248/s6",
+      "248/s7",
+      "248/s8",
+      "256/s1",
+      "256/s2",
+      "256/s3",
+      "256/s4",
+      "256/s5",
+      "256/s6",
+      "256/s7",
+      "256/s8",
+      "279/s1",
+      "279/s2",
+      "279/s3",
+      "279/s4",
+      "279/s5",
+      "279/s6",
+      "279/s7",
+      "279/s8",
+      "283/s1",
+      "283/s2",
+      "283/s3",
+      "283/s4",
+      "283/s5",
+      "283/s6",
+      "283/s7",
+      "283/s8",
+      "292/s1",
+      "293/s1",
+      "293/s2",
+      "293/s3",
+      "293/s4",
+      "293/s5",
+      "293/s6",
+      "293/s7",
+      "293/s8",
+      "307/s1",
+      "307/s2",
+      "307/s3",
+      "307/s4",
+      "307/s5",
+      "307/s6",
+      "307/s7",
+      "307/s8",
+      "314/s1",
+      "314/s2",
+      "314/s3",
+      "314/s4",
+      "314/s5",
+      "314/s6",
+      "314/s7",
+      "314/s8",
+      "321/s1",
+      "321/s2",
+      "321/s3",
+      "321/s4",
+      "321/s5",
+      "321/s6",
+      "321/s7",
+      "321/s8",
+      "322/s1",
+      "322/s2",
+      "322/s3",
+      "322/s4",
+      "322/s5",
+      "322/s6",
+      "322/s7",
+      "322/s8",
+      "328/s1",
+      "328/s2",
+      "328/s3",
+      "328/s4",
+      "328/s5",
+      "328/s6",
+      "328/s7",
+      "328/s8",
+      "330/s1",
+      "330/s2",
+      "330/s3",
+      "330/s4",
+      "330/s5",
+      "330/s6",
+      "330/s7",
+      "330/s8",
+      "339/s1",
+      "339/s2",
+      "339/s3",
+      "339/s4",
+      "339/s5",
+      "339/s6",
+      "339/s7",
+      "339/s8",
+      "340/s1",
+      "340/s2",
+      "340/s3",
+      "340/s4",
+      "340/s5",
+      "340/s6",
+      "340/s7",
+      "340/s8",
+      "342/s1",
+      "342/s2",
+      "342/s3",
+      "342/s4",
+      "342/s5",
+      "342/s6",
+      "342/s7",
+      "342/s8",
+      "344/s1",
+      "344/s2",
+      "344/s3",
+      "344/s4",
+      "344/s5",
+      "344/s6",
+      "344/s7",
+      "344/s8",
+      "345/s1",
+      "345/s2",
+      "345/s3",
+      "345/s4",
+      "345/s5",
+      "345/s6",
+      "345/s7",
+      "345/s8",
+      "357/s1",
+      "357/s2",
+      "357/s3",
+      "357/s4",
+      "357/s5",
+      "357/s6",
+      "357/s7",
+      "357/s8",
+      "358/s1",
+      "358/s2",
+      "358/s3",
+      "358/s4",
+      "358/s5",
+      "358/s6",
+      "358/s7",
+      "358/s8",
+      "365/s1",
+      "365/s2",
+      "365/s3",
+      "365/s4",
+      "365/s5",
+      "365/s6",
+      "365/s7",
+      "365/s8",
+      "367/s1",
+      "367/s2",
+      "367/s3",
+      "367/s4",
+      "367/s5",
+      "367/s6",
+      "367/s7",
+      "367/s8",
+      "370/s1",
+      "370/s2",
+      "370/s3",
+      "370/s4",
+      "370/s5",
+      "370/s6",
+      "370/s7",
+      "370/s8",
+      "371/s1",
+      "371/s2",
+      "371/s3",
+      "371/s4",
+      "371/s5",
+      "371/s6",
+      "371/s7",
+      "371/s8",
+      "378/s1",
+      "378/s2",
+      "378/s3",
+      "378/s4",
+      "378/s5",
+      "378/s6",
+      "378/s7",
+      "378/s8",
+      "383/s1",
+      "383/s2",
+      "383/s3",
+      "383/s4",
+      "383/s5",
+      "383/s6",
+      "383/s7",
+      "383/s8",
+      "391/s1",
+      "391/s2",
+      "391/s3",
+      "391/s4",
+      "391/s5",
+      "391/s6",
+      "391/s7",
+      "391/s8",
+      "400/s1",
+      "400/s2",
+      "400/s3",
+      "400/s4",
+      "400/s5",
+      "400/s6",
+      "400/s7",
+      "400/s8",
+      "404/s1",
+      "404/s2",
+      "404/s3",
+      "404/s4",
+      "404/s5",
+      "404/s6",
+      "404/s7",
+      "404/s8",
+      "405/s1",
+      "405/s2",
+      "405/s3",
+      "405/s4",
+      "405/s5",
+      "405/s6",
+      "405/s7",
+      "405/s8",
+      "414/s1",
+      "414/s2",
+      "414/s3",
+      "414/s4",
+      "414/s5",
+      "414/s6",
+      "414/s7",
+      "414/s8",
+      "415/s1",
+      "415/s2",
+      "415/s3",
+      "415/s4",
+      "415/s5",
+      "415/s6",
+      "415/s7",
+      "415/s8",
+      "420/s1",
+      "420/s2",
+      "420/s3",
+      "420/s4",
+      "421/s1",
+      "421/s2",
+      "421/s3",
+      "421/s4",
+      "421/s5",
+      "421/s6",
+      "421/s7",
+      "421/s8",
+      "424/s1",
+      "424/s2",
+      "424/s3",
+      "424/s4",
+      "424/s5",
+      "424/s6",
+      "424/s7",
+      "424/s8",
+      "431/s1",
+      "431/s2",
+      "431/s3",
+      "431/s4",
+      "431/s5",
+      "431/s6",
+      "431/s7",
+      "431/s8",
+      "434/s1",
+      "434/s2",
+      "434/s3",
+      "434/s4",
+      "434/s5",
+      "434/s6",
+      "434/s7",
+      "434/s8",
+      "437/s1",
+      "437/s2",
+      "437/s3",
+      "437/s4",
+      "437/s5",
+      "437/s6",
+      "437/s7",
+      "437/s8",
+      "439/s1",
+      "439/s2",
+      "439/s3",
+      "439/s4",
+      "439/s5",
+      "439/s6",
+      "439/s7",
+      "439/s8",
+      "441/s1",
+      "441/s2",
+      "441/s3",
+      "441/s4",
+      "441/s5",
+      "441/s6",
+      "441/s7",
+      "441/s8",
+      "444/s1",
+      "444/s2",
+      "444/s3",
+      "444/s4",
+      "444/s5",
+      "444/s6",
+      "444/s7",
+      "444/s8",
+      "445/s1",
+      "445/s2",
+      "445/s3",
+      "445/s4",
+      "445/s5",
+      "445/s6",
+      "445/s7",
+      "445/s8",
+      "447/s1",
+      "447/s2",
+      "447/s3",
+      "447/s4",
+      "447/s5",
+      "447/s6",
+      "447/s7",
+      "447/s8",
+      "460/s1",
+      "460/s2",
+      "460/s3",
+      "460/s4",
+      "460/s5",
+      "460/s6",
+      "460/s7",
+      "460/s8",
+      "464/s1",
+      "464/s2",
+      "464/s3",
+      "464/s4",
+      "464/s5",
+      "464/s6",
+      "464/s7",
+      "464/s8",
+      "469/s1",
+      "469/s2",
+      "469/s3",
+      "469/s4",
+      "469/s5",
+      "469/s6",
+      "469/s7",
+      "469/s8",
+      "470/s1",
+      "470/s2",
+      "470/s3",
+      "470/s4",
+      "470/s5",
+      "470/s6",
+      "470/s7",
+      "470/s8",
+      "471/s1",
+      "471/s2",
+      "471/s3",
+      "474/s1",
+      "474/s2",
+      "474/s3",
+      "474/s4",
+      "474/s5",
+      "474/s6",
+      "474/s7",
+      "474/s8",
+      "485/s1",
+      "485/s2",
+      "485/s3",
+      "485/s4",
+      "485/s5",
+      "485/s6",
+      "485/s7",
+      "485/s8",
+      "489/s1",
+      "489/s2",
+      "489/s3",
+      "489/s4",
+      "489/s5",
+      "489/s6",
+      "489/s7",
+      "489/s8",
+      "490/s1",
+      "490/s2",
+      "490/s3",
+      "490/s4",
+      "490/s5",
+      "490/s6",
+      "490/s7",
+      "490/s8",
+      "491/s1",
+      "491/s2",
+      "491/s3",
+      "491/s4",
+      "491/s5",
+      "491/s6",
+      "491/s7",
+      "491/s8",
+      "492/s1",
+      "492/s2",
+      "492/s3",
+      "492/s4",
+      "492/s5",
+      "492/s6",
+      "492/s7",
+      "492/s8",
+      "502/s1",
+      "502/s2",
+      "502/s3",
+      "502/s4",
+      "502/s5",
+      "502/s6",
+      "502/s7",
+      "502/s8",
+      "512/s1",
+      "512/s2",
+      "512/s3",
+      "512/s4",
+      "512/s5",
+      "512/s6",
+      "512/s7",
+      "512/s8",
+      "518/s1",
+      "518/s2",
+      "518/s3",
+      "518/s4",
+      "518/s5",
+      "518/s6",
+      "518/s7",
+      "518/s8",
+      "521/s1",
+      "521/s2",
+      "521/s3",
+      "521/s4",
+      "521/s5",
+      "521/s6",
+      "521/s7",
+      "521/s8",
+      "527/s1",
+      "527/s2",
+      "527/s3",
+      "527/s4",
+      "527/s5",
+      "527/s6",
+      "527/s7",
+      "527/s8",
+      "530/s1",
+      "530/s2",
+      "530/s3",
+      "530/s4",
+      "530/s5",
+      "530/s6",
+      "530/s7",
+      "530/s8",
+      "532/s1",
+      "532/s2",
+      "532/s3",
+      "532/s4",
+      "532/s5",
+      "532/s6",
+      "532/s7",
+      "532/s8",
+      "538/s1",
+      "538/s2",
+      "538/s3",
+      "538/s4",
+      "538/s5",
+      "538/s6",
+      "538/s7",
+      "538/s8",
+      "540/s1",
+      "540/s2",
+      "540/s3",
+      "540/s4",
+      "540/s5",
+      "540/s6",
+      "540/s7",
+      "540/s8",
+      "553/s1",
+      "553/s2",
+      "553/s3",
+      "553/s4",
+      "553/s5",
+      "553/s6",
+      "553/s7",
+      "553/s8",
+      "554/s1",
+      "554/s2",
+      "554/s3",
+      "554/s4",
+      "554/s5",
+      "554/s6",
+      "554/s7",
+      "554/s8",
+      "556/s1",
+      "572/s1",
+      "572/s2",
+      "572/s3",
+      "572/s4",
+      "572/s5",
+      "572/s6",
+      "572/s7",
+      "572/s8",
+      "574/s1",
+      "574/s2",
+      "574/s3",
+      "574/s4",
+      "574/s5",
+      "574/s6",
+      "574/s7",
+      "574/s8",
+      "575/s1",
+      "575/s2",
+      "575/s3",
+      "575/s4",
+      "575/s5",
+      "575/s6",
+      "575/s7",
+      "575/s8",
+      "580/s1",
+      "580/s2",
+      "580/s3",
+      "580/s4",
+      "580/s5",
+      "580/s6",
+      "580/s7",
+      "580/s8",
+      "581/s1",
+      "581/s2",
+      "581/s3",
+      "581/s4",
+      "581/s5",
+      "581/s6",
+      "581/s7",
+      "581/s8",
+      "583/s1",
+      "583/s2",
+      "583/s3",
+      "583/s4",
+      "583/s5",
+      "583/s6",
+      "583/s7",
+      "583/s8",
+      "584/s1",
+      "584/s2",
+      "584/s3",
+      "584/s4",
+      "584/s5",
+      "584/s6",
+      "584/s7",
+      "584/s8",
+      "592/s1",
+      "592/s2",
+      "592/s3",
+      "592/s4",
+      "592/s5",
+      "592/s6",
+      "592/s7",
+      "592/s8",
+      "595/s1",
+      "595/s2",
+      "595/s3",
+      "595/s4",
+      "595/s5",
+      "595/s6",
+      "595/s7",
+      "595/s8",
+      "596/s1",
+      "596/s2",
+      "596/s3",
+      "596/s4",
+      "596/s5",
+      "596/s6",
+      "596/s7",
+      "596/s8",
+      "602/s1",
+      "602/s2",
+      "602/s3",
+      "602/s4",
+      "602/s5",
+      "602/s6",
+      "602/s7",
+      "602/s8",
+      "606/s1",
+      "606/s2",
+      "606/s3",
+      "606/s4",
+      "606/s5",
+      "606/s6",
+      "606/s7",
+      "606/s8",
+      "608/s1",
+      "614/s1",
+      "614/s2",
+      "614/s3",
+      "614/s4",
+      "614/s5",
+      "614/s6",
+      "614/s7",
+      "614/s8",
+      "615/s1",
+      "615/s2",
+      "615/s3",
+      "615/s4",
+      "615/s5",
+      "615/s6",
+      "615/s7",
+      "615/s8",
+      "620/s1",
+      "620/s2",
+      "620/s3",
+      "620/s4",
+      "620/s5",
+      "620/s6",
+      "620/s7",
+      "620/s8",
+      "621/s1",
+      "621/s2",
+      "621/s3",
+      "621/s4",
+      "621/s5",
+      "621/s6",
+      "621/s7",
+      "621/s8",
+      "622/s1",
+      "622/s2",
+      "622/s3",
+      "622/s4",
+      "622/s5",
+      "622/s6",
+      "622/s7",
+      "622/s8",
+      "625/s1",
+      "625/s2",
+      "625/s3",
+      "625/s4",
+      "625/s5",
+      "625/s6",
+      "625/s7",
+      "625/s8",
+      "634/s1",
+      "634/s2",
+      "634/s3",
+      "634/s4",
+      "634/s5",
+      "634/s6",
+      "634/s7",
+      "634/s8",
+      "635/s1",
+      "635/s2",
+      "635/s3",
+      "635/s4",
+      "635/s5",
+      "635/s6",
+      "635/s7",
+      "635/s8",
+      "637/s1",
+      "637/s2",
+      "637/s3",
+      "637/s4",
+      "637/s5",
+      "637/s6",
+      "637/s7",
+      "637/s8",
+      "642/s1",
+      "642/s2",
+      "642/s3",
+      "642/s4",
+      "642/s5",
+      "642/s6",
+      "642/s7",
+      "642/s8",
+      "643/s1",
+      "643/s2",
+      "643/s3",
+      "643/s4",
+      "643/s5",
+      "643/s6",
+      "643/s7",
+      "643/s8",
+      "649/s1",
+      "649/s2",
+      "649/s3",
+      "649/s4",
+      "649/s5",
+      "649/s6",
+      "649/s7",
+      "649/s8",
+      "650/s1",
+      "650/s2",
+      "650/s3",
+      "650/s4",
+      "650/s5",
+      "650/s6",
+      "650/s7",
+      "650/s8",
+      "651/s1",
+      "651/s2",
+      "651/s3",
+      "651/s4",
+      "651/s5",
+      "651/s6",
+      "651/s7",
+      "651/s8",
+      "657/s1",
+      "657/s2",
+      "657/s3",
+      "657/s4",
+      "657/s5",
+      "657/s6",
+      "657/s7",
+      "657/s8",
+      "659/s1",
+      "659/s2",
+      "659/s3",
+      "659/s4",
+      "659/s5",
+      "659/s6",
+      "659/s7",
+      "659/s8",
+      "660/s1",
+      "661/s1",
+      "661/s2",
+      "661/s3",
+      "661/s4",
+      "661/s5",
+      "661/s6",
+      "661/s7",
+      "661/s8",
+      "665/s1",
+      "665/s2",
+      "665/s3",
+      "665/s4",
+      "665/s5",
+      "665/s6",
+      "665/s7",
+      "665/s8",
+      "668/s1",
+      "668/s2",
+      "668/s3",
+      "668/s4",
+      "668/s5",
+      "668/s6",
+      "668/s7",
+      "668/s8",
+      "681/s1",
+      "681/s2",
+      "681/s3",
+      "681/s4",
+      "681/s5",
+      "681/s6",
+      "681/s7",
+      "681/s8",
+      "682/s1",
+      "682/s2",
+      "682/s3",
+      "682/s4",
+      "682/s5",
+      "682/s6",
+      "682/s7",
+      "682/s8",
+      "686/s1",
+      "686/s2",
+      "686/s3",
+      "686/s4",
+      "686/s5",
+      "686/s6",
+      "686/s7",
+      "686/s8"
+    ],
+    "otherEdgesUnchanged": true,
+    "poolResponsesUnchanged": false
+  }
+}

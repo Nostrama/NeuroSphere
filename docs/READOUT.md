@@ -1,4 +1,107 @@
-# Stage 3: learned readout of self-formed engrams
+# Stage 3: readout confirmation
+
+**Confirmation outcome: GO at teacher tick 24 / threshold factor 0.25.**
+
+All three seeds reach criterion and pass R1–R4 and every required control discrimination at this single setting.
+
+The confirmation section was committed first as `940ea23`. Selection was declared before running seeds 2/3: choose the passing seed-1 cell nearest the original primary, tick 24 / factor 0.25. Seed 1 is the saved diagnostic from the earlier study, copied byte-for-byte with every control, checkpoint and reproduced origin; it was not retrained. Only seeds 2 and 3 were newly trained. No other teacher tick or threshold factor was run.
+
+The original tick-24 / factor-0.4 primary remains a recorded NO-GO. The revised plan identifies its threshold calculation as an error: it assumed weights at least 1.0 and did not allow for leak across arriving spikes. This confirmation tests the separately declared correction; it does not rewrite the original outcomes or change the formation memories.
+
+## Protocol and acceptance
+
+Seeds 2/3 reproduce unlocked Stage 1g stops at 60/70 epochs and assert byte-identity with the original Stage 1g evidence before either confirmation trial begins. Seed 1 retains its original verified 70-epoch origin. All memory checks use the frozen reference cores. The native engine, training/probing code, afferents, pool radii, teacher mechanism, stopping rule and controls are unchanged.
+
+Two readout cells receive dense ordinary native projections at 0.02. The approved permanent phase settings remain maxSynapses=10, weightFloor=0 and pool/output nextGrowthAt=1e12. Hebbian updates are scoped to output cells only; native forcedSpike teachers retain refractory vetoes. Threshold is exactly 0.25×frozen core size×1.65. Every 10 readout epochs, from 20 through 80, R1–R3 select the first qualifying checkpoint; training then continues to 80 for the curve. Controls match the selected stopping duration. R4 retains exact pool→pool weight equality plus original formation gates 2/4/8/9.
+
+GO requires all three seeds at the fixed setting to reach criterion and pass R1–R4, plus all five control discriminations. C margin and natural-firing epochs are measurements, not extra acceptance thresholds.
+
+| Seed | Evidence | Stop | Reached | Ref A/B | O thresholds A/B | R1 full | R2 halves | R3 C | R4 memory | Result |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | reused | 70 | True | 68/61 | 28.050000/25.162500 | PASS | PASS | PASS | PASS | PASS |
+| 2 | new | 70 | True | 63/64 | 25.987500/26.400000 | PASS | PASS | PASS | PASS | PASS |
+| 3 | new | 70 | True | 57/62 | 23.512500/25.575000 | PASS | PASS | PASS | PASS | PASS |
+
+### Required control discriminations
+
+| Seed | readoutHebbianOff | pruneReadout | swappedTeacher | pruneFormed | untrainedReadout |
+|---|---|---|---|---|---|
+| 1 | PASS | PASS | PASS | PASS | PASS |
+| 2 | PASS | PASS | PASS | PASS | PASS |
+| 3 | PASS | PASS | PASS | PASS | PASS |
+
+Hebbian-off and untrained readouts must remain silent; readout pruning must fail R1 while leaving pool responses unchanged; swapped teaching must reverse both full-cue labels; pruning formed pool→pool edges must fail R2 while retaining R1. All controls are saved, including failures.
+
+## Untrained C: margin below the lower threshold
+
+Peak membrane margin is native leaky membrane potential minus the effective firing threshold on the same nonrefractory tick. Negative margin means positive containment headroom. Both O cells and both delays are reported; these values are not the raw sum of arriving weights. Native output firing determines R3 without rounding or epsilon adjustments.
+
+| Seed | Idle seconds | Output | Fixed threshold | Peak potential | Effective threshold at peak | Peak margin | Headroom | Fired |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 0 | O_A | 28.050000 | 8.231712 | 28.050000 | -19.818288 | 19.818288 | False |
+| 1 | 0 | O_B | 25.162500 | 6.080040 | 25.162500 | -19.082460 | 19.082460 | False |
+| 1 | 60 | O_A | 28.050000 | 8.231712 | 28.050000 | -19.818288 | 19.818288 | False |
+| 1 | 60 | O_B | 25.162500 | 6.080040 | 25.162500 | -19.082460 | 19.082460 | False |
+| 2 | 0 | O_A | 25.987500 | 8.759457 | 25.987500 | -17.228043 | 17.228043 | False |
+| 2 | 0 | O_B | 26.400000 | 6.616258 | 26.400000 | -19.783742 | 19.783742 | False |
+| 2 | 60 | O_A | 25.987500 | 8.759457 | 25.987500 | -17.228043 | 17.228043 | False |
+| 2 | 60 | O_B | 26.400000 | 6.616258 | 26.400000 | -19.783742 | 19.783742 | False |
+| 3 | 0 | O_A | 23.512500 | 6.933553 | 23.512500 | -16.578947 | 16.578947 | False |
+| 3 | 0 | O_B | 25.575000 | 5.844666 | 25.575000 | -19.730334 | 19.730334 | False |
+| 3 | 60 | O_A | 23.512500 | 6.933553 | 23.512500 | -16.578947 | 16.578947 | False |
+| 3 | 60 | O_B | 25.575000 | 5.844666 | 25.575000 | -19.730334 | 19.730334 | False |
+
+## First natural output firing and teacher vetoes
+
+Natural firing excludes both driven and external-drive spikes. The first natural epoch is scanned across both A/B presentations, including the opposite cue if it fired there; the matching-teacher “natural before teacher” epoch is reported separately. Measurements cover the unchanged harness’s retained 65-tick presentation windows, not the intervening 10-second gaps. Forced teacher spikes never count as natural firing.
+
+| Seed | Output | First natural by stop | Cue at first | Tick after cue | First natural through80 | First before teacher by stop | Teachers delivered through80 | Vetoes through80 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | O_A | 59 | A | 23 | 59 | 59 | 69 | 11 |
+| 1 | O_B | 64 | B | 21 | 64 | 64 | 74 | 6 |
+| 2 | O_A | 68 | A | 23 | 68 | 68 | 76 | 4 |
+| 2 | O_B | 65 | B | 21 | 65 | 65 | 74 | 6 |
+| 3 | O_A | 58 | A | 23 | 58 | 58 | 69 | 11 |
+| 3 | O_B | 58 | B | 22 | 58 | 58 | 66 | 14 |
+
+## Confirmation curves
+
+![Fixed-setting confirmation curves](../outputs/readout-confirmation/2026-11-01T21-07-36-391Z-stage3-confirmation/confirmation-curves.png)
+
+Margin curves show the worst full-cue and half-cue values across delays. The C curves use the largest margin across delays for each O. Dotted gray lines mark stopping epochs; colored dashed lines in the teacher panels show first natural firing. Full checkpoint values remain in each case’s curve.json.
+
+## Saved-circuit CLI
+
+The default inference command now uses the accepted confirmation’s seed-1 circuit at tick 24 / factor 0.25. It does not silently select a different diagnostic.
+
+```powershell
+npm run demo:readout:confirm
+node examples/readout.cjs --cue aardvark
+node examples/readout.cjs --cue "abominable snowman" --idle 60
+```
+
+With no arguments, the readout CLI now runs this fixed confirmation. `--confirm` is explicit; parameter overrides are rejected. `--study` remains the original historical grid for intentional reproduction and was not run during this confirmation. `--memory FILE` and `--idle 0|60` select an explicit saved probe. The emitted word remains a host `vocabulary.get(conceptId).word` codebook lookup, not generated language. The browser Sense Input path is unchanged.
+
+Verified default CLI: `aardvark` produces O_A at 0.34 s (16 ticks after cue), with 68 reference-core cells fired, input margin 20.120569 and peak membrane margin 4.953170. The untrained C word at 60 s is silent. Both command outputs are saved with the evidence.
+
+## Verification and scope
+
+All 17 targeted tests passed (10 existing readout tests and 7 confirmation tests). Independent verification replayed 42 saved circuits and 570 native probes across all three seeds and all controls, recomputing gates, margins, stop selection, teacher records and ablations. All 70 reused seed-1 case files and its origin match the original bytes. The additional natural-firing and C-margin measurements were independently checked. All 11 native source files remain byte-identical; no dependencies or temporary configuration mutations were introduced.
+
+```powershell
+node scripts/verify-readout-confirmation.cjs outputs/readout-confirmation/2026-11-01T21-07-36-391Z-stage3-confirmation
+```
+
+The study exits 0 for GO, 1 for scientific NO-GO and 2 for execution error. The independent verifier exits 0 when the recorded evidence is correct, including a correctly reported NO-GO. Variable run metadata stays outside deterministic summaries, in timing files and original seed-1 provenance. The plan, full controls and native checkpoints are included with the evidence.
+
+This is a bounded, supervised readout result on two self-formed memories. It does not establish multi-memory stability under ongoing plasticity, free-form language generation, or UI integration. Earlier formation and inhibitory outcomes remain unchanged.
+
+---
+
+## Historical study: original primary and seed-1 diagnostic
+
+The earlier report is retained below. Its original CLI-default description is historical; current commands and selection behavior are described above.
+
 
 **Outcome: NO-GO.** All three primary seeds, the six-cell seed 1 diagnostic (including the reused primary), and every required control are saved. Diagnostic settings do not replace the primary.
 
@@ -6,7 +109,7 @@
 
 Both plans were committed first (`096d535`). The ordinary-projection correction was committed as `2c1834f`, and native teacher-forcing/veto measurements as `c35e545`, before implementation and scientific runs. No result-dependent retuning was performed.
 
-## Starting memories and phase boundary
+### Starting memories and phase boundary
 
 Each seed starts from a newly reproduced, unlocked Stage 1g stop at 70/60/70 epochs. The entire native locked export, frozen reference cores, ordered formed edges/weights, original training responses and jitter schedule are compared byte-for-byte with the original evidence before readout. All memory-preservation metrics use those frozen references.
 
@@ -20,7 +123,7 @@ The primary threshold for each O is 0.4×its frozen core size×1.65. Teacher tic
 
 Each readout epoch presents jittered full A, teacher O_A, gap 10 s, then full B/teacher O_B and another gap 10 s. Eight independent draws from a dedicated seed stream give offsets 0..15; capture is 65 ticks. Checkpoints every 10 select the first epoch≥20 satisfying R1–R3 at both 0/60-second delays, capped at 80. R4 is not consulted by the stopping rule. The primary continues to 80 for curves. All trained controls match the selected stop.
 
-## Primary acceptance
+### Primary acceptance
 
 | Cell | Teacher tick | Threshold factor | Stop/reached | Frozen A/B sizes | O thresholds A/B | R1 full | R2 halves | R3 C | R4 memory | Result |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +136,7 @@ Each readout epoch presents jittered full A, teacher O_A, gap 10 s, then full B/
 | diagnostic-t32-f0.25 | 32 | 0.25 | 70/True | 68/61 | 28.0500/25.1625 | PASS | PASS | PASS | PASS | PASS |
 | diagnostic-t32-f0.4 | 32 | 0.4 | 80/False | 68/61 | 44.8800/40.2600 | FAIL | FAIL | PASS | PASS | FAIL |
 
-### Required control discriminations
+#### Required control discriminations
 
 | Cell | readoutHebbianOff | pruneReadout | swappedTeacher | pruneFormed | untrainedReadout |
 |---|---|---|---|---|---|
@@ -48,7 +151,7 @@ Each readout epoch presents jittered full A, teacher O_A, gap 10 s, then full B/
 
 Readout-Hebbian-off and untrained-readout must produce no O response. Prune-readout removes only weights>0.1 and must fail R1 while preserving all pool responses. Swapped teaching must reverse both full-cue labels at both delays. Prune-formed must fail R2 **while R1 still passes**. A failed discrimination is a scientific failure, not a reason to change threshold.
 
-## Decoded output and native firing
+### Decoded output and native firing
 
 The emitted word is explicitly a **host codebook lookup**: the firing O cell stores a concept ID, and the CLI prints `vocabulary.get(id).word`. It is neither generated language nor copying the input string. The swapped-teacher control tests whether output identity follows the learned teacher label.
 
@@ -105,7 +208,7 @@ Input margin is the sum of weights arriving during the 1 s capture minus the fix
 | 3 | 60 | B half0 | silent | silent | -29.2887 | 2.2404 | -31.3303 | -7.9953 | 8/53 |
 | 3 | 60 | B half1 | silent | silent | -29.9132 | 5.7006 | -31.2559 | -8.7221 | 7/58 |
 
-## Memory preservation: strict R4
+### Memory preservation: strict R4
 
 | Cell | poolWeightsExactlyUnchanged | 2-specificity | 4-negative-cue | 8-retention | 9-pattern-completion |
 |---|---|---|---|---|---|
@@ -120,7 +223,7 @@ Input margin is the sum of weights arriving during the 1 s capture minus the fix
 
 R4 compares exact ordered pool→pool edge identities and numeric weights with Stage 1g, without a tolerance. It also evaluates frozen-reference specificity, absolute negative-cue rejection/containment, retention and half-completion/gain against the initial untrained formation scaffold. Every original afferent weight is checked unchanged during training as an additional host-scope invariant.
 
-## Training and teacher-veto curves
+### Training and teacher-veto curves
 
 ![Readout training and teacher-veto curves](../outputs/readout/2026-11-01T20-04-58-944Z-stage3/training-curves.png)
 
@@ -149,7 +252,7 @@ The margin curves are native membrane margins, not an observer label score. The 
 
 All six seed-1 settings are shown. Solid curves are full-cue margins; dashed curves are the weakest corresponding half. The right panels show native teacher vetoes. These diagnostic curves remain separate from primary acceptance.
 
-### Seed 1: checkpoint record
+#### Seed 1: checkpoint record
 
 | Epoch | R1 | R2 | R3 | R4 | FullA min membrane margin | HalfA min margin | C max margin |
 |---|---|---|---|---|---|---|---|
@@ -163,7 +266,7 @@ All six seed-1 settings are shown. Solid curves are full-cue margins; dashed cur
 | 70 | FAIL | FAIL | PASS | PASS | -2.0740 | -12.8001 | -34.1741 |
 | 80 | PASS | FAIL | PASS | PASS | 1.9242 | -8.6201 | -33.4905 |
 
-### Seed 2: checkpoint record
+#### Seed 2: checkpoint record
 
 | Epoch | R1 | R2 | R3 | R4 | FullA min membrane margin | HalfA min margin | C max margin |
 |---|---|---|---|---|---|---|---|
@@ -177,7 +280,7 @@ All six seed-1 settings are shown. Solid curves are full-cue margins; dashed cur
 | 70 | FAIL | FAIL | PASS | PASS | -4.9062 | -13.4255 | -32.8129 |
 | 80 | FAIL | FAIL | PASS | PASS | -0.0081 | -9.6017 | -31.7451 |
 
-### Seed 3: checkpoint record
+#### Seed 3: checkpoint record
 
 | Epoch | R1 | R2 | R3 | R4 | FullA min membrane margin | HalfA min margin | C max margin |
 |---|---|---|---|---|---|---|---|
@@ -191,7 +294,7 @@ All six seed-1 settings are shown. Solid curves are full-cue margins; dashed cur
 | 70 | FAIL | FAIL | PASS | PASS | -0.1576 | -8.4129 | -30.6418 |
 | 80 | PASS | FAIL | PASS | PASS | 3.6620 | -4.3270 | -29.7574 |
 
-## Readout weights and selectivity
+### Readout weights and selectivity
 
 Core groups are frozen references; shared A/B members appear in both groups and are explicitly counted. “Other” excludes both. Selectivity is (mean own-core input weight−mean other-core input weight)/1.65.
 
@@ -246,7 +349,7 @@ Core groups are frozen references; shared A/B members appear in both groups and 
 | diagnostic-t32-f0.4 | B | refB | 61 | 0.5193 | 0.6797 | 0.7813 | 0.8636 | 0.9708 | 0.7786 | 0.4368 | 3 |
 | diagnostic-t32-f0.4 | B | other | 374 | 0.0200 | 0.0200 | 0.0200 | 0.0200 | 0.7153 | 0.0234 | 0.4368 | 3 |
 
-## All controls
+### All controls
 
 | Cell | Control | Epoch | R1 | R2 | R3 | R4 | Pruned edges | Pool responses unchanged |
 |---|---|---|---|---|---|---|---|---|
@@ -293,7 +396,7 @@ Core groups are frozen references; shared A/B members appear in both groups and 
 
 R4 is intentionally false after prune-formed because that control removes the memory’s recurrent edges. Swapped-teacher is judged by reversed labels, not normal-label R1. These distinctions do not relax any required discrimination.
 
-## Interpretation
+### Interpretation
 
 The primary protocol remains **NO-GO**. All three seeds preserve the memory exactly and reject C, but every seed fails partial-cue readout by epoch 80. Seeds 1/3 pass full-cue accuracy; seed 2 does not. Its full-A peak membrane margin is −0.0080579138, a real native non-spike, not a rounding-adjusted success. Pool completion remains sufficient for the original Stage 1g gate, but the learned readout weights and native leaky integration do not consistently clear the declared output threshold. No threshold or teacher timing was changed after observing this.
 
@@ -307,7 +410,7 @@ The predeclared tick 24/factor 0.25 and tick 32/factor 0.25 settings reach R1–
 
 Fully discriminating seed-1 diagnostic cells: diagnostic-t24-f0.25, diagnostic-t32-f0.25. Their detailed control failures or passes are retained above. No further threshold cell, engine change or UI integration was added.
 
-## Reproduce and verify
+### Reproduce and verify
 
 ```powershell
 npm run demo:readout -- --study

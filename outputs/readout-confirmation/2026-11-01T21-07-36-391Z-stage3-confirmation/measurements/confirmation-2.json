@@ -1,0 +1,88 @@
+{
+  "seed": 2,
+  "options": {
+    "teacherTick": 24,
+    "thresholdFactor": 0.25,
+    "epochs": 80
+  },
+  "stoppingEpoch": 70,
+  "negative": [
+    {
+      "idleSeconds": 0,
+      "output": "A",
+      "fired": false,
+      "threshold": 25.987499999999997,
+      "peakPotential": 8.759456503561667,
+      "peakEffectiveThreshold": 25.987499996747655,
+      "peakMembraneMargin": -17.228043493185986,
+      "headroom": 17.228043493185986
+    },
+    {
+      "idleSeconds": 0,
+      "output": "B",
+      "fired": false,
+      "threshold": 26.4,
+      "peakPotential": 6.616258267162786,
+      "peakEffectiveThreshold": 26.399999996747656,
+      "peakMembraneMargin": -19.783741729584868,
+      "headroom": 19.783741729584868
+    },
+    {
+      "idleSeconds": 60,
+      "output": "A",
+      "fired": false,
+      "threshold": 25.987499999999997,
+      "peakPotential": 8.759456503561667,
+      "peakEffectiveThreshold": 25.987499996747655,
+      "peakMembraneMargin": -17.228043493185986,
+      "headroom": 17.228043493185986
+    },
+    {
+      "idleSeconds": 60,
+      "output": "B",
+      "fired": false,
+      "threshold": 26.4,
+      "peakPotential": 6.616258267162786,
+      "peakEffectiveThreshold": 26.399999996747656,
+      "peakMembraneMargin": -19.783741729584868,
+      "headroom": 19.783741729584868
+    }
+  ],
+  "naturalAtStop": {
+    "A": {
+      "epoch": 68,
+      "cue": "A",
+      "time": 2870.68,
+      "tickFromCue": 23
+    },
+    "B": {
+      "epoch": 65,
+      "cue": "B",
+      "time": 2814.14,
+      "tickFromCue": 21
+    }
+  },
+  "naturalThrough80": {
+    "A": {
+      "epoch": 68,
+      "cue": "A",
+      "time": 2870.68,
+      "tickFromCue": 23
+    },
+    "B": {
+      "epoch": 65,
+      "cue": "B",
+      "time": 2814.14,
+      "tickFromCue": 21
+    }
+  },
+  "beforeTeacherAtStop": {
+    "A": 68,
+    "B": 65
+  },
+  "beforeTeacherThrough80": {
+    "A": 68,
+    "B": 65
+  },
+  "scope": "Natural means !driven && !externalDrive in retained65-tick presentation windows, across both cue trials; forced teacher spikes excluded. Gap spikes are not recorded by the unchanged harness."
+}

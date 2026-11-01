@@ -1,0 +1,48 @@
+{
+  "allEvidenceChecks": true,
+  "scientificPass": true,
+  "seed1ReusedByteIdentically": true,
+  "seed1CaseFiles": 70,
+  "nativeSourceByteIdentical": true,
+  "nativeFiles": 11,
+  "sourcePlanHash": "f1f4d701a33d3a6854929787197a346b31636d1909cf69a5b650b34fbba0c2f1",
+  "implementationHash": "8dabd246d6c94759b2c1c9f49800bde83e4a0a939e241c89236ec1d8a383ff66",
+  "cells": [
+    {
+      "id": "diagnostic-t24-f0.25",
+      "scientificPass": true,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 70
+    },
+    {
+      "id": "confirmation-2",
+      "scientificPass": true,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 70
+    },
+    {
+      "id": "confirmation-3",
+      "scientificPass": true,
+      "allEvidenceChecks": true,
+      "startingIdentity": true,
+      "replayedCircuits": 14,
+      "nativeProbeResponses": 190,
+      "stoppingEpoch": 70
+    }
+  ],
+  "replayedCircuits": 42,
+  "nativeProbeResponses": 570,
+  "additionalMeasurementsVerified": true,
+  "tests": {
+    "targetedPassed": 17,
+    "existingReadoutTests": 10,
+    "newConfirmationTests": 7
+  },
+  "notes": "All three cases independently replayed with the native engine. Gates and control discriminations, exact seed1 reuse, fixed settings, C margins, natural firing and before-teacher epochs checked. No scientific retuning."
+}

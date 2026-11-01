@@ -1,0 +1,7 @@
+{
+  "byteIdentical": true,
+  "coresSHA256": "19ac5c263ce012fe4ca4bacf9e446379c4d30c1888fae07e50cd5b4501505b75",
+  "formedEdgesSHA256": "86a08a108fc1399c2c3fa2426f3baa42a516a98a09d1ed54eeb452285b8b7a99",
+  "memorySHA256": "4cac02661ec801325d840f1d200bf1c3333a9528392c8f5819ddd6669a3230cc",
+  "scope": "Exact UTF-8 serialization of cores, ordered formed edges and weights, full locked native export, A/B responses and jitter schedule; training field remains unlocked."
+}

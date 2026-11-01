@@ -231,28 +231,31 @@ npm run demo:inhibitory
 
 ## Learned readout experiment
 
-Stage 3 adds two teacher-trained output neurons to exact reproductions of the
-Stage 1g stopping circuits. Plasticity is confined to the readout projections;
-the original memories pass strict preservation checks.
+**Stage 3 confirmation is GO at teacher tick 24 / threshold factor 0.25.** All three seeds pass R1–R4 and every required control. Seed 1 is reused byte-for-byte; seeds 2 and 3 are new confirmation runs.
 
-**The primary protocol is NO-GO:** all three seeds miss the required partial-cue
-readout gate. Two predeclared lower-threshold seed-1 diagnostics pass every gate
-and control; they do not replace the primary or constitute three-seed confirmation.
-Read [the readout report](docs/READOUT.md) for
-native spike times, teacher deliveries and refractory vetoes, controls, margins
-and the complete timing diagnostic.
+Readout plasticity is confined to two teacher-trained output neurons; the
+original memories pass strict preservation checks. The earlier factor-0.4
+primary remains a recorded NO-GO. Read [the readout report](docs/READOUT.md)
+for all controls, C's membrane margins, natural-firing epochs, native teacher
+deliveries and refractory vetoes, and the retained historical results.
 
 ```powershell
-npm run demo:readout -- --study
+npm run demo:readout:confirm
 node examples/readout.cjs --cue aardvark
+node examples/readout.cjs --cue "abominable snowman" --idle 60
 ```
 
-The second command probes the saved seed-1 primary and prints `aardvark` from the
-firing output neuron's concept ID. This is explicitly a vocabulary codebook
-lookup, not generated language. An unrecognized cue can produce silence.
-The study exits 1 for scientific NO-GO; this does not prevent inspecting the
-saved circuit. Both experiments preserve every byte under `src/neuron` and add
-no runtime dependencies. The browser's Sense Input path is unchanged.
+Default inference uses the confirmed seed-1 circuit at tick 24 / factor 0.25.
+The printed word is a vocabulary codebook lookup from the firing output cell,
+not generated language. Silent responses are reported honestly. Use
+`--memory FILE` to inspect a specific saved circuit. With no arguments, the
+readout CLI runs the fixed confirmation; `--confirm` is explicit. `--study`
+is reserved for reproducing the original historical grid. Confirmation accepts
+no alternative tick or factor. Exit codes are 0 for GO, 1 for scientific NO-GO
+and 2 for execution error.
+
+Every byte under `src/neuron` is preserved, and no runtime dependencies were
+added. The browser's Sense Input path is unchanged.
 
 ## Project map
 
