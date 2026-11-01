@@ -77,6 +77,12 @@ Same numbering as Stage 1 so the two scaffolds compare line by line.
     with plasticity still on — gates 2, 4, 8 and 9 still pass and the within-core median has
     saturated (≥ 0.65). This is the gate Stage 2 showed the old scaffold cannot pass; it is the
     point of v2. Report the full curve of completion, spillover and median weight from 10 to 120.
+    **Reference set (clarified 2026-11-01):** all gate-11 quantities are measured against the
+    **frozen stopping cores**, not cores recomputed at 120 — the gate is a claim that the memory
+    formed at the stop persists, the same reasoning as `refA`/`refB` in Stage 2. Contemporaneous
+    cores at 120 are reported alongside, and **drift** = Jaccard(frozen core, contemporaneous
+    core at 120) ≥ 0.8 for both A and B is part of the gate, so a memory that "passes" only by
+    migrating into different cells is caught.
 
 Reported: 5 compactness, 6 neutral recruitment (now split: primed recruits vs truly neutral),
 churn table, weight-vs-pairings table (1e audit), primed-set sizes, `directSet` overlaps.
