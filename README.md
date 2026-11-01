@@ -8,25 +8,29 @@ Requires Node.js 20 or newer; verified locally with Node.js 24.
 ## UI preview
 
 **Proof of concept, under active development.** These screenshots show the
-current supervised fact-learning workspace. The teacher-free formation experiment
-is documented separately below in [Teacher-free formation experiment](#teacher-free-formation-experiment).
+current **Learned memory** UI with a confirmed Stage 3 circuit. Explore the
+three saved seeds, full and half cues, untrained-cue rejection, and retained
+recall after 60 simulated seconds. See [the UI guide](docs/READOUT_UI.md).
 
 ### Neural console
 
 One shared volume connects Sense Input to Output. The console displays stored
-synaptic weights, recorded spike activity, learning controls and a neuron inspector.
-Here, the saved fact `The lamp is blue.` answers `What color is the lamp?` with `blue`.
+synaptic weights, recorded spike activity, cue controls and a neuron inspector.
+Here, seed 1 receives four of `aardvark`'s eight input features: 58 of 68 reference
+core cells respond, and O_A fires at 0.42 s. The displayed word is a vocabulary
+codebook lookup from the firing output cell, not generated language.
 
-![NeuroSphere console showing the shared neural volume, synaptic matrix, measured telemetry, and the learned response blue](docs/images/neurosphere-console.jpg)
+![Current NeuroSphere learned-memory console showing half-cue recall of aardvark, measured telemetry, and O_A/O_B controls beside the neural volume](docs/images/neurosphere-console.jpg)
 
 ### Inside the volume
 
-The expanded view zooms into an individual neuron and its connections. The
-inspector shows its threshold, incoming and outgoing links, weights, delays and
-recorded membrane potential. Neuron shapes are procedural illustrations;
-the displayed activity and connection values come from the simulation.
+The expanded view lets you zoom into the network and inspect individual neurons.
+O_A and O_B remain in a fixed strip beside the canvas, keeping the network clear
+while you zoom or pan. Here, the inspector shows O_A's threshold, incoming links,
+weights, delays and measured membrane potential at its spike. Neuron shapes are
+procedural illustrations; activity and connection values come from the simulation.
 
-![Expanded NeuroSphere view showing neuron 13, its synaptic connections, and the circuit inspector](docs/images/neurosphere-neuron-inspector.jpg)
+![Expanded NeuroSphere learned-memory view with side-mounted O_A/O_B controls and O_A membrane inspection at 0.42 seconds](docs/images/neurosphere-readout.jpg)
 
 ## Run
 
