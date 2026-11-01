@@ -11,6 +11,7 @@ outputs/formation/*/*
 outputs/pilot-v*/*
 !outputs/pilot-v*/summary.json
 !outputs/pilot-v*/engram-pilot.json
+!outputs/pilot-v3/engram-memory.json
 *.node
 
 # Private/local configuration
@@ -34,3 +35,9 @@ Thumbs.db
 outputs/association/*
 !outputs/association/2026-11-01T17-09-44-115Z-stage2/
 !outputs/association/2026-11-01T17-09-44-115Z-stage2/**
+
+# Complete predeclared Stage 1 v2 bounded-scaffold evidence
+!outputs/formation-v2/
+outputs/formation-v2/*
+!outputs/formation-v2/2026-11-01T17-59-30-265Z-stage1v2/
+!outputs/formation-v2/2026-11-01T17-59-30-265Z-stage1v2/**

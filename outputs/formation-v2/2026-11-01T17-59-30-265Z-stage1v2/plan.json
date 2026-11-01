@@ -1,0 +1,282 @@
+{
+  "stage": "1-v2",
+  "sourcePlan": "docs/FORMATION_V2_PLAN.md",
+  "protocol": {
+    "seed": 1,
+    "pool": 500,
+    "g": 4,
+    "w0": 0.7,
+    "maxSynapses": 10,
+    "k": 8,
+    "jitter": 8,
+    "gap": 10,
+    "epochs": 120
+  },
+  "cells": [
+    {
+      "id": "baseline-1",
+      "role": "baseline",
+      "options": {
+        "seed": 1,
+        "pool": 500,
+        "g": 4,
+        "w0": 0.7,
+        "maxSynapses": 10,
+        "k": 8,
+        "jitter": 8,
+        "gap": 10,
+        "epochs": 120
+      }
+    },
+    {
+      "id": "baseline-2",
+      "role": "baseline",
+      "options": {
+        "seed": 2,
+        "pool": 500,
+        "g": 4,
+        "w0": 0.7,
+        "maxSynapses": 10,
+        "k": 8,
+        "jitter": 8,
+        "gap": 10,
+        "epochs": 120
+      }
+    },
+    {
+      "id": "baseline-3",
+      "role": "baseline",
+      "options": {
+        "seed": 3,
+        "pool": 500,
+        "g": 4,
+        "w0": 0.7,
+        "maxSynapses": 10,
+        "k": 8,
+        "jitter": 8,
+        "gap": 10,
+        "epochs": 120
+      }
+    },
+    {
+      "id": "diagnostic-g3-w0.6",
+      "role": "diagnostic",
+      "options": {
+        "seed": 1,
+        "pool": 500,
+        "g": 3,
+        "w0": 0.6,
+        "maxSynapses": 10,
+        "k": 8,
+        "jitter": 8,
+        "gap": 10,
+        "epochs": 120
+      }
+    },
+    {
+      "id": "diagnostic-g3-w0.7",
+      "role": "diagnostic",
+      "options": {
+        "seed": 1,
+        "pool": 500,
+        "g": 3,
+        "w0": 0.7,
+        "maxSynapses": 10,
+        "k": 8,
+        "jitter": 8,
+        "gap": 10,
+        "epochs": 120
+      }
+    },
+    {
+      "id": "diagnostic-g4-w0.6",
+      "role": "diagnostic",
+      "options": {
+        "seed": 1,
+        "pool": 500,
+        "g": 4,
+        "w0": 0.6,
+        "maxSynapses": 10,
+        "k": 8,
+        "jitter": 8,
+        "gap": 10,
+        "epochs": 120
+      }
+    },
+    {
+      "id": "diagnostic-synapses-8",
+      "role": "diagnostic",
+      "options": {
+        "seed": 1,
+        "pool": 500,
+        "g": 4,
+        "w0": 0.7,
+        "maxSynapses": 8,
+        "k": 8,
+        "jitter": 8,
+        "gap": 10,
+        "epochs": 120
+      }
+    }
+  ],
+  "primaryDiagnostic": "baseline-1 is the g=4/w0=0.7/maxSynapses=10 cell; reuse that run.",
+  "scaffold": {
+    "bits": 192,
+    "groupSize": 4,
+    "featureCount": 768,
+    "totalCells": 1268,
+    "featurePlacement": "Each bit owns g consecutive indices of a single 192*g-point Fibonacci shell, radius 300. Each cell has permanent reach 600 and nextGrowthAt 1e12.",
+    "poolPlacement": "The unchanged Stage 1 shifted Halton ball, radius 120, own cell radius 60.",
+    "input": "One native SpikeIO port per bit, cells array contains all group IDs; assert every group member fires once at its scheduled tick.",
+    "projections": "Independent seeded projection stream; 8 distinct pool targets per feature cell, native connect() with explicit w0.",
+    "directSet": "Seed-topology count >=ceil(1.02/w0)=2. Primed means exactly one hit. No equality with simulated activation is assumed.",
+    "weights": {
+      "initialWeight": 0.4,
+      "maxWeight": "w0",
+      "primaryW0": 0.7,
+      "threshold": 1.02,
+      "leakRate": 1.4,
+      "maxSynapses": 10
+    },
+    "featureGrowth": false,
+    "decay": "weightDecay=unusedDecay=healthLoss=0",
+    "clock": "arrival",
+    "margin": 1,
+    "exploration": 0.1,
+    "inhibition": [
+      0.5,
+      0.6
+    ],
+    "cues": "ID-ordered disjoint words via unchanged loadVocabulary/selectCues."
+  },
+  "training": {
+    "jitter": 8,
+    "jitterUnit": "One independent seeded integer draw per bit; all g copies share onset. Save draws and feature spike evidence.",
+    "captureTicks": 58,
+    "gapSeconds": 10,
+    "stopping": {
+      "checkpoints": [
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120
+      ],
+      "minimum": 30,
+      "maximum": 120,
+      "threshold": 0.8,
+      "rule": "First checkpoint >=30 with both fixed halves of A and B >=0.8 at both 0/60-second delays on contemporaneous cores. C and all other gates are excluded."
+    },
+    "continuation": "Continue primary to 120 regardless of first stopping point. Never replace stopping memory based on later gates.",
+    "curves": "Report contemporary metrics and retrospectively recomputed frozen-stop metrics for every checkpoint. Frozen-reference curves cannot influence the stopping rule."
+  },
+  "gates": {
+    "stop": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10
+    ],
+    "stability": 0.7,
+    "specificity": 0.2,
+    "size": [
+      5,
+      "0.25*P"
+    ],
+    "negative": "C rejects, each Jaccard <=0.25, spillover <=25% of smaller core, both delays.",
+    "recurrent": "Within-core count >=core size and density >=3*pool density for both cores.",
+    "retention": "Unchanged Stage 1 criterion 8: full A at 60 seconds has Jaccard >=0.8 with A; B also reported.",
+    "completion": "Each of four fixed halves at both delays >=0.8 and gain >=0.25 vs untrained on the same core.",
+    "median": 0.6,
+    "capFractionThreshold": 0.69,
+    "continued": {
+      "epoch": 120,
+      "reference": "Frozen stopping cores for specificity, spillover, completion, retention and within-core median.",
+      "gates": [
+        2,
+        4,
+        8,
+        9
+      ],
+      "median": 0.65,
+      "drift": "Jaccard(frozen stopping core, contemporaneous epoch-120 core) >=0.8 for BOTH A/B.",
+      "contemporaneous": "Report separately; never substitute into gate 11."
+    },
+    "reported": [
+      5,
+      6,
+      "strict stability",
+      "cap fraction",
+      "primed and truly-neutral recruits",
+      "direct overlaps",
+      "churn",
+      "weight versus predicted pairings",
+      "fan-in"
+    ]
+  },
+  "controls": {
+    "standard": [
+      "growth-off",
+      "hebbian-off",
+      "inhibition-off",
+      "shuffled",
+      "untrained",
+      "prune-formed"
+    ],
+    "matched": "Growth/Hebbian/inhibition/shuffled use primary stopping epoch. Untrained zero. Native prune-formed acts on the exact restored stopping circuit.",
+    "required": "Growth-off and Hebbian-off each fail both 9 and 10; pruning lowers every half below 0.6 from a higher value.",
+    "continuedPlastic": "Primary own epoch-120 continuation.",
+    "continuedHebbianOff": "Native checkpoint restore at stop, then recorded field.setFeatures({hebbian:false}); structure may keep growing until 120.",
+    "noPostStopEpochs": "If stop=120, continued controls have zero additional epochs; report this limit without extending training."
+  },
+  "basin": {
+    "counts": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+    ],
+    "subsets": [
+      [
+        0,
+        2,
+        4,
+        6,
+        1,
+        3,
+        5,
+        7
+      ],
+      [
+        1,
+        3,
+        5,
+        7,
+        0,
+        2,
+        4,
+        6
+      ]
+    ],
+    "rule": "Prefix of each fixed index order in the sorted eight-bit code; at 4 bits these are exactly the two existing halves. At 8 both orders are the same full cue. No subset search.",
+    "probes": "Synchronous independent locked clones, both delays, A/B, trained and initial untrained against the same stopping reference; also report epoch-120 contemporary and frozen-reference basins."
+  },
+  "audit": {
+    "observer": "Unchanged Stage 1e native potentiation and competition observers. Continued phase imports and merges the original edge lifecycles.",
+    "prediction": "Aff-only continuous leaky integration of all grouped seed arrivals until threshold 1.02, first crossing per endpoint; actual recurrent delay, inclusive lag 0..0.32 s, since birth. Does not model youth, adaptation, inhibition, rounding or recurrence. Predicted counts never replace observed native events."
+  },
+  "decision": "GO only when every baseline seed reaches criterion, passes stop gates, gate 11 and all three required control discriminations. All seven cells saved; diagnostics cannot replace primary. Exit 0 GO, 1 scientific NO-GO, 2 execution error."
+}

@@ -193,6 +193,29 @@ timing diagnostic, cross-edge audits and per-seed curves. The complete evidence
 is included under `outputs/association/2026-11-01T17-09-44-115Z-stage2/`.
 The experiment exits 1 for this scientific NO-GO; execution errors exit 2.
 
+## Bounded-scaffold formation experiment
+
+Stage 1 v2 gives each feature bit four input cells and caps every synapse at
+0.7. It tests formation, partial-cue completion and continued training to 120
+epochs, with the stopping cores frozen as the reference for persistence.
+
+**Stage 1 v2 is NO-GO under its declared criteria.** Seeds 1–3 reach the half-cue
+stopping rule at epochs 100, 40 and 90, but all fail specificity, containment,
+potentiation and continued stability. The required growth, Hebbian and pruning
+controls discriminate. All declared cells and controls are retained in the report;
+no diagnostic replaces a primary seed.
+
+```powershell
+npm run demo:formation:v2 -- --study
+```
+
+This command runs the full seven-cell study and all controls.
+Read [the bounded-scaffold report](docs/FORMATION_V2.md) for the basin curves,
+all seven predeclared cells, all controls and independent native replay checks.
+Complete evidence is included under
+`outputs/formation-v2/2026-11-01T17-59-30-265Z-stage1v2/`.
+Exit codes are 0 for GO, 1 for scientific NO-GO and 2 for execution error.
+
 ## Project map
 
 - `public/`: browser interface and actual-position 3D volume renderer.
